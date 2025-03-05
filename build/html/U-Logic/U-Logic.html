@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>U-Logic &mdash; документация База знаний 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e35015f7"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cd1d70c9"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="UI-Designer" href="../UI-Designer.html" />
+    <link rel="prev" title="Начало работы с контроллером Uvatron 3000PRO" href="../guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            База знаний
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Начало работы с контроллером Uvatron 3000PRO</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">U-Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Начало работы с U-Logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Редактор</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Заголовок редактора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Палитра редактора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Рабочее пространство редактора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id66">Боковая панель редактора</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id86">Быстрый страт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id87">Палитра узлов</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../UI-Designer.html">UI-Designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UI-Panel.html">UI-Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Часто задаваемые вопросы</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">База знаний</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">U-Logic</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="u-logic">
+<h1>U-Logic<a class="headerlink" href="#u-logic" title="Ссылка на этот заголовок"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Вся логика, включая логику интерфейса, программируется в <strong>U-Logic</strong>.
+Для доступа к U-Logic откройте в браузере страницу <strong>&lt;IP Контроллера&gt;:1880</strong>.</p>
+</div>
+<section id="id1">
+<h2>Начало работы с U-Logic<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h2>
+<section id="id2">
+<h3>Редактор<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h3>
+<figure class="align-center" id="id88">
+<a class="reference internal image-reference" href="../_images/about.png"><img alt="../_images/about.png" src="../_images/about.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id88" title="Ссылка на это изображение"></a></p>
+</figcaption>
+</figure>
+<p><strong>Окно редактора <em>U-Logic</em> состоит из четырех компонентов:</strong></p>
+<ol class="arabic simple">
+<li><p>Заголовок вверху содержит кнопку <strong>развернуть</strong>, <strong>главное меню</strong> , <strong>аутентификация пользователя</strong>, <strong>меню пользователя</strong>.</p></li>
+<li><p>Палитра слева содержит доступные для использования узлы.</p></li>
+<li><p>Основное рабочее пространство посередине, где создаются потоки.</p></li>
+<li><p>Боковая панель справа.</p></li>
+</ol>
+<section id="id3">
+<h4>Заголовок редактора<a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h4>
+<section id="id4">
+<h5>Компонент заголовка редактора U-LOGIC<a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h5>
+<p>Заголовок редактора U-LOGIC — это центральный компонент, который упрощает навигацию по основным настройкам U-LOGIC, предоставляет кнопку развертывания для выполнения потоков и доступ к профилю пользователя.</p>
+<p><img alt="изменить лого и сделать скрин" src="../_images/U-Logic" /></p>
+</section>
+<section id="id5">
+<h5>Кнопка развертывания<a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h5>
+<p>С правой стороны заголовка вы найдете красную кнопку развертывания. Нажатие на нее запускает все потоки в экземпляре. Красный цвет указывает на ожидающие изменения для развертывания, а серый — на отсутствие ожидающих изменений.</p>
+<p><img alt="Red Deploy" src="../_images/deploy_red.png" /></p>
+<p><img alt="Grey Deploy" src="../_images/deploy_grey.png" /></p>
+<p>Чтобы развернуть все в рабочей обалсти, или только потоки, содержащие измененные узлы, или только узлы, которые были изменены, или перезапустить развернутые потоки, нажмите на значок раскрытия кнопки развертывания. Выберите предпочитаемый вариант и затем нажмите кнопку развертывания соответственно</p>
+<p><img alt="Change Deploy" src="../_images/deploy_type.png" /></p>
+</section>
+<section id="id6">
+<h5>Главное меню<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h5>
+<p>Сразу после профиля пользователя в правом углу вы увидите значок меню. Нажав на него, вы откроете список опций, которые упрощают работу с U-Logic.</p>
+<p>Ниже приведены опции, доступные в главном меню.</p>
+<section id="edit">
+<h6>Edit<a class="headerlink" href="#edit" title="Ссылка на этот заголовок"></a></h6>
+<p>Первая опция в меню позволяет выполнять основные действия по редактированию. Наведение на нее открывает дополнительные опции, такие как «Отменить последнее выполненное изменение», «Выбрать все узлы», «Скопировать выбранные узлы» и т. д.</p>
+<p><img alt="Edit" src="../_images/edit.png" /></p>
+<ul class="simple">
+<li><p><strong>Отменить последнее выполненное изменение</strong>: Отменяет последнее действие или серию действий, выполненных в редакторе.</p></li>
+<li><p><strong>Redo</strong>: Повторно применяет действие, которое было ранее отменено с помощью команды «Отменить последнее выполненное изменение».</p></li>
+<li><p><strong>Вырезать выбранные узлы</strong>: Удаляет выбранные узлы из рабочей области и временно сохраняет их в буфере обмена.</p></li>
+<li><p><strong>Скопировать выбранные узлы</strong>: Сохраняет дубликат выбранных узлов в буфере обмена, не удаляя их из исходного потока.</p></li>
+<li><p><strong>Вставить узлы</strong>: Позволяет вставлять скопированные или вырезанные узлы из буфера обмена обратно в рабочий процесс.</p></li>
+<li><p><strong>Copy group style</strong>: Сохраняет стиль выбранной группы в буфере обмена.</p></li>
+<li><p><strong>Paste group style</strong>: Применяет сохраненный стиль группы к другой выбранной группе.</p></li>
+<li><p><strong>Выбрать все узлы</strong>: Выбирает все группы потоков в текущей рабочей области.</p></li>
+<li><p><strong>Выбрать все соединенные узлы</strong>: Выбирает узлы, подключенные к текущим выбранным узлам.</p></li>
+<li><p><strong>Select none</strong>: Отменяет выбор всех выбранных узлов или групп.</p></li>
+<li><p><strong>Split selection with Link nodes</strong>: Соединяет выбранные узлы с помощью узлов связи.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h6>Вид<a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция позволяет пользователям управлять отображением и видимостью различных элементов интерфейса в редакторе U-Logic и обеспечивает им беспрепятственный доступ к этим элементам.</p>
+<p><img alt="View" src="../_images/view.png" /></p>
+<ul class="simple">
+<li><p><strong>Показывать палитру</strong>: переключает видимость палитры U-Logic</p></li>
+<li><p><strong>Показывать боковую панель</strong>: включает и выключает видимость боковой панели.</p></li>
+<li><p><strong>Журнал событий</strong>: открывает журнал, в котором регистрируются события и действия в U-Logic.</p></li>
+<li><p><strong>Список действий</strong>: предоставляет список доступных действий или задач в U-Logic, что позволяет быстро получить доступ к часто используемым операциям и функциям.</p></li>
+<li><p><strong>Отладочные сообщения</strong>: отображает сообщения, сгенерированные узлами отладки.</p></li>
+</ul>
+</section>
+<section id="arrange">
+<h6>Arrange<a class="headerlink" href="#arrange" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция позволяет вам упорядочивать и управлять выбранными группами потоков в рабочем пространстве U-Logic:</p>
+<p><img alt="Arrange" src="../_images/arrange.png" /></p>
+<ul class="simple">
+<li><p><strong>Align to Left</strong>: Выравнивает выбранные группы потоков по левому краю рабочей области. <em>(Сочетание клавиш: alt + a l)</em></p></li>
+<li><p><strong>Align to Center</strong>: Центрирует выбранные группы потоков по горизонтали в рабочей области. <em>(Сочетание клавиш: alt + a c)</em></p></li>
+<li><p><strong>Align to Right</strong>: Выравнивает выбранные группы потоков по правому краю рабочей области. <em>(Сочетание клавиш: alt + a r)</em></p></li>
+<li><p><strong>Align to Top</strong>: Выравнивает выбранные группы потоков по верхнему краю рабочей области. <em>(Сочетание клавиш: alt + a t)</em></p></li>
+<li><p><strong>Align to Middle</strong>: Центрирует выбранные группы потоков по вертикали в рабочей области. <em>(Сочетание клавиш: alt + a m)</em></p></li>
+<li><p><strong>Align to Bottom</strong>: Выравнивает выбранные группы потоков по нижнему краю рабочей области. <em>(Сочетание клавиш: alt + a b)</em></p></li>
+<li><p><strong>Distribute Vertically</strong>: Равномерно распределяет выбранные группы потоков по вертикали в рабочей области. <em>(Сочетание клавиш: alt + a v)</em></p></li>
+<li><p><strong>Distribute Horizontally</strong>: Равномерно распределяет выбранные группы потоков по горизонтали в рабочей области. <em>(Сочетание клавиш: alt + a h)</em></p></li>
+<li><p><strong>Move Back</strong>: Перемещает выбранные группы потоков на один слой назад в порядке наложения.</p></li>
+<li><p><strong>Move Front</strong>: Перемещает выбранные группы потоков на один слой вперед в порядке наложения.</p></li>
+<li><p><strong>Move Backward</strong>: Перемещает выбранные группы потоков на одну позицию назад в порядке наложения.</p></li>
+<li><p><strong>Move Forward</strong>: Перемещает выбранные группы потоков на одну позицию вперед в порядке наложения.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h6>Импорт<a class="headerlink" href="#id8" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция позволяет импортировать файл приложения flow.json. В общем, вам доступны два основных метода импорта: вы можете использовать поле «Буфер обмена» или загрузить файл из локальной системы, нажав «выберите файл для импорта».</p>
+<p><img alt="Import" src="../_images/import.png" /></p>
+<p>Кроме того, снизу можно выбрать область, в которой поток должен импортироваться:</p>
+<ul class="simple">
+<li><p><strong>текущий поток</strong>: Выбор «текущий поток» импортирует поток в существующую рабочую область.</p></li>
+<li><p><strong>новый поток</strong>: Выбор «новый поток» создаст новое рабочее пространство для импортированного потока после нажатия кнопки импорта.</p></li>
+</ul>
+<p>С левой стороны после буфера обмена вы найдете три опции:</p>
+<ul class="simple">
+<li><p><strong>Локальные</strong>: Здесь вы можете просмотреть локальную библиотеку потоков, которая содержит потоки, созданные в том же экземпляре U-Logic. Эта библиотека доступна только из того же экземпляра, где были созданы потоки.</p></li>
+<li><p><strong>Примеры</strong>: В этом разделе содержатся примеры потоков для всех основных узлов, а также сторонних узлов, которые вы установили, если они были добавлены.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h6>Экспорт<a class="headerlink" href="#id9" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция позволяет экспортировать созданный вами поток приложений. Обычно она предоставляет две основные опции: «Скопировать в буфер обмена», которая позволяет копировать flow.json, и «Скачать», которая загружает flow.json файл.</p>
+<p><img alt="Export 1" src="../_images/export.png" /></p>
+<p>Кроме того, вы можете выбрать область, из которой будет экспортироваться поток приложений, из верхних опций:</p>
+<p><img alt="Export 2" src="../_images/export2.png" /></p>
+<ul class="simple">
+<li><p><strong>выбранные узлы</strong>: Выбор этой опции позволяет экспортировать только выбранные узлы из потока.</p></li>
+<li><p><strong>текущий поток</strong>: Выбор этой опции позволяет экспортировать приложение из текущей рабочей области потока.</p></li>
+<li><p><strong>все потоки</strong>: Выбор этой опции позволяет экспортировать поток из всех потоков в данном экземпляре.</p></li>
+</ul>
+<p>В верхней части вы увидите две вкладки:</p>
+<ul class="simple">
+<li><p><strong>Экспортировать узлы</strong>: Эта вкладка позволяет увидеть узлы и потоки, которые вы собираетесь экспортировать.</p></li>
+<li><p><strong>JSON</strong>: Эта вкладка покажет поток в формате JSON, который вы собираетесь экспортировать.</p></li>
+</ul>
+<p><img alt="Export 3" src="../_images/export3.png" /></p>
+<ul class="simple">
+<li><p><strong>компактно</strong>: Это уплотнит ваш JSON-файл потока в одну строку.</p></li>
+<li><p><strong>форматированно</strong>: Это отформатирует JSON-файл потока, сделав его более удобным для чтения или проверки.</p></li>
+</ul>
+<p>С левой стороны после буфера обмена вы найдете еще опцию:</p>
+<p><img alt="Export 4" src="../_images/export4.png" /></p>
+<p><strong>Локальные:</strong> Эта опция позволяет создать коллекцию потоков, которые вы создали в текущем экземпляре U-Logic. Вы можете создать новую папку, нажав на значок с тремя точками в правом верхнем углу и выбрав «Новая папка». Кроме того, внизу вы найдете поле ввода, которое позволяет изменить имя файла потока. Нажатие на «Экспорт в библиотеку» сохранит его в коллекции. Теперь вы можете получить доступ к своей коллекции в том же экземпляре.</p>
+</section>
+<section id="id10">
+<h6>Поиск в потоках<a class="headerlink" href="#id10" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Search Flows 1" src="../_images/search_flows.png" /></p>
+<p><img alt="Search Flows 2" src="../_images/search_flows2.png" /></p>
+<p>Эта опция позволяет выполнять поиск групп потоков, созданных в этом экземпляре U-Logic.</p>
+</section>
+<section id="id11">
+<h6>Конфигурационные узлы<a class="headerlink" href="#id11" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Configuration Nodes" src="../_images/configuration_nodes.png" /></p>
+<p>При нажатии на эту опцию откроется вкладка «конфиг» боковой панели, которая позволит вам управлять всеми узлами конфигурации текущего экземпляра U-Logic.</p>
+</section>
+<section id="id12">
+<h6>Потоки<a class="headerlink" href="#id12" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Flows 1" src="../_images/flows.png" /></p>
+<!--- add link-->
+<p>Эта опция позволяет управлять вкладками <a class="reference internal" href="#"><span class="xref myst">потока</span></a>.</p>
+<ul class="simple">
+<li><p><strong>Добавить</strong>: добавляет новую вкладку потока.</p></li>
+<li><p><strong>Edit</strong>: Редактирует текущую вкладку потока.</p></li>
+<li><p><strong>Удалить</strong>: удаляет текущую вкладку потока.</p></li>
+</ul>
+</section>
+<section id="id13">
+<h6>Подпотоки<a class="headerlink" href="#id13" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Flows 2" src="../_images/subflows.png" /></p>
+<!--- add link--->
+<p>Эта опция позволяет создать <a class="reference internal" href="#"><span class="xref myst">подпоток</span></a>.</p>
+<ul class="simple">
+<li><p><strong>Создать подпоток</strong>: создает новую вкладку подпотока.</p></li>
+<li><p><strong>Выделение в подпоток</strong>: преобразует выбранные узлы в подпоток.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h6>Группы<a class="headerlink" href="#id14" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Groups" src="../_images/groups.png" /></p>
+<p>Эта опция позволяет управлять группами потоков.</p>
+<ul class="simple">
+<li><p><strong>Сгруппировать выделенное</strong>: группирует выбранные узлы.</p></li>
+<li><p><strong>Разгруппировать выделенное</strong>: разгруппирует выбранную группу потоков.</p></li>
+<li><p><strong>Объединить выделение</strong>: объединяет выбранные группы потоков.</p></li>
+<li><p><strong>Удалить из группы</strong>: удаляет выбранные узлы из группы.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h6>Управление палитрой<a class="headerlink" href="#id15" title="Ссылка на этот заголовок"></a></h6>
+<!-- названия сторонних узлов содержат nod-red -->
+<p>Это позволяет пользователям управлять узлами, доступными в их среде U-Logic. Это включает установку новых узлов, обновление существующих и удаление узлов, которые больше не нужны.</p>
+<p>Он содержит две основные вкладки:</p>
+<ul>
+<li><p><strong>Узлы</strong>: эта вкладка показывает список установленных узлов. В правом углу каждой записи узла есть опции для:</p>
+<p><img alt="Palette 1" src="../_images/palette1.png" /></p>
+</li>
+<li><p><strong>удалить</strong>: удалить узел.</p></li>
+<li><p><strong>отключить все</strong>: Временно отключить узел.</p></li>
+<li><p><strong>Установить</strong>: эта вкладка позволяет устанавливать сторонние узлы U-Logic из реестра npm.</p>
+<p><img alt="Palette 2" src="../_images/palette2.png" /></p>
+</li>
+<li><p><strong>сортировать</strong>: это параметры сортировки, которые позволяют сортировать по relevance (по умолчанию), по алфавиту и по дате.</p></li>
+<li><p><strong>Обновить список модулей</strong>: обновить список доступных сторонних узлов.</p></li>
+</ul>
+</section>
+<section id="id16">
+<h6>Параметры<a class="headerlink" href="#id16" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Settings" src="../_images/settings.png" /></p>
+<ul class="simple">
+<li><p><strong>Вид</strong>: настройка параметров редактора и параметров интерфейса.</p>
+<ul>
+<li><p><strong>Язык</strong>: выберите язык для редактора U-Logic.</p></li>
+<li><p><strong>Restore zoom level on load</strong>: включение этой опции восстановит уровень масштабирования редактора при загрузке U-Logic.</p></li>
+<li><p><strong>Restore scroll position on load</strong>: включение этой опции восстановит позицию прокрутки редактора при загрузке U-Logic.</p></li>
+<li><p><strong>Показывать сетку</strong>: включите отображение сетки в рабочей области редактора.</p></li>
+<li><p><strong>Привязывать к сетке</strong>: включите привязку узлов к сетке.</p></li>
+<li><p><strong>Размер сетки</strong>: отрегулируйте размер квадратов сетки.</p></li>
+<li><p><strong>Показать статус узла</strong>: переключите, чтобы отобразить статус узлов в редакторе.</p></li>
+<li><p><strong>Показывать метки у недавно добавленных узлов</strong>: переключите, чтобы метки недавно добавленных узлов стали видимыми</p></li>
+<li><p><strong>Показать советы</strong>: переключите, чтобы отобразить подсказки в редакторе.</p></li>
+<li><p><strong>Show guided tours for new versions</strong>: включите пошаговые руководства для новых версий U-Logic.</p></li>
+</ul>
+</li>
+</ul>
+<!--- add link-->
+<ul>
+<li><p><strong>Палитра</strong>: эта опция <a class="reference internal" href="#"><span class="xref myst">управления палитрой</span></a> позволяет управлять узлами, доступными в вашей среде U-Logic.</p></li>
+<li><p><strong>Клавиши</strong>: настройте сочетания клавиш для эффективной навигации и работы в U-Logic.</p></li>
+<li><p><strong>Enviroment</strong>: Управление переменными окружения, используемыми в потоках U-Logic. Это включает в себя настройку, редактирование и удаление переменных, к которым узлы могут получить доступ во время выполнения.</p>
+<p><img alt="Enviroment" src="../_images/enviroment.png" /></p>
+<ul class="simple">
+<li><p><strong>+ добавить</strong>: Добавляет новую переменную среды.</p></li>
+<li><p><strong>x</strong>: Удалить соответствующие переменные среды.</p></li>
+<li><p><strong>Revert</strong>: отменяет изменения, внесенные в переменные среды.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id17">
+<h6>Сочетание клавиш<a class="headerlink" href="#id17" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция перенаправляет вас в интерфейс, где вы можете настроить сочетания клавиш для эффективной навигации и работы в экземпляре U-Logic.</p>
+</section>
+<section id="id18">
+<h6>Вебсайт U-Logic<a class="headerlink" href="#id18" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция перенаправит вас на официальный сайт U-Logic.</p>
+</section>
+<section id="v4-0-9">
+<h6>v4.0.9<a class="headerlink" href="#v4-0-9" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция отображает журнал изменений для текущей версии U-Logic на вкладке «Change Log» боковой панели, подробно описывая, что было изменено или исправлено по сравнению с предыдущими версиями.</p>
+</section>
+</section>
+</section>
+<section id="id19">
+<h4>Палитра редактора<a class="headerlink" href="#id19" title="Ссылка на этот заголовок"></a></h4>
+<p>Палитра — это левая боковая панель, которая содержит все доступные узлы, включая основные узлы и установленные сторонние узлы.</p>
+<section id="id20">
+<h5>Панель поиска<a class="headerlink" href="#id20" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Search bar" src="../_images/search.png" /></p>
+<p>Расположенная в верхней части палитры строка фильтра узлов позволяет быстро находить узлы по их названию.</p>
+</section>
+<section id="id21">
+<h5>Категории узлов<a class="headerlink" href="#id21" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Node categories" src="../_images/categories.png" /></p>
+<p>Палитра разделена на несколько категорий, каждая из которых содержит коллекции узлов. При установке стороннего узла может быть создана новая категория. Подпотоки категоризируются в разделе «Подпотоки».</p>
+<p>Вы можете свернуть или развернуть категории, нажав на нужную категорию.</p>
+<section id="id22">
+<h6>Свернуть все категории<a class="headerlink" href="#id22" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Collapse All Categories" src="../_images/collapse.png" /></p>
+<p>Внизу палитры вы найдете два значка со стрелками. Нажатие на левый значок со стрелкой вверх свернёт все категории.</p>
+</section>
+</section>
+<section id="id23">
+<h5>Развернуть все категории<a class="headerlink" href="#id23" title="Ссылка на этот заголовок"></a></h5>
+<p>Нажатие на значок со стрелкой вниз развернет все категории обратно в состояние по умолчанию.</p>
+</section>
+<section id="id24">
+<h5>Показать/скрыть палитру<a class="headerlink" href="#id24" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Toggle Palette" src="../_images/toggle.png" /></p>
+<p>Нажатие этой кнопки скрывает боковую панель палитры. Чтобы снова ее отобразить, нажмите на кнопку еще раз.</p>
+</section>
+</section>
+<section id="id25">
+<h4>Рабочее пространство редактора<a class="headerlink" href="#id25" title="Ссылка на этот заголовок"></a></h4>
+<p>Рабочая область — это основная область редактора, в которой вы создаете потоки приложений, перетаскивая узлы из палитры.</p>
+<p><img alt="Workspace" src="../_images/workspace.png" /></p>
+<section id="id26">
+<h5>Просмотреть инструменты<a class="headerlink" href="#id26" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="View Tools" src="../_images/tools.png" /></p>
+<p>В рабочем пространстве в правом нижнем углу есть инструменты просмотра. Сюда входят кнопки увеличения (<code class="docutils literal notranslate"><span class="pre">Ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">+</span></code>) и уменьшения (<code class="docutils literal notranslate"><span class="pre">Ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">-</span></code>) для управления видом рабочего пространства и сброса уровня масштабирования до значения по умолчанию.</p>
+<p><img alt="View Tools" src="../_images/map.png" /></p>
+<p>Кроме того, он предоставляет навигатор представлений, который позволяет вам видеть уменьшенное изображение всего рабочего пространства. В этом представлении вы также можете видеть текущую видимую область рабочего пространства в редакторе. Чтобы перейти к определенной области рабочего пространства, щелкните эту область в навигаторе представлений.</p>
+</section>
+<section id="search-flows">
+<h5>Search flows<a class="headerlink" href="#search-flows" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Search Flow" src="../_images/search1.png" /></p>
+<p><img alt="Search Flow" src="../_images/search2.png" /></p>
+<p>В левом нижнем углу рабочей области вы увидите значок поиска. Нажатие на него откроет всплывающее окно, позволяющее быстро искать потоки в вашем экземпляре U-Logic по их имени. Вы можете открыть это диалоговое окно, нажав <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
+</section>
+<section id="id27">
+<h5>Поток<a class="headerlink" href="#id27" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Flow" src="../_images/flows1.png" /></p>
+<p>Поток представлен в виде вкладки в рабочей области редактора, предоставляя новое рабочее пространство для создания приложений путем соединения узлов. «Поток» также неформально используется для описания одного набора соединенных узлов. Таким образом, поток (вкладка) может содержать несколько потоков (наборов соединенных узлов), но формально поток является родительской группой нескольких соединенных узлов. Поток может иметь имя и описание, которые будут отображаться на информационной боковой панели.</p>
+<section id="id28">
+<h6>Добавление потока<a class="headerlink" href="#id28" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Adding a Flow" src="../_images/flow_add.png" /></p>
+<p>Чтобы создать родительский поток, нажмите на значок «+» в правом верхнем углу, или воспользуйтесь опцией добавления потока в главном меню при помощи раздела «Потоки»</p>
+</section>
+<section id="id29">
+<h6>Редактирование свойств поиска<a class="headerlink" href="#id29" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing a flow properties" src="../_images/flow_edit.png" /></p>
+<p>Чтобы изменить свойства потока, дважды щелкните вкладку потока, чтобы ввести его имя и описание в появившейся всплывающей форме.</p>
+</section>
+<section id="id30">
+<h6>Удаление потока<a class="headerlink" href="#id30" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Deleting a flow" src="../_images/flow_delete2.png" /></p>
+<p>Чтобы удалить поток, дважды щелкните по нему. В появившемся всплывающем окне нажмите кнопку «Удалить» в верхнем левом углу.</p>
+<p><img alt="Deleting a flow" src="../_images/flow_delete.png" /></p>
+<p>Либо щелкните правой кнопкой мыши вкладку потока и выберите в меню пункт «Удалить».</p>
+</section>
+<section id="id31">
+<h6>Включение и выключение потоков<a class="headerlink" href="#id31" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Enabling and Disabling Flows" src="../_images/flow_enable.png" /></p>
+<p>Чтобы включить или отключить поток, дважды щелкните на вкладке потока. Нажмите кнопку «Отключено» в нижнем левом углу или кнопку «Включено», если он уже отключен.</p>
+<p><img alt="Enabling and Disabling Flows" src="../_images/flow_enable2.png" /></p>
+<p>Либо щелкните правой кнопкой мыши по вкладке потока и выберите в меню «Disable flow/Enable flow». Отключенные потоки не выполняются при развертывании.</p>
+</section>
+<section id="id32">
+<h6>Переупорядочение потоков<a class="headerlink" href="#id32" title="Ссылка на этот заголовок"></a></h6>
+<p>Потоки можно переупорядочить, щелкнув и перетащив вкладку потока в нужную позицию. Дополнительные параметры меню вкладки потока можно получить, щелкнув значок раскрывающейся стрелки в правом верхнем углу.</p>
+</section>
+</section>
+<section id="id33">
+<h5>Подпоток<a class="headerlink" href="#id33" title="Ссылка на этот заголовок"></a></h5>
+<!-- создание gif -->
+<p><img alt="Subflow" src="../_images/subflow.png" /></p>
+<p>Подпоток в U-Logic — это набор узлов, которые свернуты в один узел в рабочей области. Он позволяет группировать набор узлов в повторно используемую единицу. Это помогает в организации потоков, содействии повторному использованию и упрощении сложных конструкций потоков путем инкапсуляции нескольких узлов в единое представление узла более высокого уровня.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>подпоток не может содержать экземпляр самого себя — ни напрямую, ни косвенно.</p>
+</div>
+<section id="id34">
+<h6>Создание подпотока<a class="headerlink" href="#id34" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Creating a Subflow" src="../_images/subflow_add.png" /></p>
+<p>Чтобы создать подпоток, в разделе «Подпотоки» выберите «Создать подпоток» в главном меню.</p>
+<p><img alt="Creating a Subflow" src="../_images/subflow_add2.png" /></p>
+<p>Он создаст для вас окно подпотока, похожее на вкладку потока.</p>
+</section>
+<section id="id35">
+<h6>Редактирование подпотока<a class="headerlink" href="#id35" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing a Subflow" src="../_images/subflow_edit.png" /></p>
+<p>Чтобы открыть диалоговое окно редактирования подпотока, дважды щелкните по узлу подпотока, затем щелкните «Изменить шаблон подпотока». Вы можете дать имя для этого подпотока, добавить описание, щелкнув в правом верхнем углу</p>
+<p><img alt="Editing a Subflow" src="../_images/subflow_edit2.png" /></p>
+<p>опцию «Описание», а также настроить внешний вид, нажав на опцию «Внешний вид» в правом верхнем углу.</p>
+<p><img alt="Editing a Subflow" src="../_images/subflow_lookup.png" /></p>
+<p>На вкладке свойств вы можете определить пользовательские свойства, которые будут добавлены в диалог редактирования подпотока. Затем эти свойства будут представлены как переменные среды, которые затем могут использоваться узлами этого подпотока. При определении этих свойств вы также можете определить тип данных и метку для каждого.</p>
+<p><img alt="Editing a Subflow" src="../_images/subflow_env.png" /></p>
+</section>
+<section id="id36">
+<h6>Удаление подпотока<a class="headerlink" href="#id36" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Deleting a Subflow" src="../_images/subflow_delete.png" /></p>
+<p>Чтобы удалить подпоток, нажмите кнопку «удалить подпоток» в верхней части вкладки подпотока.</p>
+</section>
+<section id="id37">
+<h6>Преобразование узлов в подпоток<a class="headerlink" href="#id37" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Converting Nodes into a Subflow" src="../_images/subflow_from_nodes.png" /></p>
+<p>Если у вас есть узлы на рабочем пространстве и вы хотите создать из них подпоток, вы можете выбрать их, нажав левую клавишу мыши и нарисовав вокруг них прямоугольник. Затем нажмите на <code class="docutils literal notranslate"><span class="pre">Подпотоки</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Выделение</span> <span class="pre">в</span> <span class="pre">подпоток</span></code> в главном меню.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Провода, входящие в выборку, должны быть подключены к одному узлу, поскольку результирующий узел подпотока может иметь не более одного входа.</p>
+</div>
+</section>
+<section id="id38">
+<h6>Входы и выходы<a class="headerlink" href="#id38" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Inputs and Outputs" src="../_images/subflow_io.png" /></p>
+<p>Входы и выходы подпотока изображены серыми квадратными узлами, которые могут быть соединены в рабочем пространстве подпотока как обычные узлы. Верхняя панель инструментов предлагает функции для добавления и удаления этих узлов. Подобно узлам обычного потока, каждый подпоток может иметь максимум один вход, но может вмещать несколько выходов.</p>
+</section>
+<section id="id39">
+<h6>Статус узла<a class="headerlink" href="#id39" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Status Node" src="../_images/subflow_status.png" /></p>
+<p>Узел Status используется для обновления статуса подпотока. Этот узел статуса можно редактировать как обычные узлы потока. Этот узел использует входные данные, <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> которые могут быть либо простой строкой, либо объектом Status.</p>
+</section>
+</section>
+<section id="id40">
+<h5>Узлы<a class="headerlink" href="#id40" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Nodes" src="../_images/node.png" /></p>
+<p>Узел — это фундаментальный строительный блок, используемый для создания потоков. Каждый узел представляет собой отдельную часть функциональности или определенное действие, которое может быть выполнено в потоке. Эти узлы могут быть сторонними дополнениями с использованием менеджера палитры или основных узлов.</p>
+<p><img alt="Node Explanation" src="../_images/node_io.png" /></p>
+<p>Узлы могут иметь один входной и несколько выходных портов, соединенных проводами, которые определяют поток данных внутри потоков. Как входные, так и выходные узлы могут подключаться к нескольким проводам.</p>
+<p><img alt="Node Buttons" src="../_images/node_buttons.png" /></p>
+<p>Некоторые узлы имеют кнопки либо слева, либо справа. Например, узел inject имеет кнопку слева, а узел debug — справа. Функция этих кнопок различается между узлами.</p>
+<!-- 
+![]() -->
+<p>Кроме того, некоторые узлы отображают статус внизу со значками, указывающими на их статус выполнения. Например, узлы mqtt in и websocket in показывают текст «подключено» с зеленым кружком, указывающим на успешное подключение.</p>
+<p><img alt="Node Error" src="../_images/node_error.png" /></p>
+<p><img alt="Node Deploy" src="../_images/node_deploy.png" /></p>
+<p>Все узлы в U-Logic обозначают ошибки красным треугольником, неразвернутые изменения — синим кружком.</p>
+<section id="id41">
+<h6>Добавление узлов в рабочее пространство<a class="headerlink" href="#id41" title="Ссылка на этот заголовок"></a></h6>
+<p>Добавить узлы в рабочую область можно тремя способами:</p>
+<p><strong>Перетаскивание из палитры</strong></p>
+<p>Узлы можно добавлять из палитры U-Logic , перетаскивая их на рабочую область.</p>
+<p><strong>Использование диалогового окна быстрого добавления</strong></p>
+<p>Редактор U-Logic предоставляет быстрый и простой способ добавления узлов с помощью палитры:</p>
+<p><img alt="Using Quick-Add Dialog" src="../_images/node_palette.png" /></p>
+<ul class="simple">
+<li><p>Нажмите <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> или <code class="docutils literal notranslate"><span class="pre">Command</span></code> и щелкните по рабочей области.</p></li>
+<li><p>Выберите нужный узел в диалоговом окне, которое содержит все доступные узлы из основной палитры узлов.</p></li>
+<li><p>Используйте строку поиска для быстрого поиска узлов.</p></li>
+</ul>
+<p>При рисовании провода от одного узла оставьте провод на рабочем пространстве, чтобы подключить его к узлу, который будет добавлен с помощью того же диалогового окна быстрого добавления.</p>
+<p><strong>Импорт из библиотеки или буфера обмена</strong></p>
+<p>Узлы также можно добавлять, импортируя их из командной или локальной библиотеки или используя буфер обмена (<code class="docutils literal notranslate"><span class="pre">главное</span> <span class="pre">меню</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">импорт</span></code>).</p>
+</section>
+<section id="id42">
+<h6>Редактирование свойств узла<a class="headerlink" href="#id42" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing Node Properties" src="../_images/node_edit.png" /></p>
+<p>Чтобы настроить свойства узла, дважды щелкните по нему или выберите узел и нажмите Enter. Появится всплывающая форма для настройки узла. Параметры конфигурации различаются в зависимости от типа узла.</p>
+<p><img alt="Editing Node Properties" src="../_images/node_edit2.png" /></p>
+<ul class="simple">
+<li><p>При нажатии на вторую из трех опций в правом верхнем углу открывается вкладка «Описание», позволяющая написать описание в формате Markdown, которое будет отображаться на боковой панели информации.</p></li>
+</ul>
+<p><img alt="Editing Node Properties" src="../_images/node_edit3.png" /></p>
+<ul class="simple">
+<li><p>При нажатии на третий параметр открывается вкладка для изменения внешнего вида узла, например, для изменения значков, присвоения имен входным и выходным портам и переключения видимости меток.</p></li>
+</ul>
+</section>
+<section id="id43">
+<h6>Включение и отключение узлов<a class="headerlink" href="#id43" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing Node Properties" src="../_images/node_enable.png" /></p>
+<p>Чтобы включить или отключить узлы, дважды щелкните по узлу и нажмите нижнюю кнопку «Включено» или кнопку «Отключено», если они уже включены.</p>
+</section>
+<section id="node">
+<h6>Доступ к справочной информации Node<a class="headerlink" href="#node" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing Node Properties" src="../_images/node_info.png" /></p>
+<p>Чтобы получить доступ к справочной информации об узле, дважды щелкните по узлу и щелкните нижний значок «Показать справку», который отображает информацию, связанную с этим узлом, на информационной боковой панели.</p>
+</section>
+<section id="id44">
+<h6>Конфигурационные узлы<a class="headerlink" href="#id44" title="Ссылка на этот заголовок"></a></h6>
+<p>Узлы конфигурации в U-Logic хранят конфигурации, общие для нескольких узлов в потоке.</p>
+<p>Например, узлы HTTP-прокси или настройки TLS представляют собой конфигурации для узлов HTTP-запросов.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Узлы конфигурации не шифруют данные после конфигурации, что потенциально может раскрыть конфиденциальную информацию при неправильном распространении. Рекомендуется использовать переменные среды для настройки этих узлов, чтобы предотвратить их раскрытие в потоке.</p>
+</div>
+<p>Узлы конфигурации можно добавлять с помощью диалогового окна редактирования узлов, требующих настройки:</p>
+<p><img alt="Configuration Nodes" src="../_images/node_conf.png" /></p>
+<ul class="simple">
+<li><p>Нажмите на значок «+» рядом со значком карандаша и полем с текстом.</p></li>
+<li><p>Введите необходимую информацию в диалоговом окне редактирования и нажмите «Добавить».</p></li>
+</ul>
+<p>Узлы конфигурации не видны в рабочей области, как другие узлы, но ими можно управлять на вкладке узлов конфигурации на боковой панели.</p>
+<p><img alt="Configuration Nodes" src="../_images/node_count.png" /></p>
+<p>Чтобы узнать, сколько узлов используют определенную конфигурацию, проверьте информацию в нижнем колонтитуле диалогового окна редактирования узла конфигурации.</p>
+<p>Кроме того, как и общие узлы, узлы конфигурации можно отключать и включать таким же образом.</p>
+</section>
+</section>
+<section id="id45">
+<h5>Провода<a class="headerlink" href="#id45" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Wires" src="../_images/wire.png" /></p>
+<p>«Провода» относятся к соединениям, которые связывают узлы вместе, чтобы определить поток данных. Эти провода визуально представляют направление и поток информации от одного узла к другому в потоке U-Logic.</p>
+<section id="id46">
+<h6>Соединение узлов вместе<a class="headerlink" href="#id46" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы соединить узлы с помощью проводов, щелкните левой кнопкой мыши на выходном порту узла и перетащите провод к входному порту назначения. Кроме того, если вы нажмете <code class="docutils literal notranslate"><span class="pre">Ctrl/Command</span></code> и левую клавишу мыши на входном или выходном порту, вам не нужно будет удерживать левую клавишу мыши или любую другую кнопку для перетаскивания провода. Чтобы подключить его к порту назначения, нажмите левую клавишу мыши на порту назначения. Если клавиша <code class="docutils literal notranslate"><span class="pre">Ctrl/Command</span></code> останется нажатой после подключения к порту назначения, и если узел этого порта имеет выходной порт, будет перетащен новый провод.</p>
+<p>Провода можно подключать от входного порта к выходному порту, а не от входного порта к входному порту или от выходного порта к выходному порту.</p>
+</section>
+<section id="id47">
+<h6>Удаление проводов<a class="headerlink" href="#id47" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы удалить провода, щелкните левой кнопкой мыши, чтобы выбрать первый провод. Чтобы выбрать несколько проводов, нажмите и удерживайте клавишу, <code class="docutils literal notranslate"><span class="pre">Ctrl\Command</span></code> щелкая каждый провод левой кнопкой мыши. Если вы используете только левую кнопку мыши, вы можете выбрать только один провод за раз. После выбора проводов нажмите клавишу «delete» или «backspace», чтобы удалить их.</p>
+</section>
+<section id="id48">
+<h6>Движущиеся провода<a class="headerlink" href="#id48" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы отключить провод от порта, выберите провод, щелкнув по нему. Затем нажмите и удерживайте клавишу <code class="docutils literal notranslate"><span class="pre">Shift</span></code> , пока левая клавиша мыши нажата на порту. При перетаскивании мыши вы увидите, что провод отключается от порта и может быть подключен к другому порту.</p>
+<p>Если к порту подключено несколько проводов, и при нажатии кнопки с удерживаемой клавишей Shift ни один из них не выбран, то будут перемещаться все провода.</p>
+</section>
+<section id="id49">
+<h6>Резка проводов<a class="headerlink" href="#id49" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Провода также можно удалить, разрезав их. Это можно сделать, удерживая клавишу <code class="docutils literal notranslate"><span class="pre">Alt/Option</span></code>, а затем нарисовав линию разрезания, удерживая левую кнопку мыши.</p>
+</section>
+<section id="id50">
+<h6>Отсоединение узлов<a class="headerlink" href="#id50" title="Ссылка на этот заголовок"></a></h6>
+<p><strong>Сохранение провода при удалении узла</strong></p>
+<!-- 
+![]() -->
+<p>Для этого нажмите и удерживайте клавишу Ctrl/ Command, выберите узел, щелкнув левой клавишей мыши, а затем нажмите клавишу «delete» или «backspace».</p>
+<p><strong>Отсоединение узла от проводов</strong></p>
+<!-- 
+![]() -->
+<p>Чтобы использовать эту опцию, необходимо задать сочетание клавиш для действия «Detach Selected Nodes»</p>
+</section>
+</section>
+<section id="id51">
+<h5>Группы<a class="headerlink" href="#id51" title="Ссылка на этот заголовок"></a></h5>
+<p><img alt="Groups" src="../_images/group.png" /></p>
+<p>В U-Logic можно создавать группы для лучшей организации, содержащие один объект с включенными конфигурациями узлов в редакторе.</p>
+<section id="id52">
+<h6>Создание группы потоков<a class="headerlink" href="#id52" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Creating a Flow Group" src="../_images/group_add.png" /></p>
+<p>Чтобы создать группу потоков, выберите узлы (удерживая клавишу Ctrl или рисуя вокруг них прямоугольник). Перейдите <code class="docutils literal notranslate"><span class="pre">Группы</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Сгруппировать</span> <span class="pre">выделение</span></code> в главном меню или нажмите <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+</section>
+<section id="id53">
+<h6>Редактирование свойств группы<a class="headerlink" href="#id53" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Editing Group Properties" src="../_images/group_edit.png" /></p>
+<p>Группа потока может иметь имя, цвет фона и метку границы, видимую в рабочей области. По умолчанию она имеет серую границу без фона или имени.</p>
+<p>Чтобы задать стиль и имя группы, дважды щелкните по ней. Введите имя, выберите цвета контура и фона в свойстве заливки, настройте положение и цвет метки, затем щелкните «Готово» в правом верхнем углу.</p>
+</section>
+<section id="id54">
+<h6>Добавление переменных среды на уровне группы<a class="headerlink" href="#id54" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Adding Group-Level Enviroment Variables" src="../_images/group_env.png" /></p>
+<p>Чтобы добавить переменные среды на уровне группы, дважды щелкните по ним. Выберите вторую опцию в правом верхнем углу всплывающего окна, расположенного под кнопкой «Готово». Нажмите самую нижнюю кнопку «добавить», чтобы добавить переменные.</p>
+</section>
+<section id="id55">
+<h6>Добавление описания<a class="headerlink" href="#id55" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Adding Description" src="../_images/group_description.png" /></p>
+<p>Чтобы добавить описание в группу, дважды щелкните по ней. Выберите третий вариант в правом верхнем углу всплывающего окна под кнопкой «Готово». Введите описание в формате Markdown.</p>
+</section>
+<section id="id56">
+<h6>Добавление узлов в группу<a class="headerlink" href="#id56" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы добавить узлы в существующую группу, перетащите их в группу. Это можно делать по одному узлу за раз. Группы также могут быть вложены друг в друга таким же образом.</p>
+</section>
+<section id="id57">
+<h6>Удаление узлов из группы<a class="headerlink" href="#id57" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы удалить узлы из группы, выберите узлы и перейдите <code class="docutils literal notranslate"><span class="pre">Группы</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Удалить</span> <span class="pre">из</span> <span class="pre">группы</span></code> в главном меню. Аналогично удалите группу из другой группы. Или щелкните по узлу, удерживайте клавишу «Alt» и перетащите его за пределы группы.</p>
+</section>
+<section id="id58">
+<h6>Объединение групп<a class="headerlink" href="#id58" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Merging Groups" src="../_images/group_merge.png" /></p>
+<p>Чтобы объединить несколько групп в одну, выберите группы. Перейти к главному меню и выбрать раздел <code class="docutils literal notranslate"><span class="pre">Группы</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Объединить</span> <span class="pre">выделение</span></code>.</p>
+</section>
+<section id="id59">
+<h6>Разгруппировка выбранных узлов<a class="headerlink" href="#id59" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Ungrouping Selected Nodes" src="../_images/group_ungroup_selection.png" /></p>
+<p>Чтобы разгруппировать узлы из группы, выберите узлы. Перейти к главному меню в раздел <code class="docutils literal notranslate"><span class="pre">Группы</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Разгруппировать</span> <span class="pre">выделение</span></code>.</p>
+</section>
+</section>
+<section id="id60">
+<h5>Выбор<a class="headerlink" href="#id60" title="Ссылка на этот заголовок"></a></h5>
+<p>Редактор U-Logic предоставляет простой интерфейс для выбора узлов и проводов на рабочем пространстве.</p>
+<p>Узел можно выбрать или отменить выбор, щелкнув по нему. Чтобы выбрать несколько узлов, нажмите <code class="docutils literal notranslate"><span class="pre">Ctrl/Command</span></code> клавишу и выберите нужные узлы. Чтобы выбрать все узлы в рабочей области, щелкните <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<section id="id61">
+<h6>Инструмент «Лассо»<a class="headerlink" href="#id61" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Lasso Tool" src="../_images/selection_lasso.png" /></p>
+<p>U-Logic предоставляет инструмент лассо для более быстрого выбора. Чтобы использовать инструмент лассо, нажмите левую клавишу мыши и перетащите курсор, затем вы можете выбрать несколько узлов, нарисовав вокруг них прямоугольник.</p>
+</section>
+<section id="id62">
+<h6>Выбор подключенных узлов<a class="headerlink" href="#id62" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы выбрать все подключенные к определенному узлу узлы, нажмите <code class="docutils literal notranslate"><span class="pre">Shift</span></code> и щелкните по середине этого узла.</p>
+</section>
+<section id="id63">
+<h6>Выбор всех вышестоящих узлов<a class="headerlink" href="#id63" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы выбрать все подключенные узлы, которые находятся перед этим конкретным узлом, нажмите <code class="docutils literal notranslate"><span class="pre">Shift</span></code> и, удерживая ее, щелкните левую часть этого узла.</p>
+</section>
+<section id="id64">
+<h6>Выбор всех нижестоящих узлов<a class="headerlink" href="#id64" title="Ссылка на этот заголовок"></a></h6>
+<!-- 
+![]() -->
+<p>Чтобы выбрать все подключенные узлы, которые находятся после данного конкретного узла, нажмите <code class="docutils literal notranslate"><span class="pre">Shift</span></code> и, удерживая ее, щелкните правую часть этого узла.</p>
+</section>
+<section id="id65">
+<h6>Выбор потоков<a class="headerlink" href="#id65" title="Ссылка на этот заголовок"></a></h6>
+<p><img alt="Selecting Flows" src="../_images/selection_flows.png" /></p>
+<p>Чтобы выбрать вкладки потока, нажмите клавишу <code class="docutils literal notranslate"><span class="pre">Ctrl/Command</span></code> и, удерживая ее, щелкните на вкладке потока, которую вы хотите выбрать. Теперь вы можете удалить, экспортировать или скопировать их все вместе.</p>
+</section>
+</section>
+</section>
+<section id="id66">
+<h4>Боковая панель редактора<a class="headerlink" href="#id66" title="Ссылка на этот заголовок"></a></h4>
+<p>Боковая панель расположена на правой стороне редактора U-Logic. Она содержит набор различных инструментов, которые упрощают использование U-Logic, например, управление узлами, конфигурация, хранилище контекста и многое другое.</p>
+<p><img alt="Sidebar" src="../_images/sidebar.png" /></p>
+<p>Инструменты, доступные на боковой панели, называются панелями.</p>
+<section id="id67">
+<h5>Панели по умолчанию<a class="headerlink" href="#id67" title="Ссылка на этот заголовок"></a></h5>
+<p>Боковая панель U-Logic поставляется со следующими панелями по умолчанию:</p>
+</section>
+<section id="id68">
+<h5>Панель «инфо»<a class="headerlink" href="#id68" title="Ссылка на этот заголовок"></a></h5>
+<p>На информационной панели отображается информация обо всех потоках, узлах, присутствующих в них, подпотоках и узлах, присутствующих в них, а также узлах глобальной конфигурации в древовидной структуре.</p>
+<p>Если навести курсор на любой элемент в этой древовидной структуре, вы увидите несколько опций, которые упрощают и ускоряют работу, например, вызвать действие (для активации узлов, если у наведенного узла есть кнопка), включить/отключить (для отключения и включения наведенного узла), Show/Hide (для скрытия и отображения наведенного элемента в рабочей области), Lock/Unlock (для блокировки и разблокировки наведенного элемента), Найти в рабочей области (для быстрого поиска наведенного элемента в рабочей области). Эти опции представлены различными значками.</p>
+<section id="id69">
+<h6>Поиск в потоках<a class="headerlink" href="#id69" title="Ссылка на этот заголовок"></a></h6>
+<p>Панель «инфо» имеет строку поиска в верхней части, которая позволяет легко искать потоки, подпотоки и узлы на информационной панели.</p>
+<p>Кроме того, он предоставляет фильтр, позволяющий фильтровать эти элементы по различным параметрам, таким как</p>
+<ul class="simple">
+<li><p>Узлы конфигурации</p></li>
+<li><p>Неиспользуемые узлы конфигурации</p></li>
+<li><p>Modified nodes and flows</p></li>
+<li><p>Недействительные узлы</p></li>
+<li><p>Неизвестные узлы</p></li>
+<li><p>Неиспользуемые подпотоки</p></li>
+<li><p>Hidden flows</p></li>
+<li><p>Current flow</p></li>
+</ul>
+</section>
+<section id="id70">
+<h6>Свойства элемента<a class="headerlink" href="#id70" title="Ссылка на этот заголовок"></a></h6>
+<p>Если щелкнуть элемент в древовидной структуре информационной панели, на второй вкладке панели «инфо» вы увидите идентификатор потока, если выбранный элемент является потоком, а также идентификатор узла и тип, если это узел.</p>
+<p>Значение узла можно копировать с помощью опции копирования справа от значения</p>
+<p>Чтобы увидеть дополнительную информацию, нажмите кнопку «Показать больше», которая отобразит дополнительную информацию обо всех свойствах узла.</p>
+<p>В верхней части вы увидите три опции: первая — «Показать справку», при нажатии на которую вы перейдете на панель справки и увидите файл readme, предоставленный автором для выбранного элемента; вторая опция скопирует URL-адрес выбранного элемента, вы можете использовать эту функцию, когда хотите указать или обсудить определенный элемент в рабочей области с членом вашей команды; и третья опция позволяет вам найти этот элемент в рабочей области.</p>
+</section>
+</section>
+<section id="id71">
+<h5>Панель «справка»<a class="headerlink" href="#id71" title="Ссылка на этот заголовок"></a></h5>
+<p>Эта панель позволяет просматривать docs/readme, добавленные авторами пакета node для помощи пользователям. Макет этой панели немного похож на информационную панель и разделен на две вкладки.</p>
+<p>Первая вкладка представляет собой древовидную структуру с двумя основными темами: «U-Logic» и «Справка по Node». U-Logic включает в себя последний журнал изменений и приветственный тур (краткое руководство по недавно добавленным функциям) для всех версий U-Logic.</p>
+<p>На второй вкладке отображаются справочные документы/файлы readme выбранного узла.</p>
+<section id="id72">
+<h6>Скрытие тем<a class="headerlink" href="#id72" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы скрыть/показать первую вкладку панели справки, нажмите на верхнюю левую кнопку «Hide topics».</p>
+</section>
+<section id="id73">
+<h6>Просмотр документации Node на вкладке «Справка»<a class="headerlink" href="#id73" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы просмотреть файлы readme/docs на панели справки для узлов, щелкните один раз по узлам в рабочей области или щелкните элемент узла в древовидной структуре раздела «Справка по узлам».</p>
+</section>
+</section>
+<section id="id74">
+<h5>Панель «отладка»<a class="headerlink" href="#id74" title="Ссылка на этот заголовок"></a></h5>
+<p>Панель отладки отображает сообщения, выводимые узлом отладки. Эта панель помогает легко отлаживать ваше приложение.</p>
+<p>Когда сообщения печатаются на панели отладки, каждое сообщение включает дату и время, имя узла, который напечатал это сообщение, имя свойства, его тип данных и значение.</p>
+<section id="id75">
+<h6>Фильтрация отладочных сообщений<a class="headerlink" href="#id75" title="Ссылка на этот заголовок"></a></h6>
+<p>В верхней части панели отладки вы увидите опцию фильтра с тремя параметрами, которая позволяет отображать только те сообщения, которые вам нужны:</p>
+<ul class="simple">
+<li><p>все узлы: при выборе этого параметра будут отображаться сообщения, распечатанные всеми узлами.</p></li>
+<li><p>выбранные узлы: эта опция позволяет выбрать конкретные узлы отладки, сообщения которых вы хотите видеть на панели отладки.</p></li>
+<li><p>текущий поток: при выборе этого параметра будут печататься только сообщения, напечатанные узлами, присутствующими в текущем потоке.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>боковая панель «отладка» может отображать только 100 последних сообщений. Если боковая панель в данный момент отображает отфильтрованный список сообщений, скрытые сообщения все равно учитываются в пределе 100.</p>
+</div>
+</section>
+<section id="id76">
+<h6>Очистка сообщений<a class="headerlink" href="#id76" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы очистить сообщения, нажмите на кнопку «Очистить журнал» в правом верхнем углу. Или нажмите на <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">alt</span></code>+<code class="docutils literal notranslate"><span class="pre">l</span></code>.</p>
+</section>
+<section id="id77">
+<h6>Открытие отдельного окна<a class="headerlink" href="#id77" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы открыть панель отладки в отдельном окне, щелкните по правой нижней кнопке «Открыть в новом окне» со значком компьютера. Щелчок по нему откроет панель отладки в новом окне браузера, что позволит легко просматривать и управлять сообщениями отладки.</p>
+</section>
+</section>
+<section id="id78">
+<h5>Панель «узлы конфигурации»<a class="headerlink" href="#id78" title="Ссылка на этот заголовок"></a></h5>
+<p>Панель узлов конфигурации показывает список всех узлов конфигурации, добавленных к текущему экземпляру U-Logic. Все узлы конфигурации организованы по их области действия, например, по всем потокам, по определенному потоку и подпотоку.</p>
+<p>Каждый узел конфигурации на панели узлов конфигурации отображает тип и метку этого узла, а также количество текущих узлов, использующих эту конфигурацию.</p>
+<p>Эта панель конфигурации также обеспечивает легкий доступ к диалоговому окну редактирования узлов конфигурации. Чтобы открыть его, дважды щелкните по узлам конфигурации на панели.</p>
+<p>Для доступа к этой панели узлов конфигурации нажмите <code class="docutils literal notranslate"><span class="pre">Ctrl/command</span></code>+<code class="docutils literal notranslate"><span class="pre">g</span></code> +<code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<section id="id79">
+<h6>Фильтрация узлов конфигурации<a class="headerlink" href="#id79" title="Ссылка на этот заголовок"></a></h6>
+<p>Панель конфигурации узлов предоставляет возможность фильтровать узлы по всем и неиспользуемым.</p>
+</section>
+</section>
+<section id="id80">
+<h5>Панель «контекст»<a class="headerlink" href="#id80" title="Ссылка на этот заголовок"></a></h5>
+<p>Эта панель отображает переменные контекста по их области действия. Каждая переменная включает такие данные, как дата и время, ее хранилище (память или постоянное), а также имя и значение. Чтобы получить доступ к этой панели, нажмите <code class="docutils literal notranslate"><span class="pre">ctrl/command</span></code>+<code class="docutils literal notranslate"><span class="pre">g</span></code>+<code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<section id="id81">
+<h6>Обновление переменных контекста<a class="headerlink" href="#id81" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы обновить контекстные переменные, нажмите кнопку обновления, расположенную в правом верхнем углу каждой вкладки области действия, или, чтобы обновить определенную переменную, наведите на нее курсор и нажмите кнопку обновления, которая появляется справа от нее.</p>
+</section>
+<section id="id82">
+<h6>Удаление контекстных переменных<a class="headerlink" href="#id82" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы удалить контекстную переменную, наведите указатель мыши на переменную, которую вы хотите удалить, и нажмите кнопку удаления, которая появляется справа от нее.</p>
+</section>
+<section id="id83">
+<h6>Копирование свойств и значений<a class="headerlink" href="#id83" title="Ссылка на этот заголовок"></a></h6>
+<p>Чтобы скопировать имя этой переменной, наведите на нее курсор и нажмите первую кнопку, которая появится справа.</p>
+<p>Чтобы скопировать значение этой переменной, наведите на нее курсор и нажмите вторую кнопку, которая появится справа.</p>
+</section>
+</section>
+<section id="id84">
+<h5>Сокрытие боковой панели<a class="headerlink" href="#id84" title="Ссылка на этот заголовок"></a></h5>
+<p>Чтобы скрыть боковую панель, нажмите на кнопку «Показать/скрыть боковую панель». Чтобы снова отобразить ее, нажмите на кнопку переключения еще раз. В качестве альтернативы вы можете использовать сочетание клавиш <code class="docutils literal notranslate"><span class="pre">ctrl/command</span></code>+<code class="docutils literal notranslate"><span class="pre">space</span></code>.</p>
+</section>
+<section id="id85">
+<h5>Изменение размера боковой панели<a class="headerlink" href="#id85" title="Ссылка на этот заголовок"></a></h5>
+<p>Чтобы изменить размер боковой панели, наведите указатель мыши на границу боковой панели, пока курсор не изменится. Затем нажмите левую кнопку мыши и удерживайте ее во время изменения размера.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="id86">
+<h2>Быстрый страт<a class="headerlink" href="#id86" title="Ссылка на этот заголовок"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>За работу графического интерфейса отвечает узел <strong>UI Control Panel</strong>.
+Без этого узла графический интерфейс панели управления неактивен и недоступен.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Для инициализации интерфейса добавьте узел <strong>UI Control Panel</strong> в рабочую область.</p></li>
+</ol>
+<figure class="align-center" id="id89">
+<a class="reference internal image-reference" href="../_images/ADDUIPanelNode.png"><img alt="../_images/ADDUIPanelNode.png" src="../_images/ADDUIPanelNode.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id89" title="Ссылка на это изображение"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Откройте его настройки, дважды кликнув на него. В появившемся окне нажмите на иконку <img src="../_static/Add.png" width="40" height="40"></p></li>
+</ol>
+<figure class="align-center" id="id90">
+<a class="reference internal image-reference" href="../_images/EditNodeUI.png"><img alt="../_images/EditNodeUI.png" src="../_images/EditNodeUI.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id90" title="Ссылка на это изображение"></a></p>
+</figcaption>
+</figure>
+<p>напротив поля <code class="docutils literal notranslate"><span class="pre">path</span></code>, добавьте конфигурацию <code class="docutils literal notranslate"><span class="pre">\web-client</span></code>, примените настройки узла и запустите поток <strong>U-Logic</strong>.
+Используйте только один экземпляр узла UI Control Panel для работы всех графических интерфейсов; не дублируйте и не
+создавайте новые экземпляры. В U-Logic по умолчанию включены все необходимые узлы для работы с популярными
+протоколами, а также дополнительные вспомогательные узлы. Для каждого узла есть описание и примеры его использования.
+Чтобы вызвать справку по узлу, выберите его и нажмите <strong>Ctrl + G</strong>, затем <strong>H</strong>. Если возможностей узлов недостаточно
+для взаимодействия с оборудованием, в U-Logic включены библиотеки, которые можно использовать в узлах <strong>Function</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">:</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;ws&quot;</span><span class="p">),</span>
+<span class="n">ssh2</span><span class="p">:</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;ssh2&quot;</span><span class="p">),</span>
+<span class="n">http</span><span class="p">:</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;node:http&quot;</span><span class="p">),</span> 
+<span class="n">net</span><span class="p">:</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;node:net&quot;</span><span class="p">),</span> 
+<span class="n">tls</span><span class="p">:</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;node:tls&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Пример использования библиотек находится в разделе <a class="reference internal" href="U-Logic-Function.html"><span class="std std-doc">Function</span></a></p>
+</div>
+</section>
+<section id="id87">
+<h2>Палитра узлов<a class="headerlink" href="#id87" title="Ссылка на этот заголовок"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="../guide.html" class="btn btn-neutral float-left" title="Начало работы с контроллером Uvatron 3000PRO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="../UI-Designer.html" class="btn btn-neutral float-right" title="UI-Designer" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2025, uvatron.ru. </p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
