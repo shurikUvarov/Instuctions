@@ -54,10 +54,24 @@
 <li class="toctree-l4"><a class="reference internal" href="#id66">Боковая панель редактора</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#id86">Работа с сообщениями</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id87">Понимание сообщений U-Logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id88">Что такое сообщения U-Logic?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id89">Анатомия сообщений U-Logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id90">Типы данных в сообщениях U-Logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id91">Как клонировать сообщения или свойства сообщений</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id93">Распространенные ошибки, которых следует избегать при работе с сообщениями U-Logic</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id86">Быстрый страт</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id87">Палитра узлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id94">Программирование</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id95">Преобразование данных</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#if-else">If-Else</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id104">Быстрый страт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id105">Палитра узлов</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../UI-Designer.html">UI-Designer</a></li>
@@ -99,11 +113,11 @@
 <h2>Начало работы с U-Logic<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h2>
 <section id="id2">
 <h3>Редактор<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h3>
-<figure class="align-center" id="id88">
+<figure class="align-center" id="id106">
 <a class="reference internal image-reference" href="../_images/about.png"><img alt="../_images/about.png" src="../_images/about.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id88" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id106" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p><strong>Окно редактора <em>U-Logic</em> состоит из четырех компонентов:</strong></p>
@@ -771,9 +785,383 @@
 </section>
 </section>
 </section>
-</section>
 <section id="id86">
-<h2>Быстрый страт<a class="headerlink" href="#id86" title="Ссылка на этот заголовок"></a></h2>
+<h3>Работа с сообщениями<a class="headerlink" href="#id86" title="Ссылка на этот заголовок"></a></h3>
+<section id="id87">
+<h4>Понимание сообщений U-Logic<a class="headerlink" href="#id87" title="Ссылка на этот заголовок"></a></h4>
+<p>U-Logic полагается на передачу сообщений между узлами для создания динамичных рабочих процессов IoT, автоматизации и обработки данных. Каждое сообщение содержит данные, которые узлы изменяют, обрабатывают или анализируют, поэтому понимание структуры и обработки этих сообщений является ключевым. Неправильное управление сообщениями может привести к скрытым ошибкам, таким как перезапись данных, бесконечные циклы или сбои. Чтобы избежать ошибок и создавать надежные потоки, важно знать, как эффективно работать с сообщениями.</p>
+<p>В этом руководстве мы рассмотрим внутреннюю работу сообщений U-Logic, распространенные ошибки и лучшие практики для обеспечения плавного потока данных без ошибок.</p>
+</section>
+<section id="id88">
+<h4>Что такое сообщения U-Logic?<a class="headerlink" href="#id88" title="Ссылка на этот заголовок"></a></h4>
+<p>В U-Logic сообщения — это пакеты данных, которые перемещаются между узлами в вашем потоке. U-Logic работает на основе событий, что означает, что эмиттер событий инициирует события, а слушатель реагирует на них. В этом контексте узлы в U-Logic выступают как источники событий, так и слушатели, а сообщения служат средством, посредством которого эти события передаются. Эти сообщения представляют собой информацию, которую узлы читают, изменяют и на которую реагируют. Каждый узел обрабатывает эти сообщения и передает их следующему узлу в последовательности.</p>
+<!-- additionalyy add animation of messages move -->
+<p>Сообщения важны, потому что они передают данные, которые управляют вашими рабочими процессами, будь то показания датчиков, ввод пользователя или ответы от API. В сущности, сообщения U-Logic представляют собой объекты JavaScript, которые являются простыми, но мощными структурами для управления и передачи данных в ваших потоках.</p>
+<section id="javascript">
+<h5>Понимание объектов JavaScript<a class="headerlink" href="#javascript" title="Ссылка на этот заголовок"></a></h5>
+<p>JavaScript объект — это структура данных, используемая для хранения нескольких значений в одной переменной. Она состоит из пар ключ-значение, где каждый ключ (или свойство) связан с определенным значением. Такая организация позволяет вам легко группировать и получать доступ к связанным данным.</p>
+<p>Например:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+  <span class="n">age</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+  <span class="n">married</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>В этом примере , <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code> и <code class="docutils literal notranslate"><span class="pre">married</span></code> являются свойствами объекта. Аналогично сообщения U-Logic используют эту структуру для организации и транспортировки данных в ваших потоках.</p>
+</section>
+</section>
+<section id="id89">
+<h4>Анатомия сообщений U-Logic<a class="headerlink" href="#id89" title="Ссылка на этот заголовок"></a></h4>
+<p>В U-Logic сообщения по умолчанию именуются как <code class="docutils literal notranslate"><span class="pre">msg</span></code>, и узлы разработаны для работы с этим соглашением об именовании.</p>
+<p>Сообщения U-Logic состоят из нескольких ключевых свойств, необходимых для обработки данных и связи между узлами:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg._msgid</span></code>: Уникальный идентификатор сообщения, автоматически назначаемый U-Logic. Он помогает отслеживать и отлаживать сообщения в потоке.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>: Это основные данные сообщения. Они содержат основную информацию, которую обрабатывают и на основе которой действуют узлы, например показания датчиков или пользовательский ввод.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.topic</span></code>: Необязательное свойство, используемое для категоризации или идентификации сообщения. Может быть полезно для маршрутизации или фильтрации сообщений на основе их контекста.
+Это наиболее распространенные свойства, с которыми вы столкнетесь в U-Logic. При необходимости можно добавлять дополнительные свойства.</p></li>
+</ul>
+<p>Свойство <code class="docutils literal notranslate"><span class="pre">_msgid</span></code> всегда присутствует, даже если вы отправляете пустой объект с одного узла на другой. Это свойство автоматически добавляется U-Logic для отслеживания сообщений в потоке. Однако важно отметить, что свойства <code class="docutils literal notranslate"><span class="pre">payload</span></code> и <code class="docutils literal notranslate"><span class="pre">topic</span></code> не всегда присутствуют в каждом сообщении. Их включение зависит от того, добавляет ли их узел. Большинство узлов в U-Logic, включая добавленные узлы, используют это <code class="docutils literal notranslate"><span class="pre">payload</span></code> свойство в качестве стандарта для коммуникации.</p>
+</section>
+<section id="id90">
+<h4>Типы данных в сообщениях U-Logic<a class="headerlink" href="#id90" title="Ссылка на этот заголовок"></a></h4>
+<p>При работе с сообщениями U-Logic важно понимать типы данных, с которыми вы столкнетесь. Поскольку сообщения всегда являются объектами JavaScript, само сообщение должно быть объектом, иначе U-Logic выдаст ошибку.</p>
+<p>Однако возможно отправить <code class="docutils literal notranslate"><span class="pre">null</span></code> как сообщение. Это часто используется, когда вы не хотите отправлять какие-либо данные дальше по потоку, так как это <code class="docutils literal notranslate"><span class="pre">null</span></code> фактически останавливает распространение сообщения на последующие узлы.</p>
+<p>Говоря о свойствах сообщений, их значениями могут быть любые типы данных, поддерживаемые JavaScript, такие как строка, число, массив, логическое значение, объект, буфер и другие сложные типы данных.</p>
+<p><img alt="Image with different data types" src="../_images/data_types.png" /></p>
+</section>
+<section id="id91">
+<h4>Как клонировать сообщения или свойства сообщений<a class="headerlink" href="#id91" title="Ссылка на этот заголовок"></a></h4>
+<p>Клонирование в U-Logic подразумевает создание копии сообщения или его свойств, чтобы вы могли работать с копией независимо от оригинала. Это полезно, когда вам нужно изменить данные, не затрагивая исходное сообщение, или когда вам нужно отправить измененную версию сообщения в разные части вашего потока.</p>
+<section id="change">
+<h5>Использование узла change<a class="headerlink" href="#change" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел <strong>change</strong> в U-Logic предоставляет удобный способ изменения и клонирования свойств сообщений. Однако важно отметить, что вы не можете клонировать весь <code class="docutils literal notranslate"><span class="pre">msg</span></code> объект сразу; вам нужно копировать его свойства по одному. Кроме того, узел change может клонировать свойства только в другое свойство <code class="docutils literal notranslate"><span class="pre">msg</span></code>, или в свойство контекста потока/глобального контекста.</p>
+<p>Вот как можно использовать узел change для обработки свойств сообщения:</p>
+<ul class="simple">
+<li><p>Дважды щелкните узел <strong>change</strong> , чтобы открыть диалоговое окно его конфигурации.</p></li>
+<li><p>Вы увидите интерфейс с существующим элементом, добавленным по умолчанию.</p></li>
+<li><p>С левой стороны поля вы увидите такие опции, как <strong>«Установить»</strong> , <strong>«Изменить»</strong> , <strong>«Удалить»</strong> и <strong>«Переместить»</strong> . Вы можете использовать эти опции для выполнения соответствующих операций над сообщением.</p></li>
+<li><p>Чтобы клонировать свойство <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> в <code class="docutils literal notranslate"><span class="pre">flow.data</span></code>, выберите действие «<strong>Установить</strong>» . В первом поле «to the value» введите <code class="docutils literal notranslate"><span class="pre">payload</span></code>, выберите flow и введите данные. Для клонирования <code class="docutils literal notranslate"><span class="pre">msg</span></code> свойств в новые <code class="docutils literal notranslate"><span class="pre">msg</span></code> свойства выберите <code class="docutils literal notranslate"><span class="pre">msg</span></code> во втором поле и укажите новое имя свойства.</p></li>
+</ul>
+<p>Для получения дополнительной информации об узле change и для изучения других действий, таких как <strong>Удалить</strong> , <strong>Переместить</strong> и <strong>Изменить</strong> , обратитесь к подробной документации по узлу <a class="reference internal" href="#"><span class="xref myst">change</span></a>.</p>
+</section>
+<section id="function">
+<h5>Использование узла function<a class="headerlink" href="#function" title="Ссылка на этот заголовок"></a></h5>
+<p>В узле функции вы можете клонировать сообщения или определенные свойства с помощью JavaScript. Вот как это можно сделать:</p>
+<!-- libary RED goes to ... -->
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Клонировать</span> <span class="n">все</span> <span class="n">сообщение</span>
+<span class="n">var</span> <span class="n">newMsg</span> <span class="o">=</span> <span class="n">RED</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">Изменить</span> <span class="n">клон</span> <span class="n">при</span> <span class="n">необходимости</span><span class="p">,</span> <span class="n">изменение</span> <span class="n">клона</span> <span class="n">не</span> <span class="n">повлияет</span> <span class="n">на</span> <span class="n">оригинал</span>
+<span class="n">newMsg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="s2">&quot;Измененные данные&quot;</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">Вернуть</span> <span class="n">оригинал</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Прямое назначение, например, <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">newMsg</span> <span class="pre">=</span> <span class="pre">msg</span></code>; не создает настоящего клона. Вместо этого оно создает новую ссылку на тот же объект. Это означает, что изменения в newMsg также повлияют на msg, поскольку оба ссылаются на одни и те же данные.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Присвоить</span> <span class="n">ссылку</span> <span class="n">на</span> <span class="n">оригинальное</span> <span class="n">сообщение</span>
+<span class="n">var</span> <span class="n">newMsg</span> <span class="o">=</span> <span class="n">msg</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">Изменение</span> <span class="n">newMsg</span> <span class="n">повлияет</span> <span class="n">на</span> <span class="n">оригинальное</span> <span class="n">сообщение</span>
+<span class="n">newMsg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="s2">&quot;Измененные данные&quot;</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">Вернуть</span> <span class="n">оригинал</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Если вам нужно клонировать только определенные свойства сообщения, вы можете сделать это, вручную скопировав нужные вам свойства:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Клонировать</span> <span class="n">определенные</span> <span class="n">свойства</span> <span class="n">сообщения</span>
+<span class="n">var</span> <span class="n">newMsg</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="n">newMsg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">;</span> <span class="o">//</span> <span class="n">Копировать</span> <span class="n">payload</span>
+<span class="n">newMsg</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">;</span>     <span class="o">//</span> <span class="n">Копировать</span> <span class="n">topic</span>
+<span class="o">//</span> <span class="n">Вернуть</span> <span class="n">новое</span> <span class="n">сообщение</span> <span class="n">с</span> <span class="n">клонированными</span> <span class="n">свойствами</span>
+<span class="k">return</span> <span class="n">newMsg</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id92">
+<h5>Добавление новых свойств к сообщениям<a class="headerlink" href="#id92" title="Ссылка на этот заголовок"></a></h5>
+<p>Сообщения U-Logic, как упоминалось ранее, являются объектами JavaScript, что делает их очень гибкими для настройки. Вы можете добавлять столько свойств, сколько необходимо, к сообщению, что позволяет вам переносить дополнительные данные через ваш поток. Это может быть особенно полезно для улучшения информации, доступной для нижестоящих узлов, например, для включения метаданных, тегов или дополнительных деталей конфигурации.</p>
+<p>Чтобы добавить новые свойства к сообщению, можно использовать узел <strong>change</strong> или узел <strong>function</strong>.</p>
+<p>Узел change позволяет вам легко добавлять новые свойства к <code class="docutils literal notranslate"><span class="pre">msg</span></code> объекту без написания кода. Вот как это сделать:</p>
+<ul class="simple">
+<li><p>Перетащите узел <strong>change</strong> в свой поток и дважды щелкните по нему, чтобы открыть конфигурацию.</p></li>
+<li><p>Выберите действие <strong>«Установить»</strong> в раскрывающемся меню слева.</p></li>
+<li><p>В поле справа введите новое название свойства (например, <code class="docutils literal notranslate"><span class="pre">msg.customData</span></code>).</p></li>
+<li><p>В поле «to the value» введите значение, которое вы хотите присвоить этому свойству. Это может быть строка, число, логическое значение или даже выражение.</p></li>
+</ul>
+<p>Если вы предпочитаете больший контроль, вы можете добавлять новые свойства непосредственно через узел <strong>function</strong> с помощью JavaScript.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Добавить</span> <span class="n">новое</span> <span class="n">пользовательское</span> <span class="n">свойство</span> <span class="n">к</span> <span class="n">сообщению</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">customData</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">description</span><span class="p">:</span> <span class="s2">&quot;Это описание&quot;</span><span class="p">,</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">new</span> <span class="n">Date</span><span class="p">()</span><span class="o">.</span><span class="n">toISOString</span><span class="p">()</span>
+<span class="p">};</span>
+<span class="o">//</span> <span class="n">Вернуть</span> <span class="n">обновленное</span> <span class="n">сообщение</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="json">
+<h5>Обработка JSON сообщений<a class="headerlink" href="#json" title="Ссылка на этот заголовок"></a></h5>
+<p>В U-Logic работа с JSON является обычным явлением, особенно при работе с API и данными IoT. JSON (JavaScript Object Notation) — это облегченный формат обмена данными, а U-Logic упрощает процесс отправки и получения объектов JSON.</p>
+<p>При работе с U-Logic вы можете столкнуться с двумя формами JSON:</p>
+<ul class="simple">
+<li><p><strong>JSON Объект</strong>: это простой, структурированный объект JavaScript, которым можно легко манипулировать в U-Logic. Вы можете получить доступ к его свойствам, изменить его значения и передать его через различные узлы в вашем потоке.</p></li>
+<li><p><strong>JSON Строка</strong>: строка JSON — это сериализованная версия объекта JSON, обычно используемая при передаче данных между системами. В отличие от обычного объекта, вы не можете манипулировать строкой JSON напрямую так же, как вы бы это делали с объектом JavaScript.</p></li>
+</ul>
+<p><strong>Преобразование JSON строки в JSON объект</strong></p>
+<p>Чтобы обработать строку JSON как обычный объект JavaScript, сначала нужно преобразовать ее в объект JSON. U-Logic предоставляет узел json, который упрощает этот процесс. Узел json анализирует строку и преобразует ее в объект, позволяя вам обрабатывать ее как любые другие структурированные данные в вашем потоке.</p>
+<p>Вот шаги для достижения этого:</p>
+<ul class="simple">
+<li><p>Перетащите узел json на холст U-Logic.</p></li>
+<li><p>Дважды щелкните узел json, чтобы настроить его.</p></li>
+<li><p>Установите действие «Всегда преобразовывать в объект JavaScript» и нажмите «Готово».</p></li>
+<li><p>Подключите вход узла json к выходу узла, отправляющего строку JSON.</p></li>
+<li><p>Подключите выход узла json ко входу следующего узла в вашем потоке, которому требуется обработанный объект JSON.</p></li>
+<li><p>Выполнив эти шаги, узел json преобразует входящую строку JSON в пригодный для использования объект JavaScript в потоке U-Logic. Более подробную информацию см. в документации по узлу <a class="reference internal" href="#"><span class="xref myst">json</span></a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="id93">
+<h4>Распространенные ошибки, которых следует избегать при работе с сообщениями U-Logic<a class="headerlink" href="#id93" title="Ссылка на этот заголовок"></a></h4>
+<p>При работе с сообщениями в U-Logic избегайте следующих распространенных ошибок, чтобы гарантировать бесперебойную и ожидаемую работу ваших потоков:</p>
+<ul class="simple">
+<li><p><strong>Добавление свойств к необъектному свойству</strong>: Попытка добавить свойства к свойству, не являющемуся объектом (например, строке или числу), может привести к ошибкам или неожиданному поведению. Всегда проверяйте, работаете ли вы с объектами при добавлении свойств.</p></li>
+</ul>
+<p>Неправильный пример:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;stringValue&#39;</span><span class="p">;</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">newProperty</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Ошибка</span><span class="p">:</span> <span class="s1">&#39;stringValue&#39;</span> <span class="n">не</span> <span class="n">является</span> <span class="n">объектом</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Правильный пример:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="p">{};</span>  <span class="o">//</span> <span class="n">Инициализация</span> <span class="n">как</span> <span class="n">объект</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">newProperty</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Теперь</span> <span class="n">безопасно</span> <span class="n">добавлять</span> <span class="n">свойства</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Эта ошибка часто возникает в узле change, где узел inject отправляет данные <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">string</span></code> или <code class="docutils literal notranslate"><span class="pre">number</span></code> (например, «hello world»), а узел change пытается добавить свойство, <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как если бы это был объект.</p>
+<p><img alt="nonobject" src="../_images/nononject.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Неправильно: добавление свойства к типу, не являющемуся объектом (например, строке)</p>
+</div>
+<p>Правильный подход:</p>
+<p><img alt="correct_nonobject" src="../_images/correct_nonobject.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Правильно: Инициализируйте свойство как объект перед добавлением свойств.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Перезапись объекта сообщения (<code class="docutils literal notranslate"><span class="pre">msg</span></code>)</strong>: Некоторые пользователи ошибочно перезаписывают весь <code class="docutils literal notranslate"><span class="pre">msg</span></code> объект, а не изменяют определенные свойства. Это может привести к потере важного контекста или свойств.</p></li>
+</ul>
+<p>Пример неправильной перезаписи:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">newProperty</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span> <span class="p">};</span>  <span class="o">//</span> <span class="n">Перезаписывается</span> <span class="n">весь</span> <span class="n">объект</span> <span class="n">msg</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Вместо этого измените определенные свойства:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="o">.</span><span class="n">newProperty</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Возврат неправильного типа данных</strong>: потоки U-Logic ожидают, что сообщения будут переданы как объекты. Возврат неправильного типа данных, например строки или числа, прерывает поток и выдает ошибку.</p></li>
+<li><p><strong>Забывание вернуть сообщение</strong>: в узлах function, если вы измените сообщение, но забудете вернуть его, поток остановится на этом узле.</p></li>
+</ul>
+<p>Освоив тонкости объектов сообщений U-Logic и избежав распространенных ошибок, вы сможете создавать более надежные и эффективные рабочие процессы. Понимание того, как работать с данными JSON, клонировать сообщения и правильно обрабатывать свойства, гарантирует, что ваши данные будут бесперебойно передаваться между узлами.</p>
+<p>Продолжая изучать и разрабатывать приложения с помощью U-Logic, помните об этих передовых методах, чтобы поддерживать безошибочные и высокопроизводительные процессы.</p>
+</section>
+</section>
+<section id="id94">
+<h3>Программирование<a class="headerlink" href="#id94" title="Ссылка на этот заголовок"></a></h3>
+<p>Концепции программирования U-Logic</p>
+<ul class="simple">
+<li><p><strong>If-Else</strong>: документация If-Else объясняет, как реализовать условную логику в U-Logic. Это руководство проведет вас через использование узлов function и switch для создания динамических потоков, основанных на решениях.</p></li>
+<li><p><strong>Преобразование данных</strong>: документация по преобразованию данных охватывает методы фильтрации, отображения, сортировки и сокращения данных в U-Logic. Она объясняет, как преобразовывать данные в ваших потоках, предоставляя практические примеры по отображению массивов и обработке данных.</p></li>
+<li><p><strong>Отладка</strong>: документация по отладке описывает методы и инструменты для выявления и устранения ошибок в ваших потоках U-Logic. Она объясняет, как использовать узел debug для отслеживания сообщений и переменных, а также предоставляет советы по интерпретации логов и диагностике проблем.</p></li>
+<li><p><strong>Циклы</strong>: документация по циклам объясняет, как реализовать повторяющиеся операции в U-Logic. Это руководство проведет вас через использование узлов for и while для создания циклов, которые позволяют обрабатывать массивы данных или выполнять задачи многократно.</p></li>
+</ul>
+<section id="id95">
+<h4>Преобразование данных<a class="headerlink" href="#id95" title="Ссылка на этот заголовок"></a></h4>
+<p>U-Logic — это визуальная платформа программирования, известная своим удобным интерфейсом и подходом low-code, широко используемым для разработки приложений IoT. В приложениях IoT эффективная обработка данных имеет решающее значение, а такие операции, как фильтрация, отображение, сортировка и сокращение, необходимы для упрощения преобразований данных. Однако многие пользователи испытывают трудности с реализацией этих операций, придерживаясь подхода low-code, часто полагаясь на функциональные узлы, которые могут вносить ненужную сложность. В этом руководстве мы покажем вам, как фильтровать, отображать, сортировать и сокращать данные с помощью U-Logic для эффективного преобразования данных, придерживаясь подхода low-code.</p>
+<section id="low-code">
+<h5>Что такое Low-Code<a class="headerlink" href="#low-code" title="Ссылка на этот заголовок"></a></h5>
+<p>Low-code — это подход к разработке программного обеспечения, который требует минимального или нулевого кодирования для создания приложений и процессов. Вместо использования сложных языков программирования вы используете визуальные интерфейсы с базовой логикой и возможностями перетаскивания.</p>
+<blockquote>
+<div><p><em>Low-code — это не просто ускорение разработки; это ее демократизация. Это предоставление большему количеству людей возможности создавать решения для бизнес-задач.</em></p>
+<p><em>— Чарльз Ламанна, корпоративный вице-президент по бизнес-приложениям и платформам в Microsoft</em></p>
+</div></blockquote>
+<p>Более подробную информацию можно найти в следующих статьях:</p>
+<!-- links on other resources -->
+<ul class="simple">
+<li><p><a class="reference external" href="https://flowfuse.com/blog/2024/03/low-code-is-better/">Почему Low-Code лучше</a>.</p></li>
+<li><p><a class="reference external" href="https://flowfuse.com/blog/2024/05/why-you-need-a-low-code-platform/">Почему вам нужна платформа с низким уровнем кода</a>.</p></li>
+</ul>
+</section>
+<section id="id96">
+<h5>Зачем вам нужно научиться фильтровать, сопоставлять, сортировать и сокращать данные?<a class="headerlink" href="#id96" title="Ссылка на этот заголовок"></a></h5>
+<p>Фильтрация, отображение, сортировка и сокращение являются важнейшими функциями в обработке данных, поскольку они эффективно преобразуют, извлекают, организуют и агрегируют данные, что упрощает анализ и извлечение информации из наборов данных. Например, рассмотрим сценарий, в котором у вас есть массив данных датчиков, извлеченных из базы данных. Данные выглядят примерно так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-17T10:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">298.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-17T11:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">299.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-17T10:30:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">300.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-17T10:15:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">301.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-17T10:45:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">303.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-18T09:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">297.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-18T10:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">300.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-18T11:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">301.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-18T12:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">302.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-19T10:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">298.15</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-06-19T11:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">299.15</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Однако вы заметили, что данные о температуре указаны в градусах Кельвина, а вам нужны они в градусах Цельсия. Кроме того, данные не упорядочены по временной метке, и вам нужны только данные за 17 июня. Наконец, вы хотите рассчитать среднюю температуру за этот день. Пользователи, не знакомые с основами U-Logic, могут использовать узел функции JavaScript, чтобы добиться этого, как показано ниже:</p>
+<p><img alt="traditional_data_transformation" src="../_images/traditiona_data_transformation.png" /></p>
+<!-- make an article -->
+<p>Использование функциональных узлов не является неправильным, но оно усложняет ваши приложения, для получения дополнительной информации см. статью <a class="reference external" href="https://flowfuse.com/blog/2023/03/why-should-you-use-U-Logic-function-nodes/#5-benefits-of-avoiding-function-nodes%3A">Недостатки использования функциональных узлов</a>. Поскольку не все в команде могут быть знакомы с JavaScript, это может ограничить круг лиц, которые могут решать бизнес-задачи. Чтобы сохранить простоту потока приложений, использование подхода с малым количеством кода для выполнения этих операций имеет решающее значение.</p>
+<p>В следующих разделах мы рассмотрим, как выполнять эти операции, используя подход с минимальным кодированием.</p>
+</section>
+<section id="id97">
+<h5>Сопоставление<a class="headerlink" href="#id97" title="Ссылка на этот заголовок"></a></h5>
+<p>Сопоставление часто относится к процессу применения функции к каждому элементу в списке, массиве или другой коллекции для создания новой коллекции преобразованных элементов. Здесь, в нашем контексте, нам нужно преобразовать данные о температуре каждого объекта из градусов Кельвина в градусы Цельсия. Для выполнения отображения мы будем использовать узлы split, change и join.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел split на холст. Узел split разделит сообщение на последовательность сообщений, что позволит нам работать с каждым сообщением. Кроме того, узел «Разделить» привяжет метаданные к каждому разделенному объекту. Эти метаданные помогут узлу join объединить всю последовательность сообщений обратно в массив.</p></li>
+<li><p>Перетащите узел change на холст и задайте его <code class="docutils literal notranslate"><span class="pre">msg.payload.temperature</span></code> как <code class="docutils literal notranslate"><span class="pre">payload.temperature</span> <span class="pre">-</span> <span class="pre">273.15</span></code> выражение JSONata.</p></li>
+</ol>
+<p><img alt="Convert temperature" src="../_images/jonta_convert.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Теперь перетащите узел join на холст и установите «Режим» на «автоматический». Это автоматически объединит все сообщения, исходящие из узла split, в массив.</p></li>
+</ol>
+<p><img alt="Mapping" src="../_images/mapping.png" /></p>
+</section>
+<section id="id98">
+<h5>Фильтрация<a class="headerlink" href="#id98" title="Ссылка на этот заголовок"></a></h5>
+<p>Фильтрация — это процесс выбора определенных элементов из массива для создания нового массива. В U-Logic фильтрация достигается с помощью сопоставления и маршрутизации на основе условий. Теперь мы знакомы с сопоставлением и сделали это выше, поэтому нам нужно использовать только один дополнительный узел, который является узлом переключения для маршрутизации на основе условий.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел switch и поместите его после узла change и перед узлом join.</p></li>
+<li><p>Установите условие для проверки того, <code class="docutils literal notranslate"><span class="pre">msg.payload.timestamp</span></code> включает ли сообщение «2024-06-17». Это условие гарантирует, что далее будут отправляться только сообщения, содержащие указанную дату в своей временной метке.</p></li>
+<li><p>Далее в узле коммутации отметьте опцию «воссоздать последовательность сообщений», которая восстановит <code class="docutils literal notranslate"><span class="pre">msg.parts</span></code> метаданные, добавленные узлом Split, если какие-либо сообщения будут потеряны узлом коммутации.</p></li>
+</ol>
+<p><img alt="Switch Node properties" src="../_images/filter_switch.png" /></p>
+<p><img alt="Filter" src="../_images/filter.png" /></p>
+</section>
+<section id="id99">
+<h5>Сортировка<a class="headerlink" href="#id99" title="Ссылка на этот заголовок"></a></h5>
+<p>Сортировка, как следует из названия, означает упорядочивание элементов в определенном порядке. Этот порядок может быть возрастающим (от наименьшего к наибольшему), убывающим (от наибольшего к наименьшему) или основанным на любом определенном критерии. В U-Logic вы можете сортировать числа, алфавиты, массивы, строки и многое другое. Для выполнения сортировки нам нужно использовать узел sort U-Logic.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел sort на холст.</p></li>
+<li><p>Установите ключ в <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> качестве выражения JSONata, а затем установите порядок «восходящий. Мы устанавливаем ключ в качестве метки времени, поскольку хотим сортировать данные на основе метки времени. Вы можете установить его в качестве температуры, если хотите сортировать на основе этого.</p></li>
+</ol>
+<p><img alt="Sort Node properties" src="../_images/sort_node.png" /></p>
+<p><img alt="Sort" src="../_images/sort.png" /></p>
+</section>
+<section id="id100">
+<h5>Сокращение<a class="headerlink" href="#id100" title="Ссылка на этот заголовок"></a></h5>
+<p>Сокращение относится к процессу объединения элементов структуры данных (например, массива) в одно значение. Оно включает в себя итерацию по элементам структуры данных и многократное применение функции объединения до тех пор, пока все элементы не будут обработаны.</p>
+<ol class="arabic simple">
+<li><p>Перетащите еще один узел split на холст.</p></li>
+<li><p>Перетащите еще один узел join на холст.</p></li>
+<li><p>Выберите режим «агрегация последовательности», установите «Агрегирующее выражение» на <code class="docutils literal notranslate"><span class="pre">$A+</span> <span class="pre">payload.temperature</span></code>, «начальное значение» на <code class="docutils literal notranslate"><span class="pre">0</span></code> и «Исправляющее выражение» на <code class="docutils literal notranslate"><span class="pre">$A/$N</span></code></p></li>
+</ol>
+<p><img alt="Join Node properties" src="../_images/reduce_join.png" /></p>
+<p>В этой конфигурации узел join настроен на режим сокращения последовательности. Начальное значение аккумулятора ($A) инициализируется до 0. По мере обработки каждого сообщения текущая температура (payload.temperature) добавляется к $A. После обработки всех сообщений накопленная сумма $A делится на общее количество сообщений ($N) для вычисления средней температуры.</p>
+<p><img alt="Reducing" src="../_images/reducing.png" /></p>
+</section>
+</section>
+<section id="if-else">
+<h4>If-Else<a class="headerlink" href="#if-else" title="Ссылка на этот заголовок"></a></h4>
+<p>Принятие решений человеком часто направляется серией выборов «если это, то то» — будь то решение, что надеть в зависимости от погоды, или определение кратчайшего маршрута на работу в зависимости от трафика. Такая логика одинаково важна в системах, особенно тех, которые построены на U-Logic. Так же, как мы принимаем решения на основе различных факторов, системы должны оценивать условия и выбирать соответствующий курс действий.</p>
+<p>При разработке автоматизированных решений в U-Logic, возможность воспроизводить этот процесс принятия решений, подобный человеческому, имеет решающее значение. Внедряя логику If-Else, ваша система может разумно ориентироваться в различных сценариях, адаптируя свое поведение на основе получаемых входных данных. Это руководство покажет вам, как эффективно интегрировать логику If-Else в ваши потоки U-Logic, гарантируя, что ваша система сможет принимать разумные решения с учетом контекста — так же, как это делаете вы.</p>
+<section id="id101">
+<h5>Понимание логики If-Else<a class="headerlink" href="#id101" title="Ссылка на этот заголовок"></a></h5>
+<p>Концепция логики If-Else возникла из потребности компьютеров принимать решения. По мере развития языков программирования, управление компьютером посредством различных действий на основе различных условий стало необходимым. Это привело к созданию условных операторов, которые позволяют программам выбирать различные пути в зависимости от определенных критериев.</p>
+<section id="id102">
+<h6>Что за логика If-Else?<a class="headerlink" href="#id102" title="Ссылка на этот заголовок"></a></h6>
+<p>Логика If-Else — это способ принятия решений программами. Работает так:</p>
+<ul class="simple">
+<li><p><strong>Если</strong> определенное условие выполняется (например, «Температура выше 30°C?»), то выполнить набор действий (например, «Включить кондиционер»).</p></li>
+<li><p><strong>Иначе</strong> (если условие не выполняется) выполнить другой набор действий (например, «Выключить кондиционер»).</p></li>
+</ul>
+<p>Такой подход позволяет системам адекватно реагировать на различные ситуации.</p>
+</section>
+</section>
+<section id="id103">
+<h5>Реализация условных потоков в U-Logic: практическое руководство<a class="headerlink" href="#id103" title="Ссылка на этот заголовок"></a></h5>
+<p>В U-Logic реализация логики If-Else позволяет создавать динамичные и отзывчивые потоки, которые реагируют на различные входные данные и условия. Независимо от того, автоматизируете ли вы умный дом, управляете устройствами IoT или разрабатываете сложные рабочие процессы, освоение условной логики имеет важное значение для создания интеллектуальных систем.</p>
+<p>Для реализации логики If-Else в U-Logic можно использовать узел switch, который идеально соответствует подходу Low-Code. Однако другой способ добиться этого — использовать узел function, который обеспечивает большую гибкость и контроль при написании пользовательской логики JavaScript.</p>
+<section id="switch">
+<h6>Использование узла switch<a class="headerlink" href="#switch" title="Ссылка на этот заголовок"></a></h6>
+<p>Узел <a class="reference internal" href="#"><span class="xref myst">switch</span></a> в U-Logic используется для маршрутизации сообщений на основе определенных условий, предлагая простой, малокодовый подход к реализации условной логики в ваших потоках. Узел switch позволяет вам устанавливать правила с помощью визуального интерфейса, что делает его идеальным для пользователей, которые предпочитают более интуитивный метод обработки условий. Однако важно отметить, что узел switch представляет собой другую, независимую концепцию, известную как «оператор switch». Хотя он служит той же цели, что и логика If-Else, создавая условные потоки, он работает в рамках своей собственной парадигмы программирования.</p>
+<p>Для демонстрации узла switch мы настроим поток для принятия решений на основе значения температуры. Мы будем направлять сообщения через различные выходы на основе пороговых значений температуры.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел inject на холст и задайте его <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">$random()</span> <span class="pre">*</span> <span class="pre">100</span></code> выражение JSONata; этот узел внедрения будет имитировать датчик температуры, генерируя случайное число.</p></li>
+<li><p>Перетащите узел switch на холст. Дважды щелкните по нему и установите «Свойство» на msg.payload.</p></li>
+<li><p>Чтобы добавить правила, нажмите кнопку + Добавить в левом нижнем углу панели конфигурации. Вам будет предложено выбрать условие и ввести значение для сравнения. Добавьте следующие четыре правила и установите их для «проверка всех правил»:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Правило 1: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&gt;</span> <span class="pre">30</span></code></p></li>
+<li><p>Правило 2: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&lt;=</span> <span class="pre">30</span></code></p></li>
+<li><p>Правило 3: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&lt;=</span> <span class="pre">20</span></code></p></li>
+<li><p>Правило 4: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&lt;=</span> <span class="pre">10</span></code></p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Теперь перетащите другой узел switch и соедините его вход с выходом узлов switch 2 и 3. Мы добавляем второй узел switch, потому что нам нужно маршрутизировать сообщения на основе диапазонов. Один узел switch не допускает множественных проверок в одном правиле, поэтому нам нужно использовать другой узел switch для маршрутизации температуры на основе диапазонов. Добавьте следующие правила и установите для них значение «остановка после первого совпадения»:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Правило 1: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&gt;</span> <span class="pre">20</span></code></p></li>
+<li><p>Правило 2: <code class="docutils literal notranslate"><span class="pre">msg.payload</span> <span class="pre">&gt;</span> <span class="pre">10</span></code></p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Теперь перетащите узлы debug и подключите их к выходам узлов switch в соответствии с нашим примером. Для сообщений больше 30 подключите узел debug к первому выходу первого узла switch. Для диапазона от 30 до 20 подключите узел debug к первому выходу второго узла Switch. Для диапазона от 20 до 10 подключите узел Debug ко второму выходу второго узла switch. Наконец, для сообщений меньше 10 подключите узел debug к четвертому выходу первого узла switch.</p></li>
+<li><p>Разверните поток, нажав кнопку «Развернуть» в правом верхнем углу редактора U-Logic.</p></li>
+<li><p>После развертывания нажмите кнопку на узле inject, чтобы запустить его. Узлы debug покажут маршрутизированные сообщения на основе значения температуры.</p></li>
+</ol>
+<p>Обратите внимание, как сообщения направляются через различные выходы в зависимости от значения температуры. Теперь вы можете спросить, как обновить полезную нагрузку сообщения в зависимости от условия. Для этого вам нужно будет использовать узел change или узел function.</p>
+<p><img alt="Scheme 1" src="../_images/ifelse1_1.png" /></p>
+<p><em>Поток U-Logic с использованием узла switch для маршрутизации сообщений на основе пороговых значений температуры.</em></p>
+<p><img alt="Flow 1" src="../_images/ifelse1.png" /></p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="id104">
+<h2>Быстрый страт<a class="headerlink" href="#id104" title="Ссылка на этот заголовок"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>За работу графического интерфейса отвечает узел <strong>UI Control Panel</strong>.
@@ -782,21 +1170,21 @@
 <ol class="arabic simple">
 <li><p>Для инициализации интерфейса добавьте узел <strong>UI Control Panel</strong> в рабочую область.</p></li>
 </ol>
-<figure class="align-center" id="id89">
+<figure class="align-center" id="id107">
 <a class="reference internal image-reference" href="../_images/ADDUIPanelNode.png"><img alt="../_images/ADDUIPanelNode.png" src="../_images/ADDUIPanelNode.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id89" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id107" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
 <li><p>Откройте его настройки, дважды кликнув на него. В появившемся окне нажмите на иконку <img src="../_static/Add.png" width="40" height="40"></p></li>
 </ol>
-<figure class="align-center" id="id90">
+<figure class="align-center" id="id108">
 <a class="reference internal image-reference" href="../_images/EditNodeUI.png"><img alt="../_images/EditNodeUI.png" src="../_images/EditNodeUI.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id90" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id108" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p>напротив поля <code class="docutils literal notranslate"><span class="pre">path</span></code>, добавьте конфигурацию <code class="docutils literal notranslate"><span class="pre">\web-client</span></code>, примените настройки узла и запустите поток <strong>U-Logic</strong>.
@@ -817,8 +1205,8 @@
 <p>Пример использования библиотек находится в разделе <a class="reference internal" href="U-Logic-Function.html"><span class="std std-doc">Function</span></a></p>
 </div>
 </section>
-<section id="id87">
-<h2>Палитра узлов<a class="headerlink" href="#id87" title="Ссылка на этот заголовок"></a></h2>
+<section id="id105">
+<h2>Палитра узлов<a class="headerlink" href="#id105" title="Ссылка на этот заголовок"></a></h2>
 </section>
 </section>
 
