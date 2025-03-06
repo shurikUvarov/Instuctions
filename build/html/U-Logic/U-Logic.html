@@ -66,12 +66,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id94">Программирование</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id95">Преобразование данных</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#if-else">If-Else</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id105">Циклы</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id105">Быстрый страт</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id106">Палитра узлов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id109">Быстрый старт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id110">Палитра узлов</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../UI-Designer.html">UI-Designer</a></li>
@@ -113,11 +114,11 @@
 <h2>Начало работы с U-Logic<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h2>
 <section id="id2">
 <h3>Редактор<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h3>
-<figure class="align-center" id="id107">
+<figure class="align-center" id="id111">
 <a class="reference internal image-reference" href="../_images/about.png"><img alt="../_images/about.png" src="../_images/about.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id107" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id111" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p><strong>Окно редактора <em>U-Logic</em> состоит из четырех компонентов:</strong></p>
@@ -1225,12 +1226,120 @@
 <p>Узел function отлично подходит для сценариев, где необходима сложная логика и подробная обработка сообщений. Он позволяет писать пользовательский код JavaScript, который может обрабатывать сложные условия и выполнять вычисления. Этот узел особенно полезен, когда вам нужно принимать сложные решения на основе нескольких значений или когда вам нужно выполнять подробные обновления объекта <code class="docutils literal notranslate"><span class="pre">msg</span></code>. Например, если ваш поток требует объединения данных из разных источников, применения сложных правил или изменения нескольких свойств <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, узел function обеспечивает гибкость и мощность для выполнения этих задач.</p>
 <p>Напротив, узел switch предназначен для более простой маршрутизации на основе значений. Он идеально подходит для простых сценариев, где вам нужно маршрутизировать сообщения на основе одного значения с несколькими возможными выходами. Этот узел позволяет вам создавать правила на основе определенных значений или условий без необходимости в сложной логике или обширных модификациях сообщений. Если ваша логика маршрутизации включает в себя базовые сравнения и не требует расширенной обработки или вычислений, узел switch обеспечивает более рационализированный и интуитивно понятный подход.</p>
 <p>Подводя итог, выбирайте узел function для сложного принятия решений и подробной обработки сообщений, в то время как узел switch лучше подходит для сценариев, где достаточно простой маршрутизации на основе значений.</p>
-</section>
-</section>
+<!-- debugger - это устанавливаемый в палитре модуль -->
+<!-- #### Отладка
+
+Когда дело доходит до отладки потоков приложений в U-Logic, инструмент, к которому большинство разработчиков U-Logic часто обращаются, — это узел debug . Он предоставляет простой способ вывода полезных данных сообщений или других данных на боковую панель отладки, помогая вам получить представление о том, как работает ваш поток. Но что, если вам нужно больше контроля и видимости выполнения потока? Что, если вы хотите подробно пройти по каждому узлу, проверить переменные или приостановить поток в определенных точках, чтобы понять, что происходит?
+
+В этих случаях использование отладчика U-Logic становится бесценным. Отладчик позволяет вам отслеживать выполнение ваших потоков в интерактивном режиме, устанавливать точки останова и получать более глубокие знания, выходящие за рамки того, что предлагает узел debug. Эта документация покажет вам, как эффективно использовать отладчик U-Logic для выявления проблем и тонкой настройки ваших приложений.
+
+##### Что такое отладка и почему она так важна в потоках U-Logic?
+
+Отладка — это поиск и исправление проблем в вашем коде или рабочем процессе. В U-Logic отладка помогает вам понять, как функционируют ваши потоки, предоставляя информацию об обрабатываемых данных и определяя, где что-то может пойти не так.
+
+Обычно разработчики используют узел debug для вывода полезных данных сообщений и просмотра их на боковой панели. Хотя это полезно для простой отладки, это может быть ограничивающим, когда вам нужно устранить неполадки в более сложных сценариях. Поскольку потоки становятся больше и более взаимосвязанными, точное определение источника проблемы с использованием только узла debug может быть похоже на поиск иголки в стоге сена.
+
+Вот тут-то и вступает в дело U-Logic Debugger , предлагая более детальный подход к отладке. Отладчик позволяет: -->
 </section>
 </section>
 <section id="id105">
-<h2>Быстрый страт<a class="headerlink" href="#id105" title="Ссылка на этот заголовок"></a></h2>
+<h4>Циклы<a class="headerlink" href="#id105" title="Ссылка на этот заголовок"></a></h4>
+<p>Обработка повторяющихся задач — это распространенная проблема в автоматизации и обработке данных. Будь то необходимость итерировать по большим наборам данных, выполнять вычисления или многократно выполнять операции на основе условий, использование циклов может значительно повысить эффективность и масштабируемость.</p>
+<p>В этом документе мы рассмотрим, как реализовать различные типы циклов, которые необходимы в различных контекстах. Мы обсудим их применение и приведем примеры, чтобы помочь вам эффективно внедрять их в U-Logic.</p>
+<section id="id106">
+<h5>Что такое цикл?<a class="headerlink" href="#id106" title="Ссылка на этот заголовок"></a></h5>
+<p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Цикл</a> — это программная конструкция, которая позволяет вам выполнять блок кода повторно, пока не будет выполнено определенное условие. Различные типы циклов подходят для различных сценариев, в зависимости от того, как и когда вы хотите, чтобы код повторялся:</p>
+<ul class="simple">
+<li><p><strong>For Loop</strong>: выполняет блок кода определенное количество раз. Это полезно, когда вы заранее знаете, сколько раз вам нужно выполнить итерацию, например, для итерации по диапазону чисел или элементов в списке. Это также известно как цикл с фиксированным числом.</p></li>
+<li><p><strong>While Loop</strong>: Повторяет блок кода, пока заданное условие истинно. Этот тип цикла полезен, когда вы заранее не знаете, сколько раз цикл должен будет выполняться. Цикл продолжает выполняться, пока условие не станет ложным.</p></li>
+<li><p><strong>For…of / ForEach Loop</strong>: эти циклы используются для итерации итерируемых объектов, таких как массивы или коллекции. Они позволяют получить доступ к каждому элементу в коллекции. Цикл for…of используется специально для итерируемых объектов, в то время как forEach — это метод, доступный для массивов, который применяет функцию к каждому элементу.</p></li>
+</ul>
+<p>Каждый тип цикла служит определенной цели и может быть выбран в зависимости от требований поставленной задачи.</p>
+</section>
+<section id="id107">
+<h5>Реализация циклов в U-Logic<a class="headerlink" href="#id107" title="Ссылка на этот заголовок"></a></h5>
+<p>В этом разделе мы рассмотрим, как реализовать циклы в U-Logic. Сначала мы покажем, как добиться цикличности с помощью основных узлов. Затем мы покажем, как выполнить аналогичные задачи с помощью пользовательских узлов. Мы также рассмотрим некоторые основные операции, обычно выполняемые с помощью циклов, и предоставим практические примеры для улучшения потоков U-Logic.</p>
+<section id="id108">
+<h6>Реализация циклов в U-Logic с использованием основных узлов<a class="headerlink" href="#id108" title="Ссылка на этот заголовок"></a></h6>
+<p><strong>Цикл While</strong></p>
+<p>Чтобы продемонстрировать цикл while в U-Logic, мы создадим поток, который добавляет случайные символы в строку, пока она не будет содержать символ «Z». Этот пример поможет вам понять, как имитировать цикл while с использованием основных узлов U-Logic.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел <strong>inject</strong> на холст. Этот узел запустит начало цикла.</p></li>
+<li><p>Добавьте узел <strong>change</strong> для инициализации строковой переменной. Настройте его <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> на пустую строку (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>). Подключите узел <strong>inject</strong> к этому узлу change .</p></li>
+<li><p>Поместите узел <strong>switch</strong> на холст. Настройте его на проверку, <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> содержит ли он символ «Z» (<code class="docutils literal notranslate"><span class="pre">msg.i.includes('Z')</span></code>). Добавьте дополнительное правило для случаев, когда это условие не выполняется (<code class="docutils literal notranslate"><span class="pre">иначе</span></code>). Подключите выход узла <strong>change</strong> к входу узла <strong>switch</strong>.</p></li>
+<li><p>Добавьте узел <strong>function</strong> для добавления случайной заглавной буквы к строке. Используйте следующий код JavaScript:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="n">String</span><span class="o">.</span><span class="n">fromCharCode</span><span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">26</span><span class="p">));</span> <span class="o">//</span> <span class="n">Добавляем</span> <span class="n">случайную</span> <span class="n">заглавную</span> <span class="n">букву</span>
+<span class="k">return</span> <span class="n">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Подключите этот узел <strong>function</strong> ко второму выходу узла <strong>switch</strong> (где условие <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> не содержит «Z»). Затем подключите выход этого узла <strong>function</strong> обратно ко входу узла <strong>switch</strong> , чтобы повторить процесс.
+5. Перетащите узел <strong>debug</strong> на холст и подключите его ко второму выходу узла <strong>switch</strong> . Этот узел будет отображать текущее значение <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> на панели отладки.
+6. Добавьте еще один узел <strong>change</strong> для сигнализации о завершении. Настройте его <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> на <code class="docutils literal notranslate"><span class="pre">completed</span></code>. Подключите этот узел <strong>change</strong> к первому выходу узла <strong>switch</strong> (где <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> содержится «Z»), а затем свяжите его с другим узлом <strong>debug</strong> для отображения сообщения о завершении.</p>
+<p><img alt="Scheme Loop While" src="../_images/scheme_while.png" /></p>
+<p><img alt="Loop While" src="../_images/while.png" /></p>
+</section>
+<section id="for">
+<h6>Цикл For<a class="headerlink" href="#for" title="Ссылка на этот заголовок"></a></h6>
+<p>В традиционном программировании циклы <code class="docutils literal notranslate"><span class="pre">for</span></code> повторяются заданное количество раз на основе индекса или диапазона, при этом <code class="docutils literal notranslate"><span class="pre">while</span></code> циклы выполняются до тех пор, пока выполняется условие <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>В U-Logic вы можете имитировать циклы <code class="docutils literal notranslate"><span class="pre">for</span></code>, управляя счетчиком с узлами для итерации по элементам массива. Увеличивая индексную переменную, вы можете получить доступ к каждому элементу и выполнять операции, эффективно имитируя поведение традиционного цикла <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Вот как можно настроить цикл <code class="docutils literal notranslate"><span class="pre">for</span></code>в U-Logic:</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел inject на холст и установите <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">[&quot;foo&quot;,&quot;bar&quot;,&quot;foobar&quot;]</span></code>. Этот узел запускает начало цикла и предоставляет массив для обработки.</p></li>
+<li><p>Добавьте узел change для инициализации счетчика цикла. Настройте его, установив <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> равной <code class="docutils literal notranslate"><span class="pre">0</span></code>, подключите узел inject к этому узлу change.</p></li>
+<li><p>Далее перетащите узел switch на холст. Настройте его для проверки того, равен ли <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> длине массива (<code class="docutils literal notranslate"><span class="pre">msg.i</span> <span class="pre">==</span> <span class="pre">msg.payload.length</span></code>). Добавьте дополнительное правило для случаев, когда это условие не выполняется (<code class="docutils literal notranslate"><span class="pre">иначе</span></code>). Соедините узел change с узлом switch .</p></li>
+<li><p>Добавьте еще один узел change для увеличения счетчика. Настройте его на JSONata выражение, присваивающее <code class="docutils literal notranslate"><span class="pre">msg.i</span></code> значение <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code>. Подключите этот узел change к выходу узла switch , где условие (<code class="docutils literal notranslate"><span class="pre">msg.i</span> <span class="pre">&lt;</span> <span class="pre">msg.payload.length</span></code>) истинно (второй выход).</p></li>
+<li><p>Для доступа к элементам массива и их отображения перетащите узел change на холст. Настройте его так, чтобы <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> был установлен на msg.payload[msg.i], получая доступ к элементу массива по текущему индексу. Подключите этот узел change ко второму выходу узла switch (<code class="docutils literal notranslate"><span class="pre">otherwise</span></code>).</p></li>
+<li><p>Присоедините узел debug к выходу этого узла change, чтобы вывести текущий элемент массива.</p></li>
+<li><p>Для последнего шага добавьте еще один узел change , чтобы сигнализировать о завершении цикла. Настройте его на установку <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">completed</span></code> и подключите к первому выходу узла switch, где условие цикла — <code class="docutils literal notranslate"><span class="pre">msg.i</span> <span class="pre">==</span> <span class="pre">msg.payload.length</span></code>. Наконец, присоедините узел debug , чтобы отобразить сообщение о завершении.</p></li>
+</ol>
+<p>Этот поток будет проходить по массиву, печатая каждый элемент, пока все элементы не будут обработаны. Как только цикл достигает конца массива, он печатает сообщение «completed» и завершается.</p>
+<p><img alt="Scheme Loop 2" src="../_images/scheme_for.png" /></p>
+<p><img alt="Loop 2" src="../_images/for.png" /></p>
+</section>
+<section id="for-of-foreach">
+<h6>Цикл For…of / ForEach<a class="headerlink" href="#for-of-foreach" title="Ссылка на этот заголовок"></a></h6>
+<p>В традиционном программировании циклы <code class="docutils literal notranslate"><span class="pre">for...of</span></code> и <code class="docutils literal notranslate"><span class="pre">forEach</span></code> обычно используются для итерации по массивам или свойствам объектов, что позволяет обрабатывать отдельные элементы. Поскольку U-Logic не включает эти конкретные конструкции, вы можете повторить их функциональность, используя комбинацию узлов, в частности, узлы split и join.</p>
+<p>Вот как можно воспроизвести эту функциональность в U-Logic:</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел <strong>inject</strong> на холст и установите значение <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;,</span> <span class="pre">&quot;foobar&quot;]</span></code>.</p></li>
+<li><p>Перетащите узел <strong>split</strong> на холст. Сохраните настройки по умолчанию. Если вы работаете со строкой, убедитесь, что вы выбрали подходящий разделитель для разделения.</p></li>
+<li><p>При необходимости используйте узел <strong>change</strong> или <strong>function</strong> для выполнения операций над каждым элементом.</p></li>
+<li><p>Перетащите узел <strong>debug</strong> на холст и подключите его к выходу узла <strong>split</strong> .</p></li>
+</ol>
+<p>При нажатии кнопки узла <strong>inject</strong>, узел <strong>split</strong> будет обрабатывать каждый элемент массива по отдельности, а узел <strong>debug</strong> отобразит каждый из них в окне отладки.</p>
+<p>Чтобы узнать, как можно сопоставлять, сортировать, фильтровать и сокращать объем данных с помощью этого подхода, ознакомьтесь с разделом: «Как фильтровать, сопоставлять, сортировать и сокращать объем данных» в U-Logic в разделе «Начало работы с U-Logic/Программирование/Преобразование данных»</p>
+<p><img alt="Scheme Loops 3" src="../_images/scheme_foreach.png" /></p>
+<p><img alt="Loops 3" src="../_images/foreach.png" /></p>
+</section>
+<section id="funnction">
+<h6>Реализация циклов с помощью funnction узла<a class="headerlink" href="#funnction" title="Ссылка на этот заголовок"></a></h6>
+<p>Реализация циклов с узлом <a class="reference internal" href="#"><span class="xref myst">function</span></a> проста, если вы знакомы с JavaScript, так как он позволяет вам писать пользовательский код. Однако распространенной проблемой является выяснение того, как отправлять сообщение на каждой итерации, не завершая цикл после первой итерации. В этом разделе мы покажем вам, как при помощи узла function правильно реализовать циклы, гарантируя, что каждая итерация будет обработана и отправлена ​​должным образом, без преждевременного прерывания цикла.</p>
+<p>В демонстрационных целях мы реализуем цикл for.</p>
+<ol class="arabic simple">
+<li><p>Перетащите узел <strong>inject</strong> на холст и установите значение для <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> как <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">&quot;hello&quot;,</span> <span class="pre">&quot;%&quot;,</span> <span class="pre">true]</span></code>.</p></li>
+<li><p>Перетащите узел <strong>function</strong> на холст и добавьте следующий код JavaScript:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">Создать</span> <span class="n">новое</span> <span class="n">сообщение</span> <span class="n">для</span> <span class="n">каждого</span> <span class="n">элемента</span>
+    <span class="n">let</span> <span class="n">newMsg</span> <span class="o">=</span> <span class="p">{</span> <span class="o">...</span><span class="n">msg</span> <span class="p">};</span> <span class="o">//</span> <span class="n">Копировать</span> <span class="n">оригинальный</span> <span class="n">объект</span> <span class="n">msg</span>
+    <span class="n">newMsg</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">//</span> <span class="n">Установить</span> <span class="n">payload</span> <span class="n">на</span> <span class="n">текущий</span> <span class="n">элемент</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">newMsg</span><span class="p">);</span> <span class="o">//</span> <span class="n">Отправить</span> <span class="n">сообщение</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Перетащите узел <strong>debug</strong> на холст и подключите его к выходу узла <strong>function</strong>.</p>
+<p>Когда вы развертываете поток и нажимаете кнопку <strong>inject</strong>, каждый элемент массива будет отправлен как отдельное сообщение и выведен на панель отладки. Это работает, поскольку <code class="docutils literal notranslate"><span class="pre">node.send()</span></code> метод позволяет отправлять сообщения асинхронно. В отличие от <code class="docutils literal notranslate"><span class="pre">return</span></code>, который немедленно завершает выполнение узла <strong>function</strong>, <code class="docutils literal notranslate"><span class="pre">node.send()</span></code> продолжает обрабатывать и отправлять каждое сообщение, не останавливая цикл.</p>
+<p>Используя <code class="docutils literal notranslate"><span class="pre">node.send()</span></code> внутри цикла, вы гарантируете, что каждая итерация создает отдельное сообщение, а узел <strong>function</strong> может эффективно обрабатывать несколько сообщений. Для получения дополнительной информации об этом обратитесь к <a class="reference internal" href="Async-Messages.html"><span class="std std-doc">Документации по отправке сообщений асинхронно</span></a>.</p>
+<p><img alt="Scheme Function Loop" src="../_images/scheme_functionfor.png" /></p>
+<!--- раздел про пользовательский узел, который необходимо скачать из менеджера палитры (U-Logic-contrib-loop) -->
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="id109">
+<h2>Быстрый старт<a class="headerlink" href="#id109" title="Ссылка на этот заголовок"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>За работу графического интерфейса отвечает узел <strong>UI Control Panel</strong>.
@@ -1239,21 +1348,21 @@
 <ol class="arabic simple">
 <li><p>Для инициализации интерфейса добавьте узел <strong>UI Control Panel</strong> в рабочую область.</p></li>
 </ol>
-<figure class="align-center" id="id108">
+<figure class="align-center" id="id112">
 <a class="reference internal image-reference" href="../_images/ADDUIPanelNode.png"><img alt="../_images/ADDUIPanelNode.png" src="../_images/ADDUIPanelNode.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id108" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id112" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
 <li><p>Откройте его настройки, дважды кликнув на него. В появившемся окне нажмите на иконку <img src="../_static/Add.png" width="40" height="40"></p></li>
 </ol>
-<figure class="align-center" id="id109">
+<figure class="align-center" id="id113">
 <a class="reference internal image-reference" href="../_images/EditNodeUI.png"><img alt="../_images/EditNodeUI.png" src="../_images/EditNodeUI.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id109" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id113" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p>напротив поля <code class="docutils literal notranslate"><span class="pre">path</span></code>, добавьте конфигурацию <code class="docutils literal notranslate"><span class="pre">\web-client</span></code>, примените настройки узла и запустите поток <strong>U-Logic</strong>.
@@ -1274,8 +1383,8 @@
 <p>Пример использования библиотек находится в разделе <a class="reference internal" href="U-Logic-Function.html"><span class="std std-doc">Function</span></a></p>
 </div>
 </section>
-<section id="id106">
-<h2>Палитра узлов<a class="headerlink" href="#id106" title="Ссылка на этот заголовок"></a></h2>
+<section id="id110">
+<h2>Палитра узлов<a class="headerlink" href="#id110" title="Ссылка на этот заголовок"></a></h2>
 </section>
 </section>
 
