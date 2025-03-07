@@ -49,7 +49,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">Начало работы с U-Logic</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Редактор</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id3">Заголовок редактора</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id19">Палитра редактора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Палитра узлов редактора</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id25">Рабочее пространство редактора</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id66">Боковая панель редактора</a></li>
 </ul>
@@ -71,8 +71,23 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id109">Быстрый старт</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id110">Палитра узлов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id109">Терминология</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id110">Поток</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id111">Подпоток</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id112">Рабочее пространство</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id113">Узел</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id114">Основные узлы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id115">Провода</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id116">Порты входа и выхода</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id117">Сообщение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payload">Payload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id118">Контекст</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id119">Узел function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id120">Палитра узлов</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id121">Быстрый старт</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id122">Палитра узлов</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../UI-Designer.html">UI-Designer</a></li>
@@ -114,17 +129,17 @@
 <h2>Начало работы с U-Logic<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h2>
 <section id="id2">
 <h3>Редактор<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h3>
-<figure class="align-center" id="id111">
+<figure class="align-center" id="id123">
 <a class="reference internal image-reference" href="../_images/about.png"><img alt="../_images/about.png" src="../_images/about.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id111" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Компоненты U-Logic</span><a class="headerlink" href="#id123" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p><strong>Окно редактора <em>U-Logic</em> состоит из четырех компонентов:</strong></p>
 <ol class="arabic simple">
 <li><p>Заголовок вверху содержит кнопку <strong>развернуть</strong>, <strong>главное меню</strong> , <strong>аутентификация пользователя</strong>, <strong>меню пользователя</strong>.</p></li>
-<li><p>Палитра слева содержит доступные для использования узлы.</p></li>
+<li><p>Палитра узлов слева содержит доступные для использования узлы.</p></li>
 <li><p>Основное рабочее пространство посередине, где создаются потоки.</p></li>
 <li><p>Боковая панель справа.</p></li>
 </ol>
@@ -318,7 +333,7 @@
 </ul>
 <!--- add link-->
 <ul>
-<li><p><strong>Палитра</strong>: эта опция <a class="reference internal" href="#"><span class="xref myst">управления палитрой</span></a> позволяет управлять узлами, доступными в вашей среде U-Logic.</p></li>
+<li><p><strong>Палитра</strong>: эта опция <a class="reference internal" href="#"><span class="xref myst">управления палитрой узлов</span></a> позволяет управлять узлами, доступными в вашей среде U-Logic.</p></li>
 <li><p><strong>Клавиши</strong>: настройте сочетания клавиш для эффективной навигации и работы в U-Logic.</p></li>
 <li><p><strong>Enviroment</strong>: Управление переменными окружения, используемыми в потоках U-Logic. Это включает в себя настройку, редактирование и удаление переменных, к которым узлы могут получить доступ во время выполнения.</p>
 <p><img alt="Enviroment" src="../_images/enviroment.png" /></p>
@@ -345,8 +360,8 @@
 </section>
 </section>
 <section id="id19">
-<h4>Палитра редактора<a class="headerlink" href="#id19" title="Ссылка на этот заголовок"></a></h4>
-<p>Палитра — это левая боковая панель, которая содержит все доступные узлы, включая основные узлы и установленные сторонние узлы.</p>
+<h4>Палитра узлов редактора<a class="headerlink" href="#id19" title="Ссылка на этот заголовок"></a></h4>
+<p>Палитра узлов — это левая боковая панель, которая содержит все доступные узлы, включая основные узлы и установленные сторонние узлы.</p>
 <section id="id20">
 <h5>Панель поиска<a class="headerlink" href="#id20" title="Ссылка на этот заголовок"></a></h5>
 <p><img alt="Search bar" src="../_images/search.png" /></p>
@@ -355,7 +370,8 @@
 <section id="id21">
 <h5>Категории узлов<a class="headerlink" href="#id21" title="Ссылка на этот заголовок"></a></h5>
 <p><img alt="Node categories" src="../_images/categories.png" /></p>
-<p>Палитра разделена на несколько категорий, каждая из которых содержит коллекции узлов. При установке стороннего узла может быть создана новая категория. Подпотоки категоризируются в разделе «Подпотоки».</p>
+<!-- могут ли сторонние узлы быть установлены -->
+<p>Палитра узлов разделена на несколько категорий, каждая из которых содержит коллекции узлов. При установке стороннего узла может быть создана новая категория. Подпотоки категоризируются в разделе «Подпотоки».</p>
 <p>Вы можете свернуть или развернуть категории, нажав на нужную категорию.</p>
 <section id="id22">
 <h6>Свернуть все категории<a class="headerlink" href="#id22" title="Ссылка на этот заголовок"></a></h6>
@@ -1339,7 +1355,69 @@
 </section>
 </section>
 <section id="id109">
-<h2>Быстрый старт<a class="headerlink" href="#id109" title="Ссылка на этот заголовок"></a></h2>
+<h2>Терминология<a class="headerlink" href="#id109" title="Ссылка на этот заголовок"></a></h2>
+<p>Ниже приведены основные термины и концепции, используемые в U-Logic для обеспечения ясности и последовательности при общении между проектами.</p>
+<section id="id110">
+<h3>Поток<a class="headerlink" href="#id110" title="Ссылка на этот заголовок"></a></h3>
+<p>Поток представлен в виде вкладки в рабочей области редактора, которая предоставляет новую рабочую область для создания приложений путем соединения узлов. Термин «поток» также используется для неформального описания одного набора соединенных узлов. Таким образом, поток (вкладка) может содержать несколько потоков (наборов соединенных узлов), но формально мы можем сказать, что поток — это родительская группа нескольких соединенных узлов.</p>
+<p><img alt="Flows" src="../_images/flow.png" /></p>
+</section>
+<section id="id111">
+<h3>Подпоток<a class="headerlink" href="#id111" title="Ссылка на этот заголовок"></a></h3>
+<p>Подпоток в U-Logic — это набор узлов, которые свернуты в один узел в рабочей области. Он позволяет группировать набор узлов в повторно используемую единицу. Это помогает в организации потоков, содействии повторному использованию и упрощении сложных конструкций потоков путем инкапсуляции нескольких узлов в единое представление узла более высокого уровня.</p>
+<p><img alt="Subflow 1" src="../_images/subflow1.png" /></p>
+<p><img alt="Subflow 2" src="../_images/subflow2.png" /></p>
+</section>
+<section id="id112">
+<h3>Рабочее пространство<a class="headerlink" href="#id112" title="Ссылка на этот заголовок"></a></h3>
+<p>В рабочей области создаются потоки (группы узлов) путем перетаскивания узлов из палитры и их соединения. Добавление новой вкладки потока дает вам новое рабочее пространство.</p>
+<p><img alt="Workspace" src="../_images/workspace.png" /></p>
+</section>
+<section id="id113">
+<h3>Узел<a class="headerlink" href="#id113" title="Ссылка на этот заголовок"></a></h3>
+<!-- сторонние дополнения из менеджера палитры? -->
+<p>Узел — это фундаментальный строительный блок, используемый для создания потоков. Каждый узел представляет собой отдельную часть функциональности или определенное действие, которое может быть выполнено в потоке. Эти узлы могут быть сторонними дополнениями с использованием менеджера палитры или основных узлов.</p>
+<p><img alt="Node" src="../_images/node.png" /></p>
+</section>
+<section id="id114">
+<h3>Основные узлы<a class="headerlink" href="#id114" title="Ссылка на этот заголовок"></a></h3>
+<!-- установочные узлы?  -->
+<p>Основные узлы — это набор узлов, которые включены в среду выполнения U-Logic по умолчанию, без необходимости процедуры установки узла. Для получения дополнительной информации о основных узлах обратитесь к части по основным узлам.</p>
+</section>
+<section id="id115">
+<h3>Провода<a class="headerlink" href="#id115" title="Ссылка на этот заголовок"></a></h3>
+<p>«Провода» относятся к соединениям, которые связывают узлы вместе, чтобы определить поток данных. Эти провода визуально представляют направление и поток информации от одного узла к другому в потоке U-Logic.</p>
+<p><img alt="Wires" src="../_images/wire.png" /></p>
+</section>
+<section id="id116">
+<h3>Порты входа и выхода<a class="headerlink" href="#id116" title="Ссылка на этот заголовок"></a></h3>
+<p>Узлы в U-Logic имеют порты входа и выхода, представленные маленькими кружками на левой (вход) и правой (выход) сторонах узла. Эти порты указывают, где данные входят или выходят из узла. Это позволяет вам соединять различные узлы с помощью проводов.</p>
+<p><img alt="Input and Output Ports" src="../_images/node_io.png" /></p>
+</section>
+<section id="id117">
+<h3>Сообщение<a class="headerlink" href="#id117" title="Ссылка на этот заголовок"></a></h3>
+<p>Сообщение по сути является объектом JavaScript, который переносит данные между узлами в потоке. Это сообщение содержит как основную полезную нагрузку данных, так и дополнительные метаданные, что позволяет узлам эффективно общаться и обрабатывать информацию.</p>
+<p><img alt="Message" src="../_images/message.png" /></p>
+</section>
+<section id="payload">
+<h3>Payload<a class="headerlink" href="#payload" title="Ссылка на этот заголовок"></a></h3>
+<p>Основное свойство в сообщении. Это свойство по умолчанию, с которым будет работать большинство узлов. Это свойство содержит основные данные, которые узлы в потоке обрабатывают и которыми манипулируют.</p>
+</section>
+<section id="id118">
+<h3>Контекст<a class="headerlink" href="#id118" title="Ссылка на этот заголовок"></a></h3>
+<p>Контекст относится к механизму хранения, который позволяет узлам хранить данные между вызовами. Он предоставляет узлам способ совместного использования данных в пределах одного экземпляра или потока, в разных потоках в U-Logic. О дополнительной информации можно узнать здесь <a class="reference internal" href="#"><span class="xref myst">Понимание переменных Node, Flow, Global и Environment в U-Logic</span></a>.</p>
+</section>
+<section id="id119">
+<h3>Узел function<a class="headerlink" href="#id119" title="Ссылка на этот заголовок"></a></h3>
+<p>Узел function в U-Logic позволяет вам писать пользовательские функции JavaScript для обработки и управления сообщениями в ваших потоках.</p>
+</section>
+<section id="id120">
+<h3>Палитра узлов<a class="headerlink" href="#id120" title="Ссылка на этот заголовок"></a></h3>
+<p>Палитра представляет собой боковую панель, содержащую все установленные и доступные для использования узлы.</p>
+</section>
+</section>
+<section id="id121">
+<h2>Быстрый старт<a class="headerlink" href="#id121" title="Ссылка на этот заголовок"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>За работу графического интерфейса отвечает узел <strong>UI Control Panel</strong>.
@@ -1348,21 +1426,21 @@
 <ol class="arabic simple">
 <li><p>Для инициализации интерфейса добавьте узел <strong>UI Control Panel</strong> в рабочую область.</p></li>
 </ol>
-<figure class="align-center" id="id112">
+<figure class="align-center" id="id124">
 <a class="reference internal image-reference" href="../_images/ADDUIPanelNode.png"><img alt="../_images/ADDUIPanelNode.png" src="../_images/ADDUIPanelNode.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id112" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Добавленные узлы UI Control Panel</span><a class="headerlink" href="#id124" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
 <li><p>Откройте его настройки, дважды кликнув на него. В появившемся окне нажмите на иконку <img src="../_static/Add.png" width="40" height="40"></p></li>
 </ol>
-<figure class="align-center" id="id113">
+<figure class="align-center" id="id125">
 <a class="reference internal image-reference" href="../_images/EditNodeUI.png"><img alt="../_images/EditNodeUI.png" src="../_images/EditNodeUI.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id113" title="Ссылка на это изображение"></a></p>
+<p><span class="caption-text">Настройка узла</span><a class="headerlink" href="#id125" title="Ссылка на это изображение"></a></p>
 </figcaption>
 </figure>
 <p>напротив поля <code class="docutils literal notranslate"><span class="pre">path</span></code>, добавьте конфигурацию <code class="docutils literal notranslate"><span class="pre">\web-client</span></code>, примените настройки узла и запустите поток <strong>U-Logic</strong>.
@@ -1383,8 +1461,8 @@
 <p>Пример использования библиотек находится в разделе <a class="reference internal" href="U-Logic-Function.html"><span class="std std-doc">Function</span></a></p>
 </div>
 </section>
-<section id="id110">
-<h2>Палитра узлов<a class="headerlink" href="#id110" title="Ссылка на этот заголовок"></a></h2>
+<section id="id122">
+<h2>Палитра узлов<a class="headerlink" href="#id122" title="Ссылка на этот заголовок"></a></h2>
 </section>
 </section>
 
