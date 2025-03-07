@@ -85,7 +85,7 @@
 </pre></div>
 </div>
 <p>Узел function клонирует каждый объект сообщения, который вы передаете в <code class="docutils literal notranslate"><span class="pre">node.send</span></code>, чтобы избежать непреднамеренного изменения объектов сообщений, которые повторно используются в функции.</p>
-<p>Функция может запросить среду выполнения не клонировать первое сообщение, переданное в <code class="docutils literal notranslate"><span class="pre">node.send</span></code>, передав false в качестве второго аргумента функции. Это может быть полезно, если сообщение содержит что-то, что не может быть клонировано, или по соображениям производительности, чтобы минимизировать накладные расходы на отправку сообщений.</p>
+<p>Функция может запросить среду выполнения не клонировать первое сообщение, переданное в <code class="docutils literal notranslate"><span class="pre">node.send</span></code>, передав <code class="docutils literal notranslate"><span class="pre">false</span></code> в качестве второго аргумента функции. Это может быть полезно, если сообщение содержит что-то, что не может быть клонировано, или по соображениям производительности, чтобы минимизировать накладные расходы на отправку сообщений.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="n">false</span><span class="p">);</span>
 </pre></div>
 </div>
