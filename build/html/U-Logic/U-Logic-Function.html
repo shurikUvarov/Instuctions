@@ -168,7 +168,6 @@ return msg;
 <li><p>flow: контекст уровня потока.</p></li>
 <li><p>global: контекст уровня глобального окружения.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">?</span> <span class="pre">(prev</span> <span class="pre">RED)</span></code>: объект, предоставляющий доступ к API среды выполнения U-LOGIC.</p></li>
-<li><p>env: объект, содержащий метод get для доступа к переменным окружения.</p></li>
 </ul>
 </section>
 <section id="id3">
@@ -177,7 +176,7 @@ return msg;
 <li><p><strong>Пользовательская логика</strong>: Иногда в вашем потоке может понадобиться специфическая логика, которую невозможно реализовать с помощью стандартных узлов. В таких случаях используется function-узел.</p></li>
 </ol>
 <p>В примере ниже функция конвертирует температуру (сгенерированную узлом inject в виде случайного числа) из Цельсия в Фаренгейт, а также выполняет дополнительное форматирование.</p>
-<p><img alt="Пример" src="../_images/U-Logic-header.md" /></p>
+<p><img alt="Пример" src="U-Logic/U-Logic-header.md" /></p>
 <ol class="arabic simple" start="2">
 <li><p><strong>Условная маршрутизация</strong>: Когда приходится обрабатывать широкий спектр условий с сложной логикой для каждого случая, switch-узел может оказаться недостаточно гибким. В таких ситуациях полезно использовать function-узел с несколькими выходами.</p></li>
 </ol>
@@ -192,12 +191,8 @@ return msg;
 <p>Функция должна возвращать объект сообщения (или несколько объектов сообщений), но также может ничего не возвращать, чтобы остановить поток.</p>
 <p>Вкладка <strong>On Start</strong> (Настройка) содержит код, который выполняется при запуске узла. Вкладка <strong>On Stop</strong> (Закрытие) содержит код, который выполняется при остановке узла.</p>
 <p>Если код в On Start возвращает объект Promise, узел не начнёт обработку сообщений до тех пор, пока этот Promise не будет выполнен.</p>
-</section>
 <section id="id5">
-<h2>Подробности<a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h2>
-<p>Дополнительную информацию о написании функций можно найти в <a class="reference internal" href="#"><span class="xref myst">онлайн-документации</span></a>.</p>
-<section id="id6">
-<h3>Отправка сообщений<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h3>
+<h3>Отправка сообщений<a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h3>
 <p>Функция может либо вернуть сообщения, которые она хочет передать следующим узлам в потоке, либо вызвать <code class="docutils literal notranslate"><span class="pre">node.send(messages)</span></code>.</p>
 <p>Она может вернуть/отправить:</p>
 <ul class="simple">
@@ -208,31 +203,27 @@ return msg;
 <p>Если какой-либо элемент массива сам является массивом сообщений, тогда несколько сообщений отправляются на соответствующий выход.</p>
 <p>Если возвращается null (либо как одиночное значение, либо как элемент массива), сообщение не передаётся дальше.</p>
 </section>
-<section id="id7">
-<h3>Логирование и обработка ошибок<a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h3>
+<section id="id6">
+<h3>Логирование и обработка ошибок<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h3>
 <p>Для логирования информации или сообщений об ошибках доступны следующие функции:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">node.log(&quot;Сообщение</span> <span class="pre">лога&quot;)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">node.warn(&quot;Предупреждение&quot;)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">node.error(&quot;Ошибка&quot;)</span></code></p></li>
 </ul>
-<p>Также можно использовать Catch-узел для обработки ошибок. Чтобы передать <code class="docutils literal notranslate"><span class="pre">msg</span></code> в Catch-узел, укажите его вторым аргументом в <code class="docutils literal notranslate"><span class="pre">node.error</span></code>:</p>
+<p>Также можно использовать Catch-узел для обработки ошибок. Чтобы передать <code class="docutils literal notranslate"><span class="pre">msg</span></code> в Catch узел, укажите его вторым аргументом в <code class="docutils literal notranslate"><span class="pre">node.error</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Ошибка&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h3>Доступ к информации о узле<a class="headerlink" href="#id8" title="Ссылка на этот заголовок"></a></h3>
+<section id="id7">
+<h3>Доступ к информации о узле<a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h3>
 <p>Следующие свойства позволяют получить информацию о текущем узле:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">node.id</span></code> - идентификатор узла</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">node.name</span></code> - имя узла</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">node.outputCount</span></code> - количество выходов узла</p></li>
 </ul>
-</section>
-<section id="id9">
-<h3>Использование переменных среды<a class="headerlink" href="#id9" title="Ссылка на этот заголовок"></a></h3>
-<p>Доступ к переменным среды можно получить с помощью <code class="docutils literal notranslate"><span class="pre">env.get(&quot;MY_ENV_VAR&quot;)</span></code>.</p>
 </section>
 </section>
 </section>
