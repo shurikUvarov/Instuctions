@@ -118,6 +118,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#id171">function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id181">switch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id188">change</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#template">template</a></li>
 </ul>
 </li>
 </ul>
@@ -1801,7 +1803,7 @@
 <h5>Документация по узлу<a class="headerlink" href="#id138" title="Ссылка на этот заголовок"></a></h5>
 <p>Вводит сообщение в поток вручную или с регулярными интервалами. Полезная нагрузка сообщения может быть различных типов, включая строки, объекты JavaScript или текущее время.</p>
 <section id="id139">
-<h6>Выходные значения<a class="headerlink" href="#id139" title="Ссылка на этот заголовок"></a></h6>
+<h6>Выходные данные<a class="headerlink" href="#id139" title="Ссылка на этот заголовок"></a></h6>
 <p><strong>payload</strong> - Настроенный payload сообщения.</p>
 <p><strong>topic</strong> - Необязательное свойство, которое можно настроить в узле.</p>
 </section>
@@ -2002,7 +2004,7 @@
 <p>Перехват ошибок, возникающих в узлах на одной вкладке.</p>
 </section>
 <section id="id159">
-<h5>Выходные значения<a class="headerlink" href="#id159" title="Ссылка на этот заголовок"></a></h5>
+<h5>Выходные данные<a class="headerlink" href="#id159" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error.message</span></code> - сообщение об ошибке.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">error.source.id</span></code> - идентификатор узла, выдавшего ошибку.</p></li>
@@ -2041,7 +2043,7 @@
 <p>Сообщения о состоянии других узлов можно просматривать на той же вкладке.</p>
 </section>
 <section id="id163">
-<h5>Выходные значения<a class="headerlink" href="#id163" title="Ссылка на этот заголовок"></a></h5>
+<h5>Выходные данные<a class="headerlink" href="#id163" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">status.text</span></code> - текст статуса.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">status.source.type</span></code> - тип узла, сообщившего о состоянии.</p></li>
@@ -2372,6 +2374,220 @@
 <li><p>Переместить: Переместить или переименовать свойство объекта</p></li>
 </ul>
 <p>Тип «выражение» использует язык запросов и выражений <a class="reference external" href="https://jsonata.org/">JSONata</a>.</p>
+</section>
+</section>
+<section id="range">
+<h4>range<a class="headerlink" href="#range" title="Ссылка на этот заголовок"></a></h4>
+<section id="range-u-logic">
+<h5>Для чего используется узел range в U-Logic?<a class="headerlink" href="#range-u-logic" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел range в U-Logic позволяет вам сопоставлять числовое значение из одного диапазона в другой. Например, если вы хотите сопоставить мили с километрами, вы можете указать входной диапазон от 1 до 100 и целевой диапазон от 1 до 160.</p>
+<p>Помимо преобразования единиц измерения, узел диапазона можно использовать для:</p>
+<p><strong>Масштабирование данных</strong>: Используйте узел range для масштабирования или нормализации данных. Например, если у вас есть показания датчика в диапазоне от 0 до 1023, но вы хотите преобразовать их в процентную шкалу 0-100, вы можете использовать узел range для этого преобразования.</p>
+<p><strong>Сжатие данных</strong>: Сокращение диапазона значений данных с сохранением взаимосвязей между значениями. Это может быть полезно для отображения данных в меньшем масштабе без потери важных изменений.</p>
+<p><strong>Аналого-цифровое преобразование</strong>: При взаимодействии с аналоговыми датчиками можно преобразовать аналоговый диапазон напряжения в диапазон цифровых значений для обработки.</p>
+<p><strong>Сглаживание данных</strong>: Сглаживание колебаний данных путем приведения значений в пределах диапазона к одному значению.</p>
+</section>
+<section id="id192">
+<h5>Примеры для узла range<a class="headerlink" href="#id192" title="Ссылка на этот заголовок"></a></h5>
+<p>Пример узла изменения, который преобразует мили в километры.</p>
+<p><img alt="Пример настройки узла range" src="../_images/range_edit.png" /></p>
+<p><img alt="Пример использования узла range" src="../_images/range_scheme.png" /></p>
+</section>
+<section id="id193">
+<h5>Документация по узлу<a class="headerlink" href="#id193" title="Ссылка на этот заголовок"></a></h5>
+<p>Сопоставляет числовое значение с другим диапазоном.</p>
+<section id="id194">
+<h6>Входные данные<a class="headerlink" href="#id194" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: payload должен быть числом. Все остальное будет пытаться быть преобразовано в число и отклонено, если это не удастся.</p></li>
+</ul>
+</section>
+<section id="id195">
+<h6>Выходные данные<a class="headerlink" href="#id195" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Значение сопоставлено с новым диапазоном.</p></li>
+</ul>
+</section>
+<section id="id196">
+<h6>Подробности<a class="headerlink" href="#id196" title="Ссылка на этот заголовок"></a></h6>
+<p>Этот узел будет линейно масштабировать полученное значение. По умолчанию «Действие» выбрано «Масштабировать msg-свойство», т.е. результат не ограничен диапазоном, определенным в узле.</p>
+<p>Действие «Масштабировать и ограничить целевым диапазоном» означает, что результат никогда не выйдет за пределы указанного в целевом диапазоне диапазона.</p>
+<p>Действие «Масштабировать и обернуть в целевой диапазон» означает, что результат будет перемещен в пределы целевого диапазона.</p>
+<p>Действие «Scale, but drop msg if outside input range» означает, что результат будет масштабирован, но любые входные данные за пределами входного и выходного диапазона будут отброшены.</p>
+<p>Например, входные данные 0–10 будут отображаться в диапазоне 0–100 в зависимости от «Действия» следующим образом:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Действие</p></th>
+<th class="head"><p>Вход</p></th>
+<th class="head"><p>Выход</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Масштабировать msg-свойство</p></td>
+<td><p>12</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-odd"><td><p>Масштабировать и ограничить целевым диапазоном</p></td>
+<td><p>121</p></td>
+<td><p>00</p></td>
+</tr>
+<tr class="row-even"><td><p>Масштабировать и обернуть в целевой диапазон</p></td>
+<td><p>12</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scale, but drop msg if outside input range</p></td>
+<td><p>12</p></td>
+<td><p>Нет выходных данных</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="template">
+<h4>template<a class="headerlink" href="#template" title="Ссылка на этот заголовок"></a></h4>
+<p>Узел template используется для создания и управления текстовыми шаблонами. Например, для генерации HTML, файлов конфигурации и т.д.; Узел template позволяет генерировать динамический контент путем внедрения данных в предопределенные шаблоны с использованием языка шаблонов Mustache. Когда нет необходимости в динамических шаблонах, поле «Формат» можно установить как «Простой текст», что дает небольшое преимущество в производительности.</p>
+<section id="id197">
+<h5>Как работает узел template<a class="headerlink" href="#id197" title="Ссылка на этот заголовок"></a></h5>
+<section id="id198">
+<h6>Входные данные<a class="headerlink" href="#id198" title="Ссылка на этот заголовок"></a></h6>
+<p>Вы можете подключить узел template к источнику данных, например, к входу HTTP или любому другому узлу, который предоставляет данные. Эти входные данные будут использоваться для заполнения шаблона.</p>
+</section>
+<section id="id199">
+<h6>Определение шаблона<a class="headerlink" href="#id199" title="Ссылка на этот заголовок"></a></h6>
+<p>В конфигурации узла template вы определяете шаблон, используя текстовые языки форматирования, такие как HTML с синтаксисом mustache. mustache — это простой язык шаблонизации, который позволяет вам вставлять переменные и выражения в ваш шаблон.</p>
+<p>Например, вы можете определить шаблон следующим образом: <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;Hello</span> <span class="pre">{{payload.name}}!&lt;/p&gt;</span></code>.</p>
+<p><img alt="Пример использования узла template" src="../_images/template_scheme.png" /></p>
+<p>В этом примере будет выведено <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;Hello</span> <span class="pre">user!&lt;/p&gt;</span></code>.</p>
+</section>
+<section id="id200">
+<h6>Выходные данные<a class="headerlink" href="#id200" title="Ссылка на этот заголовок"></a></h6>
+<p>Когда узел template получает входные данные, он обрабатывает их и заменяет соответствующими значениями из входных данных. Полученный HTML или текст затем отправляется в качестве вывода на следующий узел в потоке.</p>
+</section>
+</section>
+<section id="id201">
+<h5>Создание JSON<a class="headerlink" href="#id201" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел template можно настроить на анализ результата ввода и шаблона как JSON, чтобы в дальнейшем использовать сообщение как объект, а не как строку.</p>
+<section id="id202">
+<h6>Входные данные<a class="headerlink" href="#id202" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;ACME&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id203">
+<h6>Конфигурация узла template<a class="headerlink" href="#id203" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p>Шаблон:</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;product&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{payload.0}}&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">payload</span><span class="mf">.1</span><span class="p">}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Формат: <code class="docutils literal notranslate"><span class="pre">Mustache</span> <span class="pre">шаблон</span></code></p></li>
+<li><p>Вывести как: <code class="docutils literal notranslate"><span class="pre">JSON</span></code></p></li>
+</ul>
+</section>
+<section id="id204">
+<h6>Выходные значения<a class="headerlink" href="#id204" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;product&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ACME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="javascript-yaml">
+<h5>Генерация объекта JavaScript из YAML<a class="headerlink" href="#javascript-yaml" title="Ссылка на этот заголовок"></a></h5>
+<p>U-Logic также может анализировать YAML</p>
+<section id="id205">
+<h6>Входные данные<a class="headerlink" href="#id205" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;U-Logic&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="mf">3000</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id206">
+<h6>Конфигурация узла template<a class="headerlink" href="#id206" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p>Шаблон:</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">options</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">topic</span><span class="p">}}</span>
+<span class="w">    </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="nx">payload</span><span class="p">}}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Формат: <code class="docutils literal notranslate"><span class="pre">Mustache</span> <span class="pre">шаблон</span></code></p></li>
+<li><p>Вывести как: <code class="docutils literal notranslate"><span class="pre">JSON</span></code></p></li>
+</ul>
+</section>
+<section id="id207">
+<h6>Выходные значения<a class="headerlink" href="#id207" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;U-Logic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3000</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id208">
+<h5>Комментарии<a class="headerlink" href="#id208" title="Ссылка на этот заголовок"></a></h5>
+<p>Когда шаблон становится больше, может быть полезно добавлять комментарии к шаблону, которые не будут отображаться в выводе. Комментарии работают примерно так же, как и обычный синтаксис, с <code class="docutils literal notranslate"><span class="pre">!</span></code> после открывающихся фигурных скобок:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="o">!</span><span class="w"> </span><span class="nx">это</span><span class="w"> </span><span class="nx">не</span><span class="w"> </span><span class="nx">отобразится</span><span class="w"> </span><span class="p">}}</span>
+<span class="nx">This</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">output</span>
+</pre></div>
+</div>
+<p>Результатом будет <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">text</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">output</span></code>. Обратите внимание, что символ пустой строки (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) отсутствует.</p>
+</section>
+<section id="id209">
+<h5>Документация по узлу<a class="headerlink" href="#id209" title="Ссылка на этот заголовок"></a></h5>
+<p>Устанавливает свойство на основе предоставленного шаблона.</p>
+<section id="id210">
+<h6>Входные данные<a class="headerlink" href="#id210" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg</span></code>: Объект msg, содержащий информацию для заполнения шаблона.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">template</span></code>: Шаблонная строка, которая будет заполнена из msg.payload. Если она не настроена в панели редактирования, её можно установить как свойство msg.</p></li>
+</ul>
+</section>
+<section id="id211">
+<h6>Выходные данные<a class="headerlink" href="#id211" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg</span></code>: msg со свойством, заданным путем заполнения настроенного шаблона свойствами из входящего сообщения.</p></li>
+</ul>
+</section>
+<section id="id212">
+<h6>Подробности<a class="headerlink" href="#id212" title="Ссылка на этот заголовок"></a></h6>
+<p>По умолчанию используется формат «Mustache шаблон».</p>
+<p>Например, когда шаблон:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Hello</span><span class="w"> </span><span class="p">{{</span><span class="nx">payload</span><span class="p">.</span><span class="nx">name</span><span class="p">}}.</span><span class="w"> </span><span class="nx">Today</span><span class="w"> </span><span class="p">{{</span><span class="nx">date</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>получает сообщение, содержащее:</p>
+<div class="highlight-javaascript notranslate"><div class="highlight"><pre><span></span>{
+  date: &quot;monday&quot;,
+  payload: {
+    name: &quot;Ivan&quot;
+  }
+}
+</pre></div>
+</div>
+<p>Результирующее свойство будет следующим:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">Ivan</span><span class="p">.</span><span class="w"> </span><span class="nx">Today</span><span class="w"> </span><span class="nx">monday</span>
+</pre></div>
+</div>
+<p>Можно использовать свойство из контекста потока или глобального контекста. Просто используйте <code class="docutils literal notranslate"><span class="pre">{{flow.name}}</span></code> или <code class="docutils literal notranslate"><span class="pre">{{global.name}}</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>По умолчанию mustache будет экранировать любые небуквенно-цифровые или HTML-сущности в значениях, которые он заменяет. Чтобы предотвратить это, используйте <code class="docutils literal notranslate"><span class="pre">{{{triple}}}</span></code>.</p>
+</div>
+<p>Если вам нужно использовать <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> в вашем контенте, вы можете изменить символы, используемые для обозначения шаблонных разделов. Например, чтобы использовать <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">]]</span></code> вместо этого, добавьте следующую строку в верхнюю часть шаблона:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="o">=</span><span class="p">[[</span><span class="w"> </span><span class="p">]]</span><span class="o">=</span><span class="p">}}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 </section>
