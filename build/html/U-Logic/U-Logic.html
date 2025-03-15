@@ -126,6 +126,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id224">Сетевые</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#http-request">http request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket">websocket</a></li>
 </ul>
 </li>
 </ul>
@@ -2774,10 +2775,149 @@
 <section id="id226">
 <h5>Вариант использования<a class="headerlink" href="#id226" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
-<li><p>Интеграция API: узел http request обеспечивает бесшовную интеграцию с внешними API. Разработчики могут использовать его для извлечения данных из API с помощью запросов GET или отправки данных в API с помощью запросов POST/PUT. Например, извлечение данных о погоде из API погоды или отправка данных в службу обмена сообщениями, такую ​​как Slack, являются распространенными сценариями.</p></li>
-<li><p>Webhooks: С помощью узла http request пользователи могут настроить webhooks для запуска действий в ответ на определенные события. Это обеспечивает связь в реальном времени между различными приложениями. Например, запуск webhook для уведомления сторонней службы при выполнении определенных условий или при получении данных от датчика. Для получения дополнительной информации см. Использование webhook с U-Logic</p></li>
-<li><p>Удаленное управление и управление устройствами: в системах умного дома узел http request может использоваться для упрощения удаленного управления устройствами. Он позволяет пользователям управлять различными устройствами, такими как освещение, термостаты и камеры безопасности, через веб-интерфейсы или мобильные интерфейсы, взаимодействуя с API устройств. Такие действия, как переключение устройств, настройка параметров и получение обновлений в реальном времени, могут быть выполнены через узел http request.</p></li>
+<li><p><strong>Интеграция API</strong>: узел http request обеспечивает бесшовную интеграцию с внешними API. Разработчики могут использовать его для извлечения данных из API с помощью запросов GET или отправки данных в API с помощью запросов POST/PUT. Например, извлечение данных о погоде из API погоды или отправка данных в службу обмена сообщениями, являются распространенными сценариями.</p></li>
+<li><p><strong>Удаленное управление и управление устройствами</strong>: в системах умного дома узел http request может использоваться для упрощения удаленного управления устройствами. Он позволяет пользователям управлять различными устройствами, такими как освещение, термостаты и камеры безопасности, через веб-интерфейсы или мобильные интерфейсы, взаимодействуя с API устройств. Такие действия, как переключение устройств, настройка параметров и получение обновлений в реальном времени, могут быть выполнены через узел http request.</p></li>
 </ol>
+<p>Это несколько вариантов использования узла http request, но его способность взаимодействовать с другими службами является важной и ключевой возможностью. Одна эта возможность открывает дверь к разнообразному массиву различных вариантов использования.</p>
+</section>
+<section id="id227">
+<h5>Примеры<a class="headerlink" href="#id227" title="Ссылка на этот заголовок"></a></h5>
+<ol class="arabic simple">
+<li><p>Ниже приведен пример, показывающий, как можно создать URL-адрес со свойствами сообщения в узле http request. Пример включает отправку запроса GET.</p></li>
+</ol>
+<p><img alt="Пример использования узла http request" src="../_images/example1.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>Ниже приведен пример, показывающий, как можно отправить HTTP POST-запрос на фиктивный API. Этот пример включает регистрацию пользователя.</p></li>
+</ol>
+<p><img alt="Пример использования узла http request" src="../_images/example2_edit.png" /></p>
+<p><img alt="Пример использования узла http request" src="../_images/example2.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Ниже приведен пример, демонстрирующий, как можно динамически задать URL, метод и заголовки для узла http request. Кроме того, этот пример иллюстрирует отправку запроса GET на фиктивный API с токеном авторизации.</p></li>
+</ol>
+<p><img alt="Пример использования узла http request" src="../_images/example3_edit.png" /></p>
+<p><img alt="Пример использования узла http request" src="../_images/example3.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p>Ниже приведен пример, показывающий, как можно отправить запрос PUT с помощью узла http request.</p></li>
+</ol>
+<p><img alt="Пример использования узла http request" src="../_images/example4_edit.png" /></p>
+<p><img alt="Пример использования узла http request" src="../_images/example4.png" /></p>
+<ol class="arabic simple" start="5">
+<li><p>Ниже приведен пример, показывающий, как можно отправить запрос DELETE с помощью узла http request.</p></li>
+</ol>
+<p><img alt="Пример использования узла http request" src="../_images/example5_edit.png" /></p>
+<p><img alt="Пример использования узла http request" src="../_images/example5.png" /></p>
+</section>
+<section id="id228">
+<h5>Документация по узлу<a class="headerlink" href="#id228" title="Ссылка на этот заголовок"></a></h5>
+<p>Отправляет HTTP-запросы и возвращает ответ.</p>
+<section id="id229">
+<h6>Входные данные<a class="headerlink" href="#id229" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: Если не настроено в узле, это необязательное свойство задает URL-адрес запроса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: Если не настроено в узле, это необязательное свойство задает метод HTTP запроса. Должен быть одним из GET, PUT, DELETE или HEAD.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code>: Устанавливает заголовки HTTP запроса. Любые заголовки, установленные в конфигурации узла, перезапишут любые соответствующие заголовки в <code class="docutils literal notranslate"><span class="pre">msg.headers</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cookies</span></code>: Если установлено, может использоваться для отправки файлов cookie вместе с запросом.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Отправлено как текст запроса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rejectUnauthorized</span></code>: Если установлено значение <code class="docutils literal notranslate"><span class="pre">false</span></code>, разрешается отправлять запросы на https-сайты, использующие самоподписанные сертификаты.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">followRedirects</span></code>: Если установлено в <code class="docutils literal notranslate"><span class="pre">false</span></code>, предотвращает следование перенаправлениям (HTTP 301). По умолчанию true.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requestTimeout</span></code>: Если задано положительное число миллисекунд, будет переопределен глобально заданный httpRequestTimeout параметр.</p></li>
+</ul>
+</section>
+<section id="id230">
+<h6>Выходные данные<a class="headerlink" href="#id230" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Тело ответа. Узел можно настроить так, чтобы он возвращал тело как строку, пытался проанализировать его как строку JSON или оставлял его как двоичный буфер.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statusCode</span></code>: Код статуса ответа или код ошибки, если запрос не может быть выполнен.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code>: Объект, содержащий заголовки ответа.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">responseUrl</span></code>: В случае, если при обработке запроса произошли перенаправления, это свойство является окончательным перенаправленным URL. В противном случае — URL исходного запроса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">responseCookies</span></code>: Если ответ включает файлы cookie, это свойство представляет собой объект пар «имя/значение» для каждого файла cookie.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">redirectList</span></code>: Если запрос был перенаправлен один или несколько раз, накопленная информация будет добавлена ​​в это свойство. <code class="docutils literal notranslate"><span class="pre">location</span></code> — следующий пункт назначения перенаправления. <code class="docutils literal notranslate"><span class="pre">cookies</span></code> — файлы cookie, возвращаемые источником перенаправления.</p></li>
+</ul>
+</section>
+<section id="id231">
+<h6>Подробности<a class="headerlink" href="#id231" title="Ссылка на этот заголовок"></a></h6>
+<p>При настройке в узле свойство URL может содержать теги в стиле mustache . Они позволяют создавать URL-адрес с использованием значений входящего сообщения. Например, если URL-адрес установлен на <code class="docutils literal notranslate"><span class="pre">example.com/{{{topic}}}</span></code>, он будет иметь значение <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code> автоматически вставленного. Использование <code class="docutils literal notranslate"><span class="pre">{{{...}}}</span></code> предотвращает экранирование mustache символов, таких как <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> и т. д.</p>
+<p>Узел может опционально автоматически кодировать <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> параметры строки запроса для запроса GET, в этом случае <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> они должны быть объектом.</p>
+<p><strong>Использование нескольких узлов HTTP-запросов</strong></p>
+<p>Чтобы использовать более одного такого узла в одном потоке, необходимо внимательно относиться к свойству msg.headers. Первый узел установит это свойство, заполнив его заголовками ответа. Следующий узел затем использует эти заголовки для своего запроса, что обычно является некорректным поведением.</p>
+<p>Если свойство msg.headers остаётся неизменным между узлами, второй узел его проигнорирует. Чтобы задать собственные заголовки, перед этим необходимо удалить msg.headers или сбросить его в пустой объект {}.</p>
+<p><strong>Обработка файлов cookie</strong></p>
+<p>Свойство cookies, переданное узлу, должно быть объектом пар «имя/значение». Значение может быть либо строкой для установки значения cookie, либо объектом с одним свойством <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<p>Все файлы cookie, возвращаемые запросом, передаются обратно в свойство <code class="docutils literal notranslate"><span class="pre">responseCookies</span></code>.</p>
+<p><strong>Обработка типов контента</strong></p>
+<p>Если <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> это объект, узел автоматически установит тип содержимого запроса <code class="docutils literal notranslate"><span class="pre">application/json</span></code> и закодирует тело соответствующим образом.</p>
+</section>
+</section>
+</section>
+<section id="websocket">
+<h4>websocket<a class="headerlink" href="#websocket" title="Ссылка на этот заголовок"></a></h4>
+<section id="websocket-node-red">
+<h5>Для чего используются узлы WebSocket в Node-RED?<a class="headerlink" href="#websocket-node-red" title="Ссылка на этот заголовок"></a></h5>
+<p>Node-RED предоставляет два узла websocket in и websocket out, которые служат различным целям и могут работать в двух режимах.</p>
+<section id="id232">
+<h6>Слушать на…<a class="headerlink" href="#id232" title="Ссылка на этот заголовок"></a></h6>
+<p>В этом режиме Node-RED функционирует как сервер WebSocket, позволяя удаленным клиентам устанавливать соединения.</p>
+<ul class="simple">
+<li><p>Узел websocket in отвечает за прием сообщений, отправленных удаленными клиентами.</p></li>
+<li><p>Узел websocket out обеспечивает поток сообщений либо для отправки сообщений конкретному подключенному клиенту, либо для широковещательной рассылки сообщений всем подключенным клиентам.</p></li>
+</ul>
+</section>
+<section id="id233">
+<h6>Присоединиться к…<a class="headerlink" href="#id233" title="Ссылка на этот заголовок"></a></h6>
+<p>В этом режиме Node-RED действует как клиент, устанавливая соединения с удаленными серверами WebSocket.</p>
+<ul class="simple">
+<li><p>Узел websocket in получает сообщения, отправленные с удаленного сервера WebSocket на Node-RED.</p></li>
+<li><p>Узел websocket out позволяет потоку отправлять сообщения на удаленный сервер.</p></li>
+</ul>
+</section>
+</section>
+<section id="id234">
+<h5>Конфигурация узла WebSocket<a class="headerlink" href="#id234" title="Ссылка на этот заголовок"></a></h5>
+<section id="id235">
+<h6>Путь<a class="headerlink" href="#id235" title="Ссылка на этот заголовок"></a></h6>
+<p>При использовании узла WebSocket в режиме «Слушать на…» вам придется указать путь или конечную точку, к которой удаленные клиенты будут устанавливать соединение.</p>
+</section>
+<section id="id236">
+<h6>Отправить/Получить<a class="headerlink" href="#id236" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p>payload: эта опция отправляет или получает только данные <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> через соединение WebSocket. Она исключает любые дополнительные свойства <code class="docutils literal notranslate"><span class="pre">msg</span></code>.</p></li>
+<li><p>Полное сообщение: если этот параметр включен, он позволяет отправлять или получать весь объект сообщения, включая payload и другие свойства, в виде строки в формате JSON.</p></li>
+</ul>
+</section>
+<section id="url">
+<h6>URL<a class="headerlink" href="#url" title="Ссылка на этот заголовок"></a></h6>
+<p>При использовании узла WebSocket в режиме «Присоединиться к…» вам придется указать URL-адрес соединения, который должен использовать схему <code class="docutils literal notranslate"><span class="pre">ws://</span></code> или <code class="docutils literal notranslate"><span class="pre">wss://</span></code> указывать на существующий прослушиватель WebSocket.</p>
+</section>
+<section id="id237">
+<h6>Подпротокол<a class="headerlink" href="#id237" title="Ссылка на этот заголовок"></a></h6>
+<p>Эта опция позволяет указать конкретный подпротокол WebSocket, который будет использоваться во время установления соединения.</p>
+</section>
+<section id="send-heartbeat">
+<h6>Send heartbeat<a class="headerlink" href="#send-heartbeat" title="Ссылка на этот заголовок"></a></h6>
+<p>Включение этой опции позволяет указать временной интервал в секундах для отправки периодических сообщений ping от клиента к серверу для поддержания соединения. Сервер отвечает сообщением pong для подтверждения статуса соединения.</p>
+<p>Это помогает предотвратить закрытие соединения из-за бездействия или проблем с сетью.</p>
+</section>
+</section>
+<section id="id238">
+<h5>Примеры<a class="headerlink" href="#id238" title="Ссылка на этот заголовок"></a></h5>
+<p>Простой эхо-тест</p>
+<p>Здесь показаны оба режима: один набор действует как WebSocket Echo Server, а другой подключается к этому серверу и отправляет и получает сообщения.</p>
+<p><img alt="Пример использования узлов websocket in и websocket out" src="../_images/websocket_example.png" /></p>
+</section>
+<section id="id239">
+<h5>Документация по узлу<a class="headerlink" href="#id239" title="Ссылка на этот заголовок"></a></h5>
+<section id="websocket-in">
+<h6>websocket in<a class="headerlink" href="#websocket-in" title="Ссылка на этот заголовок"></a></h6>
+<p>По умолчанию данные, полученные от websocket in, будут в формате <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>. Сокет можно настроить на ожидание правильно сформированной строки JSON, в этом случае он проанализирует JSON и отправит полученный объект как целое сообщение.</p>
+</section>
+<section id="websocket-out">
+<h6>websocket out<a class="headerlink" href="#websocket-out" title="Ссылка на этот заголовок"></a></h6>
+<p>По умолчанию <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> будет отправлено через websocket. Сокет можно настроить для кодирования всего <code class="docutils literal notranslate"><span class="pre">msg</span></code> объекта как строки JSON и отправки его через WebSocket.</p>
+<p>Если сообщение, прибывающее на этот узел, началось с узла websocket in, сообщение будет отправлено обратно клиенту, который инициировал поток. В противном случае сообщение будет передано всем подключенным клиентам.</p>
+<p>Если вы хотите транслировать сообщение, начатое в узле websocket in, вам следует удалить свойство <code class="docutils literal notranslate"><span class="pre">msg._session</span></code> в потоке.</p>
+<p>Этот узел конфигурации создает конечную точку сервера websocket, используя указанный путь.</p>
+<p>Этот узел конфигурации подключает клиент websocket к указанному URL-адресу.</p>
+</section>
 </section>
 </section>
 </section>
