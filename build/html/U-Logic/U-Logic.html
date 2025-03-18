@@ -138,7 +138,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#join">join</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id278">анализатор</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id278">анализатор</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv">csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#html">html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id287">json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml">xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#yaml">yaml</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -512,12 +519,25 @@
 <p>Чтобы открыть диалоговое окно редактирования подпотока, дважды щелкните по узлу подпотока, затем щелкните «Изменить шаблон подпотока». Вы можете дать имя для этого подпотока, добавить описание, щелкнув в правом верхнем углу</p>
 <p><img alt="Editing a Subflow" src="../_images/subflow_edit2.png" /></p>
 <p>опцию «Описание», а также настроить внешний вид, нажав на опцию «Внешний вид» в правом верхнем углу.</p>
+<p>Вкладка «Внешний вид» предоставляет следующие возможности:</p>
+<ul class="simple">
+<li><p>изменить категорию палитры, в которой отображается узел</p></li>
+<li><p>выберите, будет ли отображаться метка узла</p></li>
+<li><p>изменить цвет узла</p></li>
+<li><p>изменить значок узла</p></li>
+<li><p>предоставить индивидуальные метки портов.</p></li>
+</ul>
 <p><img alt="Editing a Subflow" src="../_images/subflow_lookup.png" /></p>
+<p>Также можно узнать и изменить метаданные в разделе «Module Properties»</p>
+<p>Вкладку «Свойства» диалогового окна редактирования можно использовать для определения набора свойств, которые затем можно настроить для каждого экземпляра подпотока.</p>
+<!-- Затем свойства отображаются как переменные среды внутри подпотока. -->
+<p>Каждая запись в таблице свойств может быть расширена для настройки того, как она отображается при редактировании экземпляра подпотока. Вкладка «Предпросмотр редактора» обеспечивает предварительный просмотр того, как они будут выглядеть.</p>
+<p><img alt="Предпросмотр редактора" src="../_images/subflow_preshow.png" /></p>
 </section>
 <section id="id35">
 <h6>Удаление подпотока<a class="headerlink" href="#id35" title="Ссылка на этот заголовок"></a></h6>
 <p><img alt="Deleting a Subflow" src="../_images/subflow_delete.png" /></p>
-<p>Чтобы удалить подпоток, нажмите кнопку «удалить подпоток» в верхней части вкладки подпотока.</p>
+<p>Чтобы удалить подпоток и все его экземпляры, нажмите кнопку «удалить подпоток» в верхней части вкладки подпотока.</p>
 </section>
 <section id="id36">
 <h6>Преобразование узлов в подпоток<a class="headerlink" href="#id36" title="Ссылка на этот заголовок"></a></h6>
@@ -525,7 +545,7 @@
 <p>Если у вас есть узлы на рабочем пространстве и вы хотите создать из них подпоток, вы можете выбрать их, нажав левую клавишу мыши и нарисовав вокруг них прямоугольник. Затем нажмите на <code class="docutils literal notranslate"><span class="pre">Подпотоки</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Выделение</span> <span class="pre">в</span> <span class="pre">подпоток</span></code> в главном меню.</p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
-<p>Провода, входящие в выборку, должны быть подключены к одному узлу, поскольку результирующий узел подпотока может иметь не более одного входа.</p>
+<p>Это возможно только в том случае, если все провода, входящие в выборку, подключены к одному узлу, поскольку результирующий узел подпотока может иметь не более одного входа.</p>
 </div>
 </section>
 <section id="id37">
@@ -536,7 +556,7 @@
 <section id="id38">
 <h6>Статус узла<a class="headerlink" href="#id38" title="Ссылка на этот заголовок"></a></h6>
 <p><img alt="Status Node" src="../_images/subflow_status.png" /></p>
-<p>Узел Status используется для обновления статуса подпотока. Этот узел статуса можно редактировать как обычные узлы потока. Этот узел использует входные данные, <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> которые могут быть либо простой строкой, либо объектом Status.</p>
+<p>Узел status используется для обновления статуса подпотока. Этот узел статуса можно редактировать как обычные узлы потока. Этот узел использует входные данные, <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> которые могут быть либо простой строкой, либо объектом status.</p>
 </section>
 </section>
 <section id="id39">
@@ -3458,21 +3478,21 @@
 <p>Можно задать тайм-аут для запуска отправки нового сообщения с использованием того, что было получено до сих пор. Этот тайм-аут можно перезапустить, отправив сообщение с установленным свойством <code class="docutils literal notranslate"><span class="pre">msg.restartTimeout</span></code>.</p>
 <p>Если получено сообщение с установленным свойством <code class="docutils literal notranslate"><span class="pre">msg.complete</span></code>, выходное сообщение завершается и отправляется. Это сбрасывает все счетчики частей.</p>
 <p>Если сообщение получено с установленным свойством <code class="docutils literal notranslate"><span class="pre">msg.reset</span></code>, частично заполненное сообщение удаляется и не отправляется. Это сбрасывает все счетчики частей.</p>
-<p><strong>агрегация последовательности</strong>
-При настройке на объединение в режиме сокращения выражение применяется к каждому сообщению в последовательности, а результат накапливается для создания одного сообщения.</p>
+<p><strong>агрегация последовательности</strong></p>
+<p>При настройке на объединение в режиме сокращения выражение применяется к каждому сообщению в последовательности, а результат накапливается для создания одного сообщения.</p>
 <ul class="simple">
 <li><p>Начальное значение: Начальное значение накопленной величины (<code class="docutils literal notranslate"><span class="pre">$A</span></code>).</p></li>
 <li><p>Агрегирующее выражение: Выражение JSONata, которое вызывается для каждого сообщения в последовательности. Результат передается следующему вызову выражения как накопленное значение. В выражении могут использоваться следующие специальные переменные:</p>
 <ul>
-<li><p>$A: накопленное значение</p></li>
-<li><p>$I: индекс сообщения в последовательности</p></li>
-<li><p>$N: количество сообщений в последовательности</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$A</span></code>: накопленное значение</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$I</span></code>: индекс сообщения в последовательности</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$N</span></code>: количество сообщений в последовательности</p></li>
 </ul>
 </li>
 <li><p>Исправляющее значение: Необязательное выражение JSONata, которое применяется после того, как «Агрегирующее выражение» было применено ко всем сообщениям в последовательности. В выражении могут использоваться следующие специальные переменные:</p>
 <ul>
-<li><p>$A: накопленное значение</p></li>
-<li><p>$N: количество сообщений в последовательности</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$A</span></code>: накопленное значение</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$N</span></code>: количество сообщений в последовательности</p></li>
 </ul>
 </li>
 </ul>
@@ -3486,6 +3506,193 @@
 </section>
 <section id="id278">
 <h3>анализатор<a class="headerlink" href="#id278" title="Ссылка на этот заголовок"></a></h3>
+<section id="csv">
+<h4>csv<a class="headerlink" href="#csv" title="Ссылка на этот заголовок"></a></h4>
+<section id="csv-u-logic">
+<h5>Для чего используется узел csv в U-Logic?<a class="headerlink" href="#csv-u-logic" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел csv в U-Logic используется для обработки данных, разделенных запятыми (CSV). Он позволяет либо преобразовать строку CSV в объект JavaScript, либо преобразовать объект в строку CSV. Эта возможность делает его чрезвычайно полезным для чтения и записи данных в табличном формате.</p>
+</section>
+<section id="id279">
+<h5>Пример использования<a class="headerlink" href="#id279" title="Ссылка на этот заголовок"></a></h5>
+<p>Предположим, у вас есть CSV-файл, в котором подробно описывается потребление энергии различными производственными станциями на заводе. Файл содержит название станции, месяц и общее потребление электроэнергии. Вы хотите добавить новый столбец, в котором отображается количество деталей, произведенных на станции, исходя из предположения, что каждая деталь потребляет определенное количество электроэнергии в дополнение к базовому потреблению электроэнергии станком.</p>
+<p>Содержание CSV:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Station</span><span class="p">,</span><span class="n">Month</span><span class="p">,</span><span class="n">Consumption</span>
+<span class="n">Rio</span><span class="p">,</span><span class="n">January</span><span class="p">,</span><span class="mi">4000</span>
+<span class="n">New</span> <span class="n">York</span><span class="p">,</span><span class="n">January</span><span class="p">,</span><span class="mi">1000</span>
+<span class="n">Tokio</span><span class="p">,</span><span class="n">January</span><span class="p">,</span><span class="mi">3000</span>
+</pre></div>
+</div>
+<p><img alt="Пример использования узла csv" src="../_images/csv_example.png" /></p>
+</section>
+<section id="id280">
+<h5>Документация по узлу<a class="headerlink" href="#id280" title="Ссылка на этот заголовок"></a></h5>
+<p>Выполняет преобразование между строкой в ​​формате CSV и ее представлением объекта JavaScript в любом направлении.</p>
+<section id="id281">
+<h6>Входные значения<a class="headerlink" href="#id281" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript, массив или строка CSV.</p></li>
+</ul>
+</section>
+<section id="id282">
+<h6>Выходные значения<a class="headerlink" href="#id282" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
+<ul>
+<li><p>Если входные данные являются строкой, он пытается проанализировать ее как CSV и создает объект JavaScript пар ключ/значение для каждой строки. Затем узел либо отправит сообщение для каждой строки, либо одно сообщение, содержащее массив объектов.</p></li>
+<li><p>Если входные данные представляют собой объект JavaScript, он пытается создать строку CSV.</p></li>
+<li><p>Если входные данные представляют собой массив простых значений, создается однострочная CSV-строка.</p></li>
+<li><p>Если входные данные представляют собой массив массивов или массив объектов, создается многострочная CSV-строка.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id283">
+<h6>Подробности<a class="headerlink" href="#id283" title="Ссылка на этот заголовок"></a></h6>
+<p>Шаблон столбца может содержать упорядоченный список имен столбцов. При конвертации CSV в объект имена столбцов будут использоваться как имена свойств. В качестве альтернативы имена столбцов могут быть взяты из первой строки CSV.</p>
+<p>Если отмечена опция «разбирать числовые значения», строковые числовые значения будут возвращены как числа, т. е. среднее значение «1,»1.5»,2».</p>
+<p>Если отмечен параметр «включать пустые строковые значения», в результате будут возвращены пустые строки, т. е. среднее значение „«1»,»»,3“.</p>
+<p>Если отмечена опция «Включить нулевые значения», в результате будут возвращены нулевые значения, т. е. среднее значение „«1»,»»,»3»“.</p>
+<p>Узел может принимать многокомпонентные входные данные, если partsсвойство задано правильно, например, из узла ввода файла или узла разделения.</p>
+<p>При выводе нескольких сообщений для них будут установлены свои свойства <code class="docutils literal notranslate"><span class="pre">parts</span></code>, и они сформируют полную последовательность сообщений.</p>
+<p>Если узел настроен на отправку заголовков столбцов только один раз, то установка любого значения <code class="docutils literal notranslate"><span class="pre">msg.reset</span></code> приведет к повторной отправке заголовков узлом.</p>
+</section>
+</section>
+</section>
+<section id="html">
+<h4>html<a class="headerlink" href="#html" title="Ссылка на этот заголовок"></a></h4>
+<section id="id284">
+<h5>Документация по узлу<a class="headerlink" href="#id284" title="Ссылка на этот заголовок"></a></h5>
+<p>Извлекает элементы из HTML-документа, хранящегося в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> с помощью селектора CSS.</p>
+<section id="id285">
+<h6>Входные значения<a class="headerlink" href="#id285" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: HTML-строка, из которой извлекаются элементы.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">select</span></code>: Если селектор не настроен на панели редактирования, его можно задать как свойство сообщения.</p></li>
+</ul>
+</section>
+<section id="id286">
+<h6>Выходные значения<a class="headerlink" href="#id286" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: результатом может быть либо одно сообщение с payload, содержащей массив совпавших элементов, либо несколько сообщений, каждое из которых содержит совпавший элемент. Если отправлено несколько сообщений, они также будут иметь набор <code class="docutils literal notranslate"><span class="pre">parts</span></code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id287">
+<h4>json<a class="headerlink" href="#id287" title="Ссылка на этот заголовок"></a></h4>
+<section id="json-u-logic">
+<h5>Для чего используется узел JSON в U-Logic?<a class="headerlink" href="#json-u-logic" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел JSON в U-Logic используется для обработки данных JavaScript Object Notation (JSON). Он позволяет выполнять преобразование между строкой в ​​формате JSON и объектом JavaScript, что делает его весьма универсальным для задач, связанных с манипуляцией JSON. Эта возможность преобразования оказывается существенной при работе с API, хранении данных или передаче данных между различными службами.</p>
+</section>
+<section id="id288">
+<h5>Пример использования<a class="headerlink" href="#id288" title="Ссылка на этот заголовок"></a></h5>
+<p>Предположим, у вас есть поток данных JSON, который поступает от различных датчиков, установленных на сборочной линии на производственном предприятии. Объекты JSON включают такие данные, как название оборудования, временная метка и процент эффективности. Вы хотели бы извлечь эту информацию и рассчитать среднюю ежедневную эффективность для каждого оборудования, чтобы помочь в предиктивном обслуживании и оптимизировать производственный процесс.</p>
+<p>Содержание JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;equipment&quot;</span><span class="p">:</span> <span class="s2">&quot;Drill Press&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-09-22T12:34:56Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;efficiency&quot;</span><span class="p">:</span> <span class="mf">89.5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><img alt="Пример использования узла html" src="../_images/html_example.png" /></p>
+</section>
+<section id="id289">
+<h5>Документация по узлу<a class="headerlink" href="#id289" title="Ссылка на этот заголовок"></a></h5>
+<p>Выполняет преобразование между строкой JSON и ее представлением объекта JavaScript в любом направлении.</p>
+<section id="id290">
+<h6>Входные значения<a class="headerlink" href="#id290" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка JSON.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schema</span></code>: Необязательный объект JSON Schema для проверки payload. Свойство будет удалено перед отправкой <code class="docutils literal notranslate"><span class="pre">msg</span></code> на следующий узел.</p></li>
+</ul>
+</section>
+<section id="id291">
+<h6>Выходные значения<a class="headerlink" href="#id291" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
+<ul>
+<li><p>Если входные данные представляют собой строку JSON, он пытается преобразовать ее в объект JavaScript.</p></li>
+<li><p>Если входные данные — объект JavaScript, создается строка JSON. Строка может быть, по желанию, хорошо отформатирована.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schemaError</span></code>: Если проверка схемы JSON не пройдена, узел catch будет иметь schemaErrorсвойство, содержащее массив ошибок.</p></li>
+</ul>
+</section>
+<section id="id292">
+<h6>Подробности<a class="headerlink" href="#id292" title="Ссылка на этот заголовок"></a></h6>
+<p>По умолчанию узел работает с <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, но его можно настроить для преобразования любого свойства сообщения.</p>
+<p>Узел также может быть настроен на обеспечение определенной кодировки вместо переключения между ними. Это может быть использовано, например, с узлом http in, чтобы гарантировать, что payload является проанализированным объектом.</p>
+<p>Если узел настроен на обеспечение кодирования свойства как строки и он получает строку, дальнейшие проверки свойства не будут выполняться. Он не будет проверять, является ли строка допустимым JSON, и не будет переформатировать ее, если выбрана опция форматирования.</p>
+</section>
+</section>
+</section>
+<section id="xml">
+<h4>xml<a class="headerlink" href="#xml" title="Ссылка на этот заголовок"></a></h4>
+<section id="id293">
+<h5>Документация по узлу<a class="headerlink" href="#id293" title="Ссылка на этот заголовок"></a></h5>
+<p>Выполняет преобразование между строкой XML и ее представлением объекта JavaScript в любом направлении.</p>
+<section id="id294">
+<h6>Входные значения<a class="headerlink" href="#id294" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка XML.</p></li>
+</ul>
+</section>
+<section id="id295">
+<h6>Выходные значения<a class="headerlink" href="#id295" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
+<ul>
+<li><p>Если входные данные представляют собой строку, он пытается проанализировать ее как XML и создает объект JavaScript.</p></li>
+<li><p>Если входные данные представляют собой объект JavaScript, он пытается построить XML-строку.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id296">
+<h6>Подробности<a class="headerlink" href="#id296" title="Ссылка на этот заголовок"></a></h6>
+<p>При конвертации между XML и объектом любые атрибуты XML добавляются как свойство с именем $по умолчанию. Любое текстовое содержимое добавляется как свойство с именем _. Эти имена свойств можно указать в конфигурации узла.</p>
+<p>Например, следующий XML будет преобразован, как показано:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;tag&quot;</span><span class="o">&gt;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;$&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;tag&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;_&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="yaml">
+<h4>yaml<a class="headerlink" href="#yaml" title="Ссылка на этот заголовок"></a></h4>
+<section id="id297">
+<h5>Документация по узлу<a class="headerlink" href="#id297" title="Ссылка на этот заголовок"></a></h5>
+<p>Выполняет преобразование между строкой в ​​формате YAML и ее представлением объекта JavaScript в любом направлении.</p>
+<section id="id298">
+<h6>Входные значения<a class="headerlink" href="#id298" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка YAML.</p></li>
+</ul>
+</section>
+<section id="id299">
+<h6>Выходные значения<a class="headerlink" href="#id299" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
+<ul>
+<li><p>Если входные данные представляют собой строку YAML, он пытается преобразовать ее в объект JavaScript.</p></li>
+<li><p>Если входные данные представляют собой объект JavaScript, создается строка YAML.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
 </section>
 </section>
 </section>
