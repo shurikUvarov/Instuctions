@@ -7,7 +7,7 @@
 :maxdepth: 3
 guide.md
 U-Logic/U-Logic.md
-UI-Designer.md
+UI-Designer/UI-Designer.md
 UI-Panel.md
 faq.md
 ```

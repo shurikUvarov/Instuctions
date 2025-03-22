@@ -161,6 +161,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#api-helper">api-helper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interlock">interlock</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ui-panel-in">UI - Panel in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ui-panel-out">UI - Panel out</a></li>
 </ul>
 </li>
 </ul>
@@ -4406,17 +4407,17 @@ Password: Пароль.
 <section id="id344">
 <h6>Формат выходящих сообщений<a class="headerlink" href="#id344" title="Ссылка на этот заголовок"></a></h6>
 <p>Сообщение, отправляемое узлом, будет в следующем формате:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Имя интерфейса&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;action_type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип действия (uiState или hidden)&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;Имя кнопки 1&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Имя интерфейса&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Тип действия (uiState или hidden)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Имя кнопки 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="s2">&quot;Имя кнопки 2&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
+<span class="w">        </span><span class="nt">&quot;Имя кнопки 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -4466,9 +4467,9 @@ Password: Пароль.
 <p>При каждом подключении или смене интерфейса приходит сообщение о выборе интерфейса.</p>
 <section id="id347">
 <h5>Пример:<a class="headerlink" href="#id347" title="Ссылка на этот заголовок"></a></h5>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;select UI&quot;</span><span class="o">:</span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.14&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;select UI&quot;</span><span class="p">:</span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.14&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -4494,78 +4495,457 @@ Password: Пароль.
 </section>
 <section id="id348">
 <h5>Пример для кнопки<a class="headerlink" href="#id348" title="Ссылка на этот заголовок"></a></h5>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;push&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;My Interface&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;push&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;release&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;My Interface&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;release&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;tap&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;My Interface&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;tap&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id349">
 <h5>Пример для слайдера<a class="headerlink" href="#id349" title="Ссылка на этот заголовок"></a></h5>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Slider&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;slide_begin&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.47</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;Test&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;Slider&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;slide_begin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Slider (2)&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;slide_end&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.47</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;Test&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;Slider (2)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;slide_end&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id350">
 <h5>Пример для списка<a class="headerlink" href="#id350" title="Ссылка на этот заголовок"></a></h5>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;List Box&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;item_selected&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;Test&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;List Box&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;item_selected&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="w">    </span><span class="nt">&quot;Client&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ui-panel-out">
+<h4>UI - Panel out<a class="headerlink" href="#ui-panel-out" title="Ссылка на этот заголовок"></a></h4>
+<p>формат сообщений для интерфейса - JSON. Сообщение должно находится в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code></p>
+<section id="id351">
+<h5>Пример<a class="headerlink" href="#id351" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Имя интерфейса&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;тип сообщения&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Имя объекта&quot;</span><span class="p">:</span><span class="w"> </span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;состояние объекта&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id352">
+<h5>Элементы сообщения<a class="headerlink" href="#id352" title="Ссылка на этот заголовок"></a></h5>
+<p><strong>«UI»</strong>
+Для объекта «UI» значением является имя интерфейса, которое было указано в редакторе интерфейса при создании интерфейса. Объект «UI» определяет какому интерфейсу предназначено сообщение</p>
+<p><strong>«action_type»</strong>
+Для объекта «action_type» есть значение «navigation» и «uiState». Значение «navigation» является переключателем страницы. Т.е. для переключения страницы на интерфейсе необходимо использовать конструкцию в виде «action_type»:»navigation». Значение «uiState» указывается при взаимодействии с элементами интерфейса, кнопки, слайдеры и т.д.</p>
+<p><strong>«object»</strong>
+Значением объекта «object» является JSON. Так как внутри object находятся JSON, это позволяет одним сообщением изменить состояния нескольких объектов одного интерфейса(кнопок, слайдеров, текста и т.д.)</p>
+<p><strong>«action_type»:»uiState»</strong>
+«Имя объекта» - имя объекта (кнопки, слайдера, лейбла, списка, оверлея) задается в редакторе интерфейса. Так как взаимодействие происходит с помощью имени объекта, имена для каждого объекта должны быть уникальными. Имя объекта это уникальный индетификатор, который не должен повторяется внутри одного интрефейса.</p>
+<p><strong>«event»</strong> - Тип события, для объекта:</p>
+<ul class="simple">
+<li><p>«event»:»uiState» - указатель на событие «состояние». Применим только к кнопкам</p></li>
+<li><p>«event»:»value» - Указатель на событие «изменить значение слайдера. Применим только к слайдеру»</p></li>
+<li><p>«event»:»list» - Указатель на событие «изменить список». Примени только к спискам</p></li>
+<li><p>«event»:»text» - указатель на событие «изменить текст»</p></li>
+<li><p>«event»:»fontColor» - Указатель на событие «Изменить цвет текста»</p></li>
+<li><p>«event»:»url» - указатель на событие «изменить URL». Применим только к Web URL</p></li>
+<li><p>«event»:»overlay» - Указатель на событие «переключить (отобразить оверлей)»</p></li>
+<li><p>«event»:»hidden» - указатель на событие «скрыть/показать объект».</p></li>
+<li><p>«event»:»x» - Указатель на событие «переместить объект по оси X»</p></li>
+<li><p>«event»:»y» - Указатель на событие «переместить объект по оси Y»</p></li>
+<li><p>«event»:»list» - Указатель на событие «список»</p></li>
+</ul>
+<p><strong>«value»</strong> - Значение/состояние объекта</p>
+<p>Значение для объектов Button - «event»:»uiState»</p>
+<ul class="simple">
+<li><p>«value»:»deаfault» - переключить объект в состояние default</p></li>
+<li><p>«value»:»selected» - переключить объект в состояние selected</p></li>
+<li><p>«value»:»pressed» - переключить объект в состояние pressed</p></li>
+<li><p>«value»:»disabled» - переключить объект в состояние disabled</p></li>
+</ul>
+<p><strong>Пример изменения состояния одновременно двух кнопок</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="value">
+<h5>value<a class="headerlink" href="#value" title="Ссылка на этот заголовок"></a></h5>
+<p><strong>Slider</strong> - «event»:»value»
+«event»:»value» служит для изменеия значения слайдера. Slider принимает значения от 0 до 1. Значения в формате float «value»:0.2 - изменит значение объекта Slider.</p>
+<p><strong>Пример</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Slider Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.33</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="list-items">
+<h5>list_items<a class="headerlink" href="#list-items" title="Ссылка на этот заголовок"></a></h5>
+<p><strong>list</strong> - «event»:»list_items»
+«event»:»list_items» служит для добавления или обновления ключа в списке. Обратите внимание «event»:»list_items», имеет объект key и объект value. key - ключ, отображается в левой части списка, он же будет возврщаться при нажатии на этот элемент списка. value - отображается в правой части списка. Этот мотод не позволяет одновременно изменять или добавлять несколько элементов списка.</p>
+<section id="id353">
+<h6>Пример сообщения для списка<a class="headerlink" href="#id353" title="Ссылка на этот заголовок"></a></h6>
+<p><strong>Пример 1</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list_items&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;890900000&quot;</span>
+<span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 2</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list_items&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;Hallo&quot;</span>
+<span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 3</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list_items&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;12345678&quot;</span>
+<span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="list">
+<h5>list<a class="headerlink" href="#list" title="Ссылка на этот заголовок"></a></h5>
+<p>list - «event»:»list»
+Это событие используется для формирования нового списка или очистки уже существующего. При каждом новом вызове события «event»:»list» предыдущий список перезаписывается новым значением. Значение поля «value» должно быть массивом, в котором каждый элемент представляет собой отдельный JSON-объект (словарь). Если в качестве значения «value» указан пустой массив ([]), то это приводит к очистке списка.</p>
+<p><strong>Пример 1: Формирование списка</strong>
+Здесь формируется новый список, состоящий из двух элементов. Каждый элемент — отдельный JSON-объект с ключами и значениями</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;key 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value 2&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;key 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value 2&quot;</span><span class="p">}]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 2: Очистка списка</strong></p>
+<p>В этом примере значение поля «value» — пустой массив, что приводит к очистке списка.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-list-items">
+<h5>remove_list_items<a class="headerlink" href="#remove-list-items" title="Ссылка на этот заголовок"></a></h5>
+<p>list - «event»:»remove_list_items»
+Это событие используется для удаления элемента списка по ключу. Поле «key» задает ключ удаляемого элемента. При обработке события система ищет элемент с указанным ключом в списке и удаляет его, если он существует</p>
+<p><strong>Пример</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;List Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;key 1&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="text">
+<h5>text<a class="headerlink" href="#text" title="Ссылка на этот заголовок"></a></h5>
+<p><strong>text</strong> - <code class="docutils literal notranslate"><span class="pre">&quot;event&quot;:&quot;text&quot;</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;event&quot;:&quot;text&quot;</span></code> служит для передачи текста в текстовое поле объекта.</p></li>
+</ul>
+<p><strong>Пример 1</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hallo World&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 2</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span>
+<span class="w">        </span><span class="p">}</span><span class="w">   </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="fontcolor">
+<h5>fontColor<a class="headerlink" href="#fontcolor" title="Ссылка на этот заголовок"></a></h5>
+<p>fontColor - «event»:»fontColor»</p>
+<ul class="simple">
+<li><p>«event»:»fontColor» служит для изменения цвета текста RGB.</p></li>
+</ul>
+<p><strong>Пример 1</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fontColor&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rgb(255,0,0)&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 2</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Button Name 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span>
+<span class="w">        </span><span class="p">}</span><span class="w">   </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id354">
+<h5>url<a class="headerlink" href="#id354" title="Ссылка на этот заголовок"></a></h5>
+<p>url - «event»:»url»
+«event»:»url»служит для передачи url адреса объекту WEB URL.</p>
+<p><strong>Пример</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;URL 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;url&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.example.com&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="overlay">
+<h5>overlay<a class="headerlink" href="#overlay" title="Ссылка на этот заголовок"></a></h5>
+<p>overlay - «event»:»overlay»
+«event»:»overlay»служит для переключения overlay внутри определенного frame. Взаимодействие с Frame и Overlay осуществляется так же по имени которые указанно в графическом конфигураторе. Имя Frame указывается в ключе «frame»</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;My Overlay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;overlay&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;frame&quot;</span><span class="p">:</span><span class="s2">&quot;My Frame&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="hidden">
+<h5>hidden<a class="headerlink" href="#hidden" title="Ссылка на этот заголовок"></a></h5>
+<p>hidden - «event»:»hidden»
+«event»:»hidden» служит для скрытия или отображения скрытых объектов.</p>
+<p><strong>Пример 1</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hidden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Frame 2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hidden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;false&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример 2</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hidden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;false&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="x">
+<h5>x<a class="headerlink" href="#x" title="Ссылка на этот заголовок"></a></h5>
+<p>x - «event»:»x»
+«event»:»x» служит для перемещения объекта по оси X. Ось x считается от левого края экрана до левого края объекта. Значения принимются в формате float от 0 и до разрешения экрана в проекте. Если разрешение экрана в проекте 1920x1080, Начало оси x = 0, конец = 1.92. Не перемещайте объект за границы разрешения проекта.</p>
+<p><strong>Пример</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.921&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="y">
+<h5>y<a class="headerlink" href="#y" title="Ссылка на этот заголовок"></a></h5>
+<p>y - «event»:»y»
+«event»:»y» служит для перемещения объекта по оси Y. Ось y считается от верзнего края экрана до верхнего края объекта. Значения принимются в формате float от 0 и до разрешения экрана в проекте. Если разрешение экрана в проекте 1920x1080, Начало оси y = 0, конец = 1.08. Не перемещайте объект за границы разрешения проекта.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.211&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Пример</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Interface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;navigation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Page 1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
