@@ -122,33 +122,45 @@
 <li class="toctree-l4"><a class="reference internal" href="#template">template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#delay">delay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trigger">trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculator">calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string">string</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id224">сеть</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id229">сеть</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#http-request">http request</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#websocket">websocket</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tcp">tcp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#udp">udp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssh-v3">ssh-v3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ping">ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#snmp">snmp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wake-on-lan">wake on lan</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id249">последоват-ть</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id272">последоват-ть</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#split">split</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sort">sort</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#batch">batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#join">join</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id278">анализатор</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id301">анализатор</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#csv">csv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#html">html</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id287">json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id310">json</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xml">xml</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#yaml">yaml</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id300">хранилище</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id323">хранилище</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#write-file">write file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#read-file">read file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ui">UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api-helper">api-helper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interlock">interlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ui-panel-in">UI - Panel in</a></li>
 </ul>
 </li>
 </ul>
@@ -2752,9 +2764,175 @@
 </section>
 </section>
 </section>
-</section>
+<section id="calculator">
+<h4>calculator<a class="headerlink" href="#calculator" title="Ссылка на этот заголовок"></a></h4>
+<p>Узел U-Logic для выполнения базовых математических операций.</p>
 <section id="id224">
-<h3>сеть<a class="headerlink" href="#id224" title="Ссылка на этот заголовок"></a></h3>
+<h5>Входные параметры<a class="headerlink" href="#id224" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><strong>Input field</strong>: Имя поля во входном сообщении, содержащее число или массив чисел.</p></li>
+<li><p><strong>Output field</strong>: Имя поля в выходном сообщении, в котором будет сохранён результат (как число или массив чисел).</p></li>
+<li><p><strong>Operation</strong>: Доступны различные математические операции, которые могут быть выполнены над входными данными.</p></li>
+</ul>
+</section>
+<section id="id225">
+<h5>Доступные операции<a class="headerlink" href="#id225" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><strong>Average (avg)</strong> – среднее значение всех чисел в массиве.</p></li>
+<li><p><strong>Maximum (max)</strong> – получение числа с наибольшим значением из массива.</p></li>
+<li><p><strong>Minimum (min)</strong> – получение числа с наименьшим значением из массива.</p></li>
+<li><p><strong>Increment (inc)</strong> – увеличение числа на 1.</p></li>
+<li><p><strong>Decrement (dec)</strong> – уменьшение числа на 1.</p></li>
+<li><p><strong>Integer part (trunc)</strong> – усечение числа до целой части.</p></li>
+<li><p><strong>Round upwards (ceil)</strong> – округление числа вверх до ближайшего целого.</p></li>
+<li><p><strong>Round downwards (floor)</strong> – округление числа вниз до ближайшего целого.</p></li>
+<li><p><strong>Nearest integer (round)</strong> – округление числа до ближайшего целого.</p></li>
+<li><p><strong>Round decimal places (rdec)</strong> – округление числа до указанного количества десятичных знаков.</p></li>
+<li><p><strong>Truncate decimal places (tdec)</strong> – усечение числа до указанного количества десятичных знаков.</p></li>
+<li><p><strong>Sum (sum)</strong> – сумма всех чисел в массиве.</p></li>
+<li><p><strong>Subtract (sub)</strong> – вычитание всех чисел в массиве.</p></li>
+<li><p><strong>Multiply (mult)</strong> – умножение всех чисел в массиве.</p></li>
+<li><p><strong>Divide (div)</strong> – деление всех чисел в массиве.</p></li>
+<li><p><strong>Modulus (mod)</strong> – получение остатка от деления двух чисел в массиве.</p></li>
+<li><p><strong>Absolute value (abs)</strong> – абсолютное значение числа.</p></li>
+<li><p><strong>Random (rand)</strong> – случайное число между 0 и 1.</p></li>
+<li><p><strong>Random between min and max (randb)</strong> – случайное число между двумя числами в массиве.</p></li>
+<li><p><strong>Random from array (randa)</strong> – случайное число из массива возможных чисел.</p></li>
+<li><p><strong>Length of array (len)</strong> – длина массива.</p></li>
+<li><p><strong>Sort ascending (sorta)</strong> – сортировка массива по возрастанию.</p></li>
+<li><p><strong>Sort descending (sortd)</strong> – сортировка массива по убыванию.</p></li>
+<li><p><strong>Create range (range)</strong> – создание массива целых чисел между двумя числами в массиве.</p></li>
+<li><p><strong>Get distance (dist)</strong> – получение расстояния (диапазона) между числами в массиве.</p></li>
+<li><p><strong>X to the power of y (pow)</strong> – возведение x в степень y (из массива двух чисел [x, y]).</p></li>
+<li><p><strong>E to the power of x (exp)</strong> – значение E^x, где E — число Эйлера (примерно 2.7183).</p></li>
+<li><p><strong>Cubic root (cbrt)</strong> – кубический корень числа.</p></li>
+<li><p><strong>Natural logarithm (log)</strong> – натуральный логарифм числа по основанию E.</p></li>
+<li><p><strong>Logarithm (log10)</strong> – логарифм числа по основанию 10.</p></li>
+<li><p><strong>Arccosine (acos)</strong> – арккосинус числа.</p></li>
+<li><p><strong>Hyperbolic arccosine (acosh)</strong> – гиперболический арккосинус числа.</p></li>
+<li><p><strong>Arcsine (asin)</strong> – арксинус числа в радианах.</p></li>
+<li><p><strong>Hyperbolic arcsine (asinh)</strong> – гиперболический арксинус числа.</p></li>
+<li><p><strong>Arctangent (atan)</strong> – арктангенс числа в радианах.</p></li>
+<li><p><strong>Hyperbolic arctangent (atanh)</strong> – гиперболический арктангенс числа.</p></li>
+<li><p><strong>Cosine (cos)</strong> – косинус числа в радианах.</p></li>
+<li><p><strong>Hyperbolic cosine (cosh)</strong> – гиперболический косинус числа.</p></li>
+<li><p><strong>Sine (sin)</strong> – синус числа в радианах.</p></li>
+<li><p><strong>Hyperbolic sine (sinh)</strong> – гиперболический синус числа.</p></li>
+<li><p><strong>Square root (sqrt)</strong> – квадратный корень числа.</p></li>
+<li><p><strong>Tangent (tan)</strong> – тангенс угла.</p></li>
+<li><p><strong>Hyperbolic tangent (tanh)</strong> – гиперболический тангенс числа.</p></li>
+</ul>
+</section>
+<section id="id226">
+<h5>Дополнительные параметры<a class="headerlink" href="#id226" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p>Если операция не выбрана в конфигурации, её необходимо указать в поле <code class="docutils literal notranslate"><span class="pre">msg.operation</span></code>.</p></li>
+<li><p>Если операция требует одно число, его можно передать в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>. Если передан массив, операция выполнится для всех элементов массива, а результат будет также массивом.</p></li>
+</ul>
+</section>
+<section id="constant">
+<h5>Constant<a class="headerlink" href="#constant" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p>В данном поле можно задать дополнительное число, которое будет автоматически добавлено в конец массива входных данных.</p></li>
+</ul>
+</section>
+<section id="round-result-to-decimals">
+<h5>Round result to … decimals<a class="headerlink" href="#round-result-to-decimals" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p>Можно выбрать количество знаков после запятой для округления результата.</p></li>
+</ul>
+</section>
+<section id="truncate-result-to-decimals">
+<h5>Truncate result to … decimals<a class="headerlink" href="#truncate-result-to-decimals" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p>Можно выбрать количество знаков после запятой для усечения результата.</p></li>
+</ul>
+</section>
+</section>
+<section id="string">
+<h4>string<a class="headerlink" href="#string" title="Ссылка на этот заголовок"></a></h4>
+<p>Применяет методы строк к заданному свойству контекста и присваивает результаты, по желанию, тому же или другому свойству контекста. Методы могут быть объединены путем добавления нескольких методов последовательно с параметрами, которые могут быть литералами или значениями из других свойств контекста. Объект строки всегда передает объект <code class="docutils literal notranslate"><span class="pre">msg</span></code> с примененными изменениями (если таковые имеются).</p>
+<p>По умолчанию методы <code class="docutils literal notranslate"><span class="pre">from</span></code> и <code class="docutils literal notranslate"><span class="pre">to</span></code> применяются к свойству <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, но могут быть установлены для любого свойства глобального, потокового или контекста сообщения.</p>
+<section id="id227">
+<h5>Подробности<a class="headerlink" href="#id227" title="Ссылка на этот заголовок"></a></h5>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Этот узел ожидает, что заданное свойство контекста содержит строковые данные. Результат может содержать или не содержать строковые данные.</p>
+</div>
+</section>
+<section id="id228">
+<h5>Методы, которые можно применить через интерфейс редактора узлов, и их поведение:<a class="headerlink" href="#id228" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><strong>append(chars)</strong> – добавляет указанную строку <code class="docutils literal notranslate"><span class="pre">chars</span></code> к строке. Например, <code class="docutils literal notranslate"><span class="pre">'Hello'</span> <span class="pre">append</span> <span class="pre">'World'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'HelloWorld'</span></code>.</p></li>
+<li><p><strong>between(left, right)</strong> – извлекает строку между строками <code class="docutils literal notranslate"><span class="pre">left</span></code> и <code class="docutils literal notranslate"><span class="pre">right</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">quick</span> <span class="pre">brown</span> <span class="pre">fox.'</span> <span class="pre">between</span> <span class="pre">'quick'</span> <span class="pre">and</span> <span class="pre">'fox'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">brown</span> <span class="pre">'</span></code>.</p></li>
+<li><p><strong>camelize()</strong> – удаляет любые подчеркивания или тире и преобразует строку в camelCase. Например, <code class="docutils literal notranslate"><span class="pre">'data_rate'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'dataRate'</span></code>.</p></li>
+<li><p><strong>capitalize()</strong> – делает первую букву строки заглавной. Например, <code class="docutils literal notranslate"><span class="pre">'jon'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'Jon'</span></code>.</p></li>
+<li><p><strong>chompLeft(prefix)</strong> – удаляет префикс из начала строки. Например, <code class="docutils literal notranslate"><span class="pre">'foobar'</span> <span class="pre">chompLeft</span> <span class="pre">'foo'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'bar'</span></code>.</p></li>
+<li><p><strong>chompRight(suffix)</strong> – удаляет суффикс из конца строки. Например, <code class="docutils literal notranslate"><span class="pre">'foobar'</span> <span class="pre">chompRight</span> <span class="pre">'bar'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'foo'</span></code>.</p></li>
+<li><p><strong>collapseWhitespace()</strong> – преобразует все смежные пробельные символы в один пробел.</p></li>
+<li><p><strong>contains(find)</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка содержит <code class="docutils literal notranslate"><span class="pre">find</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'JavaScript</span> <span class="pre">is</span> <span class="pre">one</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">best</span> <span class="pre">languages.'</span> <span class="pre">contains</span> <span class="pre">'one'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><strong>count(find)</strong> – возвращает количество вхождений <code class="docutils literal notranslate"><span class="pre">find</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'JP</span> <span class="pre">likes</span> <span class="pre">to</span> <span class="pre">program.</span> <span class="pre">JP</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">play</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">NBA.'</span> <span class="pre">count</span> <span class="pre">'JP'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p><strong>dasherize()</strong> – преобразует строку в camelCase в строку, разделенную тире. Например, <code class="docutils literal notranslate"><span class="pre">'dataRate'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'data-rate'</span></code>.</p></li>
+<li><p><strong>decodeHTMLEntities()</strong> – декодирует HTML-сущности в их строковое представление. Например, <code class="docutils literal notranslate"><span class="pre">'Ken</span> <span class="pre">Thompson</span> <span class="pre">&amp;amp;</span> <span class="pre">Dennis</span> <span class="pre">Ritchie'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'Ken</span> <span class="pre">Thompson</span> <span class="pre">&amp;</span> <span class="pre">Dennis</span> <span class="pre">Ritchie'</span></code>.</p></li>
+<li><p><strong>decodeURIComponent()</strong> – декодирует компонент URI. Например, <code class="docutils literal notranslate"><span class="pre">'http%3A%2F'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'http://'</span></code>.</p></li>
+<li><p><strong>delLeftMost(find)</strong> – возвращает оставшуюся строку после удаления первого вхождения <code class="docutils literal notranslate"><span class="pre">find</span></code> и всего, что находится слева от него. Например, <code class="docutils literal notranslate"><span class="pre">'\Parent\child\folders'</span> <span class="pre">delLeftMost</span> <span class="pre">'\child'</span></code> оставляет <code class="docutils literal notranslate"><span class="pre">'\folders'</span></code>.</p></li>
+<li><p><strong>delRightMost(find)</strong> – возвращает оставшуюся строку после удаления первого вхождения <code class="docutils literal notranslate"><span class="pre">find</span></code> и всего, что находится справа от него. Например, <code class="docutils literal notranslate"><span class="pre">'\Parent\child\folders'</span> <span class="pre">delRightMost</span> <span class="pre">'\child'</span></code> оставляет <code class="docutils literal notranslate"><span class="pre">'\Parent'</span></code>.</p></li>
+<li><p><strong>encodeURIComponent()</strong> – кодирует компонент URI. Например, <code class="docutils literal notranslate"><span class="pre">'http://'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'http%3A%2F'</span></code>.</p></li>
+<li><p><strong>endsWith(chars)</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка заканчивается на <code class="docutils literal notranslate"><span class="pre">chars</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">jon'</span> <span class="pre">endsWith</span> <span class="pre">'jon'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><strong>escapeHTML()</strong> – экранирует HTML. Например, <code class="docutils literal notranslate"><span class="pre">'&lt;div&gt;hi&lt;/div&gt;'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'&amp;lt;div&amp;gt;hi&amp;lt;/div&amp;gt;'</span></code>.</p></li>
+<li><p><strong>ensureLeft(prefix)</strong> – гарантирует, что строка начинается с <code class="docutils literal notranslate"><span class="pre">prefix</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'subdir'</span> <span class="pre">ensureLeft</span> <span class="pre">'/'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'/subdir'</span></code>.</p></li>
+<li><p><strong>ensureRight(suffix)</strong> – гарантирует, что строка заканчивается на <code class="docutils literal notranslate"><span class="pre">suffix</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'dir'</span> <span class="pre">ensureRight</span> <span class="pre">'/'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'dir/'</span></code>.</p></li>
+<li><p><strong>getRightMost(find)</strong> – находит первое вхождение <code class="docutils literal notranslate"><span class="pre">find</span></code> и возвращает все, что находится справа от него (не включая <code class="docutils literal notranslate"><span class="pre">find</span></code>). Например, <code class="docutils literal notranslate"><span class="pre">'\Parent\child\folders'</span> <span class="pre">getRightMost</span> <span class="pre">'\child'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">'\folders'</span></code>.</p></li>
+<li><p><strong>getLeftMost(find)</strong> – находит первое вхождение <code class="docutils literal notranslate"><span class="pre">find</span></code> и возвращает все, что находится слева от него (не включая <code class="docutils literal notranslate"><span class="pre">find</span></code>). Например, <code class="docutils literal notranslate"><span class="pre">'\Parent\child\folders'</span> <span class="pre">getLeftMost</span> <span class="pre">'\child'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">'\Parent'</span></code>.</p></li>
+<li><p><strong>humanize()</strong> – преобразует ввод в удобочитаемую форму. Например, <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">capitalize</span> <span class="pre">dash-CamelCase_underscore</span> <span class="pre">trim</span> <span class="pre">'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'Capitalize</span> <span class="pre">dash</span> <span class="pre">camel</span> <span class="pre">case</span> <span class="pre">underscore</span> <span class="pre">trim'</span></code>.</p></li>
+<li><p><strong>isAlpha()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка содержит только буквы.</p></li>
+<li><p><strong>isAlphaNumeric()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка содержит только буквы и цифры.</p></li>
+<li><p><strong>isEmpty()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка состоит только из пробелов или является <code class="docutils literal notranslate"><span class="pre">null/undefined</span></code>.</p></li>
+<li><p><strong>isLower()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если символ или строка в нижнем регистре.</p></li>
+<li><p><strong>isNumeric()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка содержит только цифры.</p></li>
+<li><p><strong>isUpper()</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если символ или строка в верхнем регистре.</p></li>
+<li><p><strong>latinise()</strong> – удаляет акценты с латинских символов. Например, <code class="docutils literal notranslate"><span class="pre">'crème</span> <span class="pre">brûlée'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'creme</span> <span class="pre">brulee'</span></code>.</p></li>
+<li><p><strong>left(n)</strong> – возвращает подстроку, состоящую из <code class="docutils literal notranslate"><span class="pre">n</span></code> левых символов. Например, <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">JP'</span> <span class="pre">left</span> <span class="pre">2</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">'My'</span></code>.</p></li>
+<li><p><strong>length()</strong> – возвращает длину строки. Например, длина <code class="docutils literal notranslate"><span class="pre">'hi'</span></code> равна <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p><strong>lines()</strong> – возвращает массив строк. Поддерживает совместимость с различными платформами.</p></li>
+<li><p><strong>pad(length, char)</strong> – дополняет строку до указанной длины символом <code class="docutils literal notranslate"><span class="pre">char</span></code> по центру. Например, <code class="docutils literal notranslate"><span class="pre">'hello'</span> <span class="pre">pad</span> <span class="pre">'.'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'...hello..'</span></code>.</p></li>
+<li><p><strong>padLeft(length, char)</strong> – дополняет строку слева. Например, <code class="docutils literal notranslate"><span class="pre">'hello'</span> <span class="pre">padLeft</span> <span class="pre">'.'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'.....hello'</span></code>.</p></li>
+<li><p><strong>padRight(length, char)</strong> – дополняет строку справа. Например, <code class="docutils literal notranslate"><span class="pre">'hello'</span> <span class="pre">padRight</span> <span class="pre">'.'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'hello.....'</span></code>.</p></li>
+<li><p><strong>parseCSV()</strong> – разбирает строку CSV в массив. Например, <code class="docutils literal notranslate"><span class="pre">&quot;'a','b','c'&quot;</span> <span class="pre">becomes</span> <span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code>.</p></li>
+<li><p><strong>repeat(n)</strong> – повторяет строку <code class="docutils literal notranslate"><span class="pre">n</span></code> раз. Например, <code class="docutils literal notranslate"><span class="pre">'*'</span> <span class="pre">repeat</span> <span class="pre">5</span></code> становится <code class="docutils literal notranslate"><span class="pre">'*****'</span></code>.</p></li>
+<li><p><strong>replaceAll(search, replace)</strong> – заменяет все вхождения <code class="docutils literal notranslate"><span class="pre">search</span></code> на <code class="docutils literal notranslate"><span class="pre">replace</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">does</span> <span class="pre">IT</span> <span class="pre">work?</span> <span class="pre">'</span> <span class="pre">replaceAll</span> <span class="pre">'</span> <span class="pre">',</span> <span class="pre">'_'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'_does_IT_work?_'</span></code>.</p></li>
+<li><p><strong>right(n)</strong> – возвращает подстроку, состоящую из <code class="docutils literal notranslate"><span class="pre">n</span></code> правых символов. Например, <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">JP'</span> <span class="pre">right</span> <span class="pre">2</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">'JP'</span></code>.</p></li>
+<li><p><strong>setValue(chars)</strong> – устанавливает содержимое в <code class="docutils literal notranslate"><span class="pre">chars</span></code>.</p></li>
+<li><p><strong>slugify()</strong> – преобразует текст в допустимый URL-slug. Удаляет акценты с латинских символов. Например, <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">Quick</span> <span class="pre">Brown</span> <span class="pre">Fox'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'the-quick-brown-fox'</span></code>.</p></li>
+<li><p><strong>split(separator, limit)</strong> – разбивает строку на массив подстрок, используя <code class="docutils literal notranslate"><span class="pre">separator</span></code>. Можно указать лимит количества разбиений. Например, <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">planet</span> <span class="pre">earth'</span> <span class="pre">split</span> <span class="pre">'</span> <span class="pre">'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">['Hello',</span> <span class="pre">'planet',</span> <span class="pre">'earth']</span></code>.</p></li>
+<li><p><strong>splitLeft(separator, maxSplit, limit)</strong> – разбивает строку слева направо, выполняя не более <code class="docutils literal notranslate"><span class="pre">maxSplit</span></code> разбиений и ограничивая результат <code class="docutils literal notranslate"><span class="pre">limit</span></code> элементами. Например, <code class="docutils literal notranslate"><span class="pre">'We</span> <span class="pre">built</span> <span class="pre">this</span> <span class="pre">city'</span> <span class="pre">splitLeft</span> <span class="pre">'</span> <span class="pre">'</span> <span class="pre">and</span> <span class="pre">1</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">['We',</span> <span class="pre">'built</span> <span class="pre">this</span> <span class="pre">city']</span></code>.</p></li>
+<li><p><strong>splitRight(separator, maxSplit, limit)</strong> – разбивает строку справа налево, выполняя не более <code class="docutils literal notranslate"><span class="pre">maxSplit</span></code> разбиений и ограничивая результат <code class="docutils literal notranslate"><span class="pre">limit</span></code> элементами. Например, <code class="docutils literal notranslate"><span class="pre">'We</span> <span class="pre">built</span> <span class="pre">this</span> <span class="pre">city'</span> <span class="pre">splitLeft</span> <span class="pre">'</span> <span class="pre">'</span> <span class="pre">and</span> <span class="pre">1</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">['We</span> <span class="pre">built</span> <span class="pre">this',</span> <span class="pre">'city']</span></code>.</p></li>
+<li><p><strong>startsWith(prefix)</strong> – возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>, если строка начинается с <code class="docutils literal notranslate"><span class="pre">prefix</span></code>. Например, <code class="docutils literal notranslate"><span class="pre">'Steve</span> <span class="pre">was</span> <span class="pre">here'</span> <span class="pre">startsWith</span> <span class="pre">'Steve'</span></code> возвращает <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><strong>strip(chars)</strong> – удаляет символы <code class="docutils literal notranslate"><span class="pre">chars</span></code> из строки. Например, <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">Hello</span> <span class="pre">World</span> <span class="pre">'</span> <span class="pre">strip</span> <span class="pre">'</span> <span class="pre">'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'HelloWorld'</span></code>.</p></li>
+<li><p><strong>stripPunctuation()</strong> – удаляет все знаки препинания. Например, <code class="docutils literal notranslate"><span class="pre">'My,</span> <span class="pre">st[ring]</span> <span class="pre">*full*</span> <span class="pre">of</span> <span class="pre">%punctuation)'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">string</span> <span class="pre">full</span> <span class="pre">of</span> <span class="pre">punctuation'</span></code>.</p></li>
+<li><p><strong>stripTags(tag)</strong> – удаляет все HTML-теги с указанным тегом или все теги, если тег не указан. Например, <code class="docutils literal notranslate"><span class="pre">'&lt;p&gt;just</span> <span class="pre">&lt;b&gt;some&lt;/b&gt;</span> <span class="pre">text&lt;/p&gt;'</span> <span class="pre">stripTags</span></code> становится <code class="docutils literal notranslate"><span class="pre">'just</span> <span class="pre">some</span> <span class="pre">text'</span></code>.</p></li>
+<li><p><strong>template(values, open, close)</strong> – интерполирует значения в строку. По умолчанию используются <code class="docutils literal notranslate"><span class="pre">{{</span></code> и <code class="docutils literal notranslate"><span class="pre">}}</span></code> для Mustache-совместимых шаблонов, но их можно изменить. Например, <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">{{planet}}!!!'</span> <span class="pre">template</span> <span class="pre">{&quot;planet&quot;:&quot;Earth&quot;}</span></code> становится <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">Earth!!!'</span></code>.</p></li>
+<li><p><strong>titleCase()</strong> – изменяет строку так, чтобы первая буква каждого слова была заглавной. Например, <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">world'</span> <span class="pre">titleCase</span></code> становится <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code>.</p></li>
+<li><p><strong>toBoolean()</strong> – преобразует строку в логическое значение. Строки, содержащие <code class="docutils literal notranslate"><span class="pre">'true'</span></code>, <code class="docutils literal notranslate"><span class="pre">'on'</span></code>, <code class="docutils literal notranslate"><span class="pre">'yes'</span></code> или <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, становятся <code class="docutils literal notranslate"><span class="pre">true</span></code>, иначе <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p><strong>toCSV(JSON)</strong> – преобразует массив или объект в строку CSV.</p></li>
+<li><p><strong>toFloat(precision)</strong> – разбирает строку и возвращает число с плавающей точкой с указанной точностью. Например, <code class="docutils literal notranslate"><span class="pre">'3.45522'</span> <span class="pre">toFloat</span> <span class="pre">2</span></code> становится <code class="docutils literal notranslate"><span class="pre">3.45</span></code>.</p></li>
+<li><p><strong>toInteger()</strong> – разбирает строку и возвращает целое число. Например, <code class="docutils literal notranslate"><span class="pre">'5.3'</span> <span class="pre">toInteger</span></code> становится <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
+<li><p><strong>toLowerCase()</strong> – преобразует строку в нижний регистр. Например, <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">world'</span> <span class="pre">toLowerCase</span></code> становится <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">world'</span></code>.</p></li>
+<li><p><strong>toString()</strong> – преобразует текущее значение в строку. Например, <code class="docutils literal notranslate"><span class="pre">123</span> <span class="pre">toString</span></code> становится <code class="docutils literal notranslate"><span class="pre">'123'</span></code>.</p></li>
+<li><p><strong>toUpperCase()</strong> – преобразует строку в верхний регистр. Например, <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">world'</span> <span class="pre">toUpperCase</span></code> становится <code class="docutils literal notranslate"><span class="pre">'HELLO</span> <span class="pre">WORLD'</span></code>.</p></li>
+<li><p><strong>trim()</strong> – удаляет пробелы в начале и конце строки. Например, <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">hello</span> <span class="pre">'</span> <span class="pre">trim</span></code> становится <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p></li>
+<li><p><strong>trimLeft()</strong> – удаляет пробелы в начале строки. Например, <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">hello</span> <span class="pre">there.'</span> <span class="pre">trimLeft</span></code> становится <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">there.'</span></code>.</p></li>
+<li><p><strong>trimRight()</strong> – удаляет пробелы в конце строки. Например, <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">there</span> <span class="pre">'</span> <span class="pre">trimRight</span></code> становится <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">there'</span></code>.</p></li>
+<li><p><strong>truncate(length, chars)</strong> – усекает строку, учитывая размещение слов и количество символов. Например, <code class="docutils literal notranslate"><span class="pre">'this</span> <span class="pre">is</span> <span class="pre">some</span> <span class="pre">long</span> <span class="pre">text'</span> <span class="pre">truncate</span> <span class="pre">14</span> <span class="pre">and</span> <span class="pre">'</span> <span class="pre">read</span> <span class="pre">more'</span></code> становится <code class="docutils literal notranslate"><span class="pre">'this</span> <span class="pre">is</span> <span class="pre">some</span> <span class="pre">read</span> <span class="pre">more'</span></code>.</p></li>
+<li><p><strong>underscore()</strong> – преобразует строку в camelCase в строку, разделенную подчеркиваниями. Например, <code class="docutils literal notranslate"><span class="pre">'dataRate'</span> <span class="pre">underscore</span></code> становится <code class="docutils literal notranslate"><span class="pre">'data-rate'</span></code>.</p></li>
+<li><p><strong>unescapeHTML()</strong> – раскрывает HTML-сущности. Например, <code class="docutils literal notranslate"><span class="pre">'&amp;lt;div&amp;gt;hi&amp;lt;/div&amp;gt;'</span> <span class="pre">unescapeHTML</span></code> становится <code class="docutils literal notranslate"><span class="pre">'&lt;div&gt;hi&lt;/div&gt;'</span></code>.</p></li>
+<li><p><strong>wrapHTML(tag, attributes)</strong> – оборачивает строку в HTML-элемент с указанными атрибутами. Например, <code class="docutils literal notranslate"><span class="pre">'Venkat'</span> <span class="pre">wrapHTML</span> <span class="pre">'div'</span> <span class="pre">and</span> <span class="pre">{</span> <span class="pre">&quot;class&quot;:</span> <span class="pre">&quot;left</span> <span class="pre">bullet&quot;</span> <span class="pre">}</span></code> становится <code class="docutils literal notranslate"><span class="pre">'&lt;div</span> <span class="pre">id=&quot;content&quot;</span> <span class="pre">class=&quot;left</span> <span class="pre">bullet&quot;&gt;Venkat&lt;/div&gt;'</span></code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id229">
+<h3>сеть<a class="headerlink" href="#id229" title="Ссылка на этот заголовок"></a></h3>
 <section id="http-request">
 <h4>http request<a class="headerlink" href="#http-request" title="Ссылка на этот заголовок"></a></h4>
 <section id="http-request-u-logic">
@@ -2762,8 +2940,8 @@
 <p>В U-Logic узел http request позволяет вам делать HTTP-запросы к внешним серверам или службам. Это позволяет вам взаимодействовать с веб-службами, API или любыми другими конечными точками на основе HTTP.</p>
 <p>При настройке узла http request вы обычно указываете метод (GET, POST, PUT, DELETE и т. д.), URL-адрес конечной точки, с которой вы хотите взаимодействовать, любые заголовки, которые вам нужно включить, и payload, если применимо. После настройки этот узел будет отправлять HTTP-запрос при срабатывании входящего сообщения или события.</p>
 </section>
-<section id="id225">
-<h5>Настройка узла http request<a class="headerlink" href="#id225" title="Ссылка на этот заголовок"></a></h5>
+<section id="id230">
+<h5>Настройка узла http request<a class="headerlink" href="#id230" title="Ссылка на этот заголовок"></a></h5>
 <p>Ниже вы найдете ряд настроек для адаптации HTTP-запросов к потребностям различных API или веб-сервисов. В зависимости от сервиса, с которым вы работаете, некоторые параметры могут быть критически важными, а другие — необязательными.</p>
 <ul class="simple">
 <li><p><strong>Метод</strong>: Выберите метод HTTP для запроса (GET, POST, PUT, DELETE, HEAD). Также возможно задать его динамически с помощью <code class="docutils literal notranslate"><span class="pre">msg.method</span></code>.</p></li>
@@ -2807,16 +2985,16 @@
 <li><p><strong>Заголовки</strong>: позволяет добавлять заголовки к HTTP-запросу, например content-type, accept, user agent и т. д. Вы можете динамически устанавливать заголовки с помощью <code class="docutils literal notranslate"><span class="pre">msg.headers</span></code>. Однако сброс <code class="docutils literal notranslate"><span class="pre">msg.headers</span></code> позволяет избежать непреднамеренного наследования заголовков при использовании нескольких узлов http request в одном потоке. Более того, если <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> это объект, узел автоматически устанавливает Content-Type значение `application/json.</p></li>
 </ul>
 </section>
-<section id="id226">
-<h5>Вариант использования<a class="headerlink" href="#id226" title="Ссылка на этот заголовок"></a></h5>
+<section id="id231">
+<h5>Вариант использования<a class="headerlink" href="#id231" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p><strong>Интеграция API</strong>: узел http request обеспечивает бесшовную интеграцию с внешними API. Разработчики могут использовать его для извлечения данных из API с помощью запросов GET или отправки данных в API с помощью запросов POST/PUT. Например, извлечение данных о погоде из API погоды или отправка данных в службу обмена сообщениями, являются распространенными сценариями.</p></li>
 <li><p><strong>Удаленное управление и управление устройствами</strong>: в системах умного дома узел http request может использоваться для упрощения удаленного управления устройствами. Он позволяет пользователям управлять различными устройствами, такими как освещение, термостаты и камеры безопасности, через веб-интерфейсы или мобильные интерфейсы, взаимодействуя с API устройств. Такие действия, как переключение устройств, настройка параметров и получение обновлений в реальном времени, могут быть выполнены через узел http request.</p></li>
 </ol>
 <p>Это несколько вариантов использования узла http request, но его способность взаимодействовать с другими службами является важной и ключевой возможностью. Одна эта возможность открывает дверь к разнообразному массиву различных вариантов использования.</p>
 </section>
-<section id="id227">
-<h5>Примеры<a class="headerlink" href="#id227" title="Ссылка на этот заголовок"></a></h5>
+<section id="id232">
+<h5>Примеры<a class="headerlink" href="#id232" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>Ниже приведен пример, показывающий, как можно создать URL-адрес со свойствами сообщения в узле http request. Пример включает отправку запроса GET.</p></li>
 </ol>
@@ -2842,11 +3020,11 @@
 <p><img alt="Пример использования узла http request" src="../_images/example5_edit.png" /></p>
 <p><img alt="Пример использования узла http request" src="../_images/example5.png" /></p>
 </section>
-<section id="id228">
-<h5>Документация по узлу<a class="headerlink" href="#id228" title="Ссылка на этот заголовок"></a></h5>
+<section id="id233">
+<h5>Документация по узлу<a class="headerlink" href="#id233" title="Ссылка на этот заголовок"></a></h5>
 <p>Отправляет HTTP-запросы и возвращает ответ.</p>
-<section id="id229">
-<h6>Входные данные<a class="headerlink" href="#id229" title="Ссылка на этот заголовок"></a></h6>
+<section id="id234">
+<h6>Входные данные<a class="headerlink" href="#id234" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: Если не настроено в узле, это необязательное свойство задает URL-адрес запроса.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: Если не настроено в узле, это необязательное свойство задает метод HTTP запроса. Должен быть одним из GET, PUT, DELETE или HEAD.</p></li>
@@ -2858,8 +3036,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">requestTimeout</span></code>: Если задано положительное число миллисекунд, будет переопределен глобально заданный httpRequestTimeout параметр.</p></li>
 </ul>
 </section>
-<section id="id230">
-<h6>Выходные данные<a class="headerlink" href="#id230" title="Ссылка на этот заголовок"></a></h6>
+<section id="id235">
+<h6>Выходные данные<a class="headerlink" href="#id235" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Тело ответа. Узел можно настроить так, чтобы он возвращал тело как строку, пытался проанализировать его как строку JSON или оставлял его как двоичный буфер.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">statusCode</span></code>: Код статуса ответа или код ошибки, если запрос не может быть выполнен.</p></li>
@@ -2869,8 +3047,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">redirectList</span></code>: Если запрос был перенаправлен один или несколько раз, накопленная информация будет добавлена ​​в это свойство. <code class="docutils literal notranslate"><span class="pre">location</span></code> — следующий пункт назначения перенаправления. <code class="docutils literal notranslate"><span class="pre">cookies</span></code> — файлы cookie, возвращаемые источником перенаправления.</p></li>
 </ul>
 </section>
-<section id="id231">
-<h6>Подробности<a class="headerlink" href="#id231" title="Ссылка на этот заголовок"></a></h6>
+<section id="id236">
+<h6>Подробности<a class="headerlink" href="#id236" title="Ссылка на этот заголовок"></a></h6>
 <p>При настройке в узле свойство URL может содержать теги в стиле mustache . Они позволяют создавать URL-адрес с использованием значений входящего сообщения. Например, если URL-адрес установлен на <code class="docutils literal notranslate"><span class="pre">example.com/{{{topic}}}</span></code>, он будет иметь значение <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code> автоматически вставленного. Использование <code class="docutils literal notranslate"><span class="pre">{{{...}}}</span></code> предотвращает экранирование mustache символов, таких как <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> и т. д.</p>
 <p>Узел может опционально автоматически кодировать <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> параметры строки запроса для запроса GET, в этом случае <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> они должны быть объектом.</p>
 <p><strong>Использование нескольких узлов HTTP-запросов</strong></p>
@@ -2889,16 +3067,16 @@
 <section id="websocket-u-logic">
 <h5>Для чего используются узлы WebSocket в U-Logic?<a class="headerlink" href="#websocket-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>U-Logic предоставляет два узла websocket in и websocket out, которые служат различным целям и могут работать в двух режимах.</p>
-<section id="id232">
-<h6>Слушать на…<a class="headerlink" href="#id232" title="Ссылка на этот заголовок"></a></h6>
+<section id="id237">
+<h6>Слушать на…<a class="headerlink" href="#id237" title="Ссылка на этот заголовок"></a></h6>
 <p>В этом режиме U-Logic функционирует как сервер WebSocket, позволяя удаленным клиентам устанавливать соединения.</p>
 <ul class="simple">
 <li><p>Узел websocket in отвечает за прием сообщений, отправленных удаленными клиентами.</p></li>
 <li><p>Узел websocket out обеспечивает поток сообщений либо для отправки сообщений конкретному подключенному клиенту, либо для широковещательной рассылки сообщений всем подключенным клиентам.</p></li>
 </ul>
 </section>
-<section id="id233">
-<h6>Присоединиться к…<a class="headerlink" href="#id233" title="Ссылка на этот заголовок"></a></h6>
+<section id="id238">
+<h6>Присоединиться к…<a class="headerlink" href="#id238" title="Ссылка на этот заголовок"></a></h6>
 <p>В этом режиме U-Logic действует как клиент, устанавливая соединения с удаленными серверами WebSocket.</p>
 <ul class="simple">
 <li><p>Узел websocket in получает сообщения, отправленные с удаленного сервера WebSocket на U-Logic.</p></li>
@@ -2906,14 +3084,14 @@
 </ul>
 </section>
 </section>
-<section id="id234">
-<h5>Конфигурация узла WebSocket<a class="headerlink" href="#id234" title="Ссылка на этот заголовок"></a></h5>
-<section id="id235">
-<h6>Путь<a class="headerlink" href="#id235" title="Ссылка на этот заголовок"></a></h6>
+<section id="id239">
+<h5>Конфигурация узла WebSocket<a class="headerlink" href="#id239" title="Ссылка на этот заголовок"></a></h5>
+<section id="id240">
+<h6>Путь<a class="headerlink" href="#id240" title="Ссылка на этот заголовок"></a></h6>
 <p>При использовании узла WebSocket в режиме «Слушать на…» вам придется указать путь или конечную точку, к которой удаленные клиенты будут устанавливать соединение.</p>
 </section>
-<section id="id236">
-<h6>Отправить/Получить<a class="headerlink" href="#id236" title="Ссылка на этот заголовок"></a></h6>
+<section id="id241">
+<h6>Отправить/Получить<a class="headerlink" href="#id241" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p>payload: эта опция отправляет или получает только данные <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> через соединение WebSocket. Она исключает любые дополнительные свойства <code class="docutils literal notranslate"><span class="pre">msg</span></code>.</p></li>
 <li><p>Полное сообщение: если этот параметр включен, он позволяет отправлять или получать весь объект сообщения, включая payload и другие свойства, в виде строки в формате JSON.</p></li>
@@ -2923,8 +3101,8 @@
 <h6>URL<a class="headerlink" href="#url" title="Ссылка на этот заголовок"></a></h6>
 <p>При использовании узла WebSocket в режиме «Присоединиться к…» вам придется указать URL-адрес соединения, который должен использовать схему <code class="docutils literal notranslate"><span class="pre">ws://</span></code> или <code class="docutils literal notranslate"><span class="pre">wss://</span></code> указывать на существующий прослушиватель WebSocket.</p>
 </section>
-<section id="id237">
-<h6>Подпротокол<a class="headerlink" href="#id237" title="Ссылка на этот заголовок"></a></h6>
+<section id="id242">
+<h6>Подпротокол<a class="headerlink" href="#id242" title="Ссылка на этот заголовок"></a></h6>
 <p>Эта опция позволяет указать конкретный подпротокол WebSocket, который будет использоваться во время установления соединения.</p>
 </section>
 <section id="send-heartbeat">
@@ -2933,14 +3111,14 @@
 <p>Это помогает предотвратить закрытие соединения из-за бездействия или проблем с сетью.</p>
 </section>
 </section>
-<section id="id238">
-<h5>Примеры<a class="headerlink" href="#id238" title="Ссылка на этот заголовок"></a></h5>
+<section id="id243">
+<h5>Примеры<a class="headerlink" href="#id243" title="Ссылка на этот заголовок"></a></h5>
 <p>Простой эхо-тест</p>
 <p>Здесь показаны оба режима: один набор действует как WebSocket Echo Server, а другой подключается к этому серверу и отправляет и получает сообщения.</p>
 <p><img alt="Пример использования узлов websocket in и websocket out" src="../_images/websocket_example.png" /></p>
 </section>
-<section id="id239">
-<h5>Документация по узлу<a class="headerlink" href="#id239" title="Ссылка на этот заголовок"></a></h5>
+<section id="id244">
+<h5>Документация по узлу<a class="headerlink" href="#id244" title="Ссылка на этот заголовок"></a></h5>
 <section id="websocket-in">
 <h6>websocket in<a class="headerlink" href="#websocket-in" title="Ссылка на этот заголовок"></a></h6>
 <p>По умолчанию данные, полученные от websocket in, будут в формате <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>. Сокет можно настроить на ожидание правильно сформированной строки JSON, в этом случае он проанализирует JSON и отправит полученный объект как целое сообщение.</p>
@@ -2957,8 +3135,8 @@
 </section>
 <section id="tcp">
 <h4>tcp<a class="headerlink" href="#tcp" title="Ссылка на этот заголовок"></a></h4>
-<section id="id240">
-<h5>Что такое TCP<a class="headerlink" href="#id240" title="Ссылка на этот заголовок"></a></h5>
+<section id="id245">
+<h5>Что такое TCP<a class="headerlink" href="#id245" title="Ссылка на этот заголовок"></a></h5>
 <p>TCP (Transmission Control Protocol) — один из основных протоколов пакета протоколов Интернета (обычно называемого TCP/IP). Это протокол с установлением соединения, который обеспечивает надежную, упорядоченную и проверенную на наличие ошибок доставку пакетов данных по сети. TCP гарантирует доставку пакетов данных в том же порядке, в котором они были отправлены. Для получения дополнительной информации о TCP см. <a class="reference external" href="https://www.ietf.org/rfc/rfc9293.html">RFC 9293</a>.</p>
 </section>
 <section id="tcp-in-u-logic">
@@ -2994,13 +3172,13 @@
 </li>
 </ul>
 </section>
-<section id="id241">
-<h5>Варианты использования<a class="headerlink" href="#id241" title="Ссылка на этот заголовок"></a></h5>
+<section id="id246">
+<h5>Варианты использования<a class="headerlink" href="#id246" title="Ссылка на этот заголовок"></a></h5>
 <p><strong>Связь с серверами</strong>: узел tcp in позволяет U-Logic взаимодействовать с различными серверами через связь TCP/IP. Это позволяет приложениям, таким как извлечение данных с веб-серверов или обмен информацией с другими сетевыми службами.</p>
 <p><strong>Интеграция с устройствами на базе TCP</strong>: U-Logic может легко интегрироваться с устройствами на базе TCP, такими как промышленные датчики, ПЛК (программируемые логические контроллеры) или пользовательские аппаратные контроллеры. Узел TCP-In обеспечивает двунаправленную связь, облегчая такие задачи, как отправка команд устройствам или получение потоков данных в реальном времени.</p>
 </section>
-<section id="id242">
-<h5>Примеры<a class="headerlink" href="#id242" title="Ссылка на этот заголовок"></a></h5>
+<section id="id247">
+<h5>Примеры<a class="headerlink" href="#id247" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В приведенном ниже примере мы создаем базовый TCP-сервер с использованием узла tcp in.</p></li>
 </ol>
@@ -3010,8 +3188,8 @@
 </ol>
 <p><img alt="Пример использования узла tcp in" src="../_images/tcpin_example2.png" /></p>
 </section>
-<section id="id243">
-<h5>Документация по узлу<a class="headerlink" href="#id243" title="Ссылка на этот заголовок"></a></h5>
+<section id="id248">
+<h5>Документация по узлу<a class="headerlink" href="#id248" title="Ссылка на этот заголовок"></a></h5>
 <p>Предоставляет выбор входов TCP. Может подключаться к удаленному порту TCP или принимать входящие соединения.</p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
@@ -3035,8 +3213,8 @@
 </section>
 <section id="udp">
 <h4>udp<a class="headerlink" href="#udp" title="Ссылка на этот заголовок"></a></h4>
-<section id="id244">
-<h5>Что такое UDP?<a class="headerlink" href="#id244" title="Ссылка на этот заголовок"></a></h5>
+<section id="id249">
+<h5>Что такое UDP?<a class="headerlink" href="#id249" title="Ссылка на этот заголовок"></a></h5>
 <p>UDP (User Datagram Protocol) — это протокол без установления соединения в наборе протоколов Интернета. Он передает пакеты данных или датаграммы без установления соединения, отдавая приоритет скорости над надежностью. Обычно используется для приложений реального времени, таких как потоковое видео, онлайн-игры и VoIP. Простота UDP уменьшает задержку, но не гарантирует доставку пакетов данных. Для получения дополнительной информации см. <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/UDP">UDP MDN Docs</a>.</p>
 </section>
 <section id="udp-in-u-logic">
@@ -3078,8 +3256,8 @@
 <p>в некоторых системах для использования портов ниже 1024 и/или широковещательной передачи вам может потребоваться доступ root или администратора, а также необходимо убедиться, что ваш брандмауэр разрешает передачу данных.</p>
 </div>
 </section>
-<section id="id245">
-<h5>Выходные значения udp in<a class="headerlink" href="#id245" title="Ссылка на этот заголовок"></a></h5>
+<section id="id250">
+<h5>Выходные значения udp in<a class="headerlink" href="#id250" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>: Вывод полученных сообщений в виде буфера, строки или строки в кодировке base64.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">msg.fromip</span></code>: IP-адрес и порт, с которого было получено сообщение, в формате «IP:Port».</p></li>
@@ -3129,8 +3307,8 @@
 <p>В некоторых системах для использования портов ниже 1024 и/или широковещательной передачи вам может потребоваться доступ root или администратора, а также необходимо убедиться, что ваш брандмауэр разрешает передачу данных</p>
 </div>
 </section>
-<section id="id246">
-<h5>Варианты использования узлов udp<a class="headerlink" href="#id246" title="Ссылка на этот заголовок"></a></h5>
+<section id="id251">
+<h5>Варианты использования узлов udp<a class="headerlink" href="#id251" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p><strong>Сбор данных с датчиков</strong>: Получайте данные в режиме реального времени с датчиков IoT, установленных на объекте, например, показания датчиков температуры, влажности или движения.</p></li>
 <li><p><strong>Мониторинг состояния устройств</strong>: Отслеживайте рабочее состояние устройств IoT, таких как подключенные приборы или промышленное оборудование, получая обновления состояния по протоколу UDP.</p></li>
@@ -3139,21 +3317,257 @@
 <li><p><strong>Прием медиапотока</strong>: Прием медиапотока, например видео- или аудиоконтента, для таких приложений, как видеонаблюдение, прямая трансляция или мультимедийная связь.</p></li>
 </ul>
 </section>
-<section id="id247">
-<h5>Пример<a class="headerlink" href="#id247" title="Ссылка на этот заголовок"></a></h5>
+<section id="id252">
+<h5>Пример<a class="headerlink" href="#id252" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В приведенном ниже примере у нас есть узел udp in, настроенный на прием данных, отправленных через локальный хост и порт 90, с использованием узла udp out.</p></li>
 </ol>
 <p><img alt="Пример использования узлов udp in и udp out" src="../_images/udp_example.png" /></p>
 </section>
-<section id="id248">
-<h5>Документация по узлам<a class="headerlink" href="#id248" title="Ссылка на этот заголовок"></a></h5>
+<section id="id253">
+<h5>Документация по узлам<a class="headerlink" href="#id253" title="Ссылка на этот заголовок"></a></h5>
 <p>Предоставляет выбор входов UDP. Может подключаться к удаленному порту UDP или принимать входящие соединения.</p>
 </section>
 </section>
+<section id="ssh-v3">
+<h4>ssh-v3<a class="headerlink" href="#ssh-v3" title="Ссылка на этот заголовок"></a></h4>
+<section id="ssh-v3-u-logic">
+<h5>Узел ssh-v3 в U-Logic<a class="headerlink" href="#ssh-v3-u-logic" title="Ссылка на этот заголовок"></a></h5>
+<p>Этот узел устанавливает SSH-соединение с удаленным сервером и выполняет команды на нем. Он настраивается с помощью параметров SSH из соответствующего узла конфигурации SSH (ssh-conf).</p>
 </section>
-<section id="id249">
-<h3>последоват-ть<a class="headerlink" href="#id249" title="Ссылка на этот заголовок"></a></h3>
+<section id="id254">
+<h5>Входные значения<a class="headerlink" href="#id254" title="Ссылка на этот заголовок"></a></h5>
+<p>Этот узел принимает сообщения с следующими свойствами:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Команда для выполнения на удаленном SSH-сервере.
+Выходы</p></li>
+</ul>
+</section>
+<section id="id255">
+<h5>Выходные значения<a class="headerlink" href="#id255" title="Ссылка на этот заголовок"></a></h5>
+<p>После выполнения команды на сервере этот узел отправляет сообщение с следующими свойствами:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Результат выполнения команды.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session</span></code>: Информация о сеансе выполнения, включая <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">stdout</span></code> и <code class="docutils literal notranslate"><span class="pre">stderr</span></code>.</p></li>
+</ul>
+</section>
+<section id="id256">
+<h5>Настройка<a class="headerlink" href="#id256" title="Ссылка на этот заголовок"></a></h5>
+<p>Name: Опционально. Название узла SSH-подключения.
+Hostmae: IP адрес сервера.
+Port: Порт для подключения.
+Username: Имя пользователя.
+Password: Пароль.
+Использование msg.reset
+Для сброса SSH-соединения и принудительного повторного подключения отправьте сообщение с <code class="docutils literal notranslate"><span class="pre">msg.reset</span></code> установленным в true. Это закроет текущее SSH-соединение и повторно подключится при следующем вводе команды.</p>
+<p>Пример использования <code class="docutils literal notranslate"><span class="pre">msg.reset</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;payload&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;reset&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Убедитесь, что узел конфигурации SSH (ssh-conf) правильно настроен с корректными учетными данными (имя пользователя, пароль, хост и т. д.) перед использованием этого узла.</p>
+<p>Команды, выполняемые на удаленном сервере, передаются через свойство <code class="docutils literal notranslate"><span class="pre">payload</span></code> входного сообщения.</p>
+</div>
+</section>
+</section>
+<section id="ping">
+<h4>ping<a class="headerlink" href="#ping" title="Ссылка на этот заголовок"></a></h4>
+<section id="ping-u-logic">
+<h5>Узел ping в U-Logic<a class="headerlink" href="#ping-u-logic" title="Ссылка на этот заголовок"></a></h5>
+<p>Пингует устройство и возвращает время отклика в мс в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>.</p>
+</section>
+<section id="id257">
+<h5>Выходные данные<a class="headerlink" href="#id257" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code> – Время отклика в мс или <code class="docutils literal notranslate"><span class="pre">false</span></code>, если нет ответа.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">topic</span></code> – Целевой хост или IP-адрес.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ping</span></code> – Объект с информацией о хосте и дополнительными свойствами.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Объект <code class="docutils literal notranslate"><span class="pre">ping</span></code> добавляется только в режиме (Mode) <code class="docutils literal notranslate"><span class="pre">Triggered</span></code>, если передан массив в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>. Это позволяет включать дополнительные свойства для использования в последующих узлах.</p>
+</div>
+</section>
+<section id="id258">
+<h5>Детали<a class="headerlink" href="#id258" title="Ссылка на этот заголовок"></a></h5>
+<p>Возвращает <code class="docutils literal notranslate"><span class="pre">false</span></code>, если хост не отвечает или его невозможно разрешить.</p>
+<p>По умолчанию пинг выполняется каждые 20 секунд (настраивается).</p>
+<section id="id259">
+<h6>Протокол<a class="headerlink" href="#id259" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p>Automatic– Выбирает IPv4 или IPv6 в зависимости от сетевых настроек системы.</p></li>
+<li><p>IPv4 – Принудительное использование IPv4 (не сработает, если нет маршрута).</p></li>
+<li><p>IPv6 – Принудительное использование IPv6 (не сработает, если нет маршрута).</p></li>
+</ul>
+</section>
+<section id="id260">
+<h6>Режимы работы<a class="headerlink" href="#id260" title="Ссылка на этот заголовок"></a></h6>
+<p><strong>Timed</strong>
+В этом режиме необходимо указать:</p>
+<ul class="simple">
+<li><p>Target – CSV-список хостов/IP, например <code class="docutils literal notranslate"><span class="pre">&quot;192.168.0.1&quot;</span></code> или <code class="docutils literal notranslate"><span class="pre">&quot;192.168.0.1,</span> <span class="pre">www.google.com&quot;</span></code>.</p></li>
+<li><p>Ping (S) – Интервал пинга в секундах.</p></li>
+</ul>
+<p><strong>Triggered</strong>
+В этом режиме узел активируется входящим сообщением.</p>
+<ul class="simple">
+<li><p>Если Target указан, он будет использоваться как хост/IP.</p></li>
+<li><p>Если Target пуст, можно передавать хосты через <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>:</p>
+<ul>
+<li><p>Строка – CSV-список хостов/IP, например <code class="docutils literal notranslate"><span class="pre">&quot;192.168.0.1&quot;</span></code> или <code class="docutils literal notranslate"><span class="pre">&quot;192.168.0.1,</span> <span class="pre">www.google.com&quot;</span></code>.</p></li>
+<li><p>Массив – Список хостов в виде строк или объектов.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id261">
+<h5>Пример массива <code class="docutils literal notranslate"><span class="pre">payload</span></code><a class="headerlink" href="#id261" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;192.168.0.99&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The router&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myapiserver.com&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;external API&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;support&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;support@myapiserver.com&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="snmp">
+<h4>snmp<a class="headerlink" href="#snmp" title="Ссылка на этот заголовок"></a></h4>
+<section id="id262">
+<h5>snmp<a class="headerlink" href="#id262" title="Ссылка на этот заголовок"></a></h5>
+<p>Простой узел для получения одного или нескольких SNMP OID. Активируется любым входным сигналом.</p>
+<section id="id263">
+<h6>Входные параметры<a class="headerlink" href="#id263" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.host</span></code> – Адрес целевого устройства.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.community</span></code> – SNMP-сообщество.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.username</span></code> – Имя пользователя (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.authkey</span></code> – Ключ аутентификации (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.privkey</span></code> – Ключ шифрования (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – Список OID, разделённых запятыми (без пробелов).</p></li>
+</ul>
+<p>OID должны быть числовыми. <code class="docutils literal notranslate"><span class="pre">iso.</span></code> эквивалентен <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="id264">
+<h6>Выходные параметры<a class="headerlink" href="#id264" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> – Значение OID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – Запрошенный OID.</p></li>
+</ul>
+</section>
+</section>
+<section id="snmp-set">
+<h5>snmp set<a class="headerlink" href="#snmp-set" title="Ссылка на этот заголовок"></a></h5>
+<p>Простой узел для установки значений SNMP. Активируется любым входным сигналом.</p>
+<section id="id265">
+<h6>Входные параметры<a class="headerlink" href="#id265" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.host</span></code> – Адрес целевого устройства.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.community</span></code> – SNMP-сообщество.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.username</span></code> – Имя пользователя (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.authkey</span></code> – Ключ аутентификации (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.privkey</span></code> – Ключ шифрования (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.varbinds</span></code> – Массив JSON-объектов, содержащий несколько OID, их типы и значения.</p></li>
+</ul>
+</section>
+<section id="msg-varbinds">
+<h6>Формат <code class="docutils literal notranslate"><span class="pre">msg.varbinds</span></code>:<a class="headerlink" href="#msg-varbinds" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.3.6.1.2.1.1.5.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OctetString&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host1&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Числовые значения должны быть числами, а не строками, например <code class="docutils literal notranslate"><span class="pre">1</span></code>, а не <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>.</p>
+<p>OID должны быть числовыми. <code class="docutils literal notranslate"><span class="pre">iso.</span></code> эквивалентен <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+</section>
+<section id="snmp-table">
+<h5>snmp table<a class="headerlink" href="#snmp-table" title="Ссылка на этот заголовок"></a></h5>
+<p>Простой узел для получения таблицы SNMP OID. Активируется любым входным сигналом.</p>
+<section id="id266">
+<h6>Входные параметры<a class="headerlink" href="#id266" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.host</span></code> – Адрес целевого устройства.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.community</span></code> – SNMP-сообщество.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.username</span></code> – Имя пользователя (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.authkey</span></code> – Ключ аутентификации (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.privkey</span></code> – Ключ шифрования (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – OID таблицы, которую необходимо запросить.</p></li>
+</ul>
+<p>OID должны быть числовыми. <code class="docutils literal notranslate"><span class="pre">iso.</span></code> эквивалентен <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="id267">
+<h6>Выходные параметры<a class="headerlink" href="#id267" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> – Полученные данные.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – Запрошенный OID.</p></li>
+</ul>
+</section>
+</section>
+<section id="snmp-subtree">
+<h5>snmp subtree<a class="headerlink" href="#snmp-subtree" title="Ссылка на этот заголовок"></a></h5>
+<p>Простой узел для получения поддерева SNMP OID. Активируется любым входным сигналом. Считывает все OID на текущем базовом уровне и ниже.</p>
+<section id="id268">
+<h6>Входные параметры<a class="headerlink" href="#id268" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.host</span></code> – Адрес целевого устройства.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.community</span></code> – SNMP-сообщество.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.username</span></code> – Имя пользователя (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.authkey</span></code> – Ключ аутентификации (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.privkey</span></code> – Ключ шифрования (только для SNMP V3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – OID таблицы, которую необходимо запросить.</p></li>
+</ul>
+<p>OID должны быть числовыми. <code class="docutils literal notranslate"><span class="pre">iso.</span></code> эквивалентен <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="id269">
+<h6>Выходные параметры<a class="headerlink" href="#id269" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> – Полученные данные.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.oid</span></code> – Запрошенный OID.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="wake-on-lan">
+<h4>wake on lan<a class="headerlink" href="#wake-on-lan" title="Ссылка на этот заголовок"></a></h4>
+<p>Отправляет Wake-On-LAN пакет magic на указанный MAC-адрес.</p>
+<section id="id270">
+<h5>Входные параметры<a class="headerlink" href="#id270" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.mac</span></code> – MAC-адрес целевого устройства, которое нужно разбудить (может быть задан динамически).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.host</span></code> – Адрес целевой машины (опционально).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.udpport</span></code> – Целевой UDP-порт (по умолчанию <code class="docutils literal notranslate"><span class="pre">9</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.numpackets</span></code> – Количество отправляемых пакетов (по умолчанию <code class="docutils literal notranslate"><span class="pre">3</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msg.interval</span></code> – Интервал между пакетами в миллисекундах (по умолчанию <code class="docutils literal notranslate"><span class="pre">100ms</span></code>).</p></li>
+</ul>
+</section>
+<section id="id271">
+<h5>Описание<a class="headerlink" href="#id271" title="Ссылка на этот заголовок"></a></h5>
+<p>Для наилучшей работы целевой адрес следует устанавливать в широковещательный адрес подсети, к которой подключено целевое устройство.<br />
+Для сети класса C это, как правило, первые три части IP-адреса, а последняя часть — <code class="docutils literal notranslate"><span class="pre">255</span></code>, например: <code class="docutils literal notranslate"><span class="pre">192.168.1.255</span></code>.</p>
+</section>
+</section>
+</section>
+<section id="id272">
+<h3>последоват-ть<a class="headerlink" href="#id272" title="Ссылка на этот заголовок"></a></h3>
 <section id="split">
 <h4>split<a class="headerlink" href="#split" title="Ссылка на этот заголовок"></a></h4>
 <section id="split-u-logic">
@@ -3176,10 +3590,10 @@
 </ol>
 <p>Узел split — это мощный инструмент, который можно использовать для обработки данных различными способами. Это ценное дополнение к любому потоку U-Logic.</p>
 </section>
-<section id="id250">
-<h5>Примеры<a class="headerlink" href="#id250" title="Ссылка на этот заголовок"></a></h5>
-<section id="id251">
-<h6>Разделение массивов<a class="headerlink" href="#id251" title="Ссылка на этот заголовок"></a></h6>
+<section id="id273">
+<h5>Примеры<a class="headerlink" href="#id273" title="Ссылка на этот заголовок"></a></h5>
+<section id="id274">
+<h6>Разделение массивов<a class="headerlink" href="#id274" title="Ссылка на этот заголовок"></a></h6>
 <p><strong>Разделение поэлементно</strong></p>
 <p>Самый простой способ разбить сообщение на несколько — это когда структура входного сообщения естественным образом разбивается на несколько. Массивы являются примером таких структур. Создание выходного сообщения для каждого элемента является режимом по умолчанию для split. При вводе одного массива с <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> содержимым в качестве, будут напечатаны 4 сообщения в следующем порядке:</p>
 <p><img alt="Пример использования узла split" src="../_images/example11.png" /></p>
@@ -3187,8 +3601,8 @@
 <p>Когда требуется перегруппировка большого количества элементов, узел split можно использовать для фрагментации данных. Например, некоторые API позволяют обновлять только 20 записей за раз. Если у вас больше входных данных, разделение их подгрупп разделит их на несколько сообщений. Это делается путем установки «Фикс. длина» максимального размера подгруппы. Допустим, <code class="docutils literal notranslate"><span class="pre">payload</span></code> для разделения <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> установлена «Фикс. длина» ​​на 2. Это отправит 3 сообщения: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>, <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4]</span></code> и <code class="docutils literal notranslate"><span class="pre">[5]</span></code>.</p>
 <p><img alt="Пример использования узла split" src="../_images/example21.png" /></p>
 </section>
-<section id="id252">
-<h6>Разделение текста<a class="headerlink" href="#id252" title="Ссылка на этот заголовок"></a></h6>
+<section id="id275">
+<h6>Разделение текста<a class="headerlink" href="#id275" title="Ссылка на этот заголовок"></a></h6>
 <p><strong>Разделение построчно</strong></p>
 <p>Текст можно разбить несколькими способами, чаще всего построчно. Хотя их также можно разбить по фиксированной длине, что полезно, когда данные структурированы предиктивно.</p>
 <p>Давайте начнем с разделения построчно, так как это стандартный способ работы узла. Оставьте значение «С помощью» в разделе «Строка/Буфер» равным \n, что является символом окончания строки в системах на базе Unix. В нашем следующем примере у нас есть список из 3 городов в Европе, которые нам нужны по отдельности.</p>
@@ -3198,17 +3612,17 @@
 <p>Когда вы что-то разделили по строкам, вам может понадобиться разделить по словам. Просто поставьте пробел в значении «С помощью» в разделе «Строка/Буфер». Это не показывает видимый символ в форме, в отличие от символа окончания строки.</p>
 <p><img alt="Пример использования узла split" src="../_images/example41.png" /></p>
 </section>
-<section id="id253">
-<h6>Разделение объектов<a class="headerlink" href="#id253" title="Ссылка на этот заголовок"></a></h6>
+<section id="id276">
+<h6>Разделение объектов<a class="headerlink" href="#id276" title="Ссылка на этот заголовок"></a></h6>
 <p>Оставшаяся структура данных узла Split в U-Logic — это «Объекты», которые представляют собой универсальную категорию. В U-Logic используются хеши — пары ключ-значение, где ключами являются имена свойств, а значениями — их соответствующие данные. Примером такой структуры является JSON. В приведённом ниже примере мы разделим соответствие слов «one» и «two» с их числовыми значениями.</p>
 <p><img alt="Пример использования узла split" src="../_images/example51.png" /></p>
 </section>
 </section>
-<section id="id254">
-<h5>Документация по узлу<a class="headerlink" href="#id254" title="Ссылка на этот заголовок"></a></h5>
+<section id="id277">
+<h5>Документация по узлу<a class="headerlink" href="#id277" title="Ссылка на этот заголовок"></a></h5>
 <p>Разбивает сообщение на последовательность сообщений.</p>
-<section id="id255">
-<h6>Входные значения<a class="headerlink" href="#id255" title="Ссылка на этот заголовок"></a></h6>
+<section id="id278">
+<h6>Входные значения<a class="headerlink" href="#id278" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Поведение узла определяется типом <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>:</p>
 <ul>
@@ -3219,8 +3633,8 @@
 </li>
 </ul>
 </section>
-<section id="id256">
-<h6>Выходные значения<a class="headerlink" href="#id256" title="Ссылка на этот заголовок"></a></h6>
+<section id="id279">
+<h6>Выходные значения<a class="headerlink" href="#id279" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code>:</p>
 <ul>
@@ -3237,20 +3651,20 @@
 </ul>
 </section>
 </section>
-<section id="id257">
-<h5>Подробности<a class="headerlink" href="#id257" title="Ссылка на этот заголовок"></a></h5>
+<section id="id280">
+<h5>Подробности<a class="headerlink" href="#id280" title="Ссылка на этот заголовок"></a></h5>
 <p>Этот узел позволяет легко создать поток, который выполняет общие действия в последовательности сообщений, прежде чем с помощью узла join объединить последовательность в одно сообщение.</p>
 <p>Он использует свойство <code class="docutils literal notranslate"><span class="pre">msg.parts</span></code> для отслеживания отдельных частей последовательности.</p>
 </section>
 </section>
 <section id="sort">
 <h4>sort<a class="headerlink" href="#sort" title="Ссылка на этот заголовок"></a></h4>
-<section id="id258">
-<h5>Что такое узел сортировки в U-Logic?<a class="headerlink" href="#id258" title="Ссылка на этот заголовок"></a></h5>
+<section id="id281">
+<h5>Что такое узел сортировки в U-Logic?<a class="headerlink" href="#id281" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел сортировки в U-Logic — это функциональный узел, используемый для сортировки либо массива данных в сообщении, либо последовательности самих сообщений, в порядке возрастания или убывания.</p>
 </section>
-<section id="id259">
-<h5>Настройка узла сортировки<a class="headerlink" href="#id259" title="Ссылка на этот заголовок"></a></h5>
+<section id="id282">
+<h5>Настройка узла сортировки<a class="headerlink" href="#id282" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p>Сортировать:</p>
 <ul>
@@ -3279,8 +3693,8 @@
 <li><p>как число: если этот параметр отмечен, значения рассматриваются как числа для числового упорядочения.</p></li>
 </ul>
 </section>
-<section id="id260">
-<h5>Варианты использования<a class="headerlink" href="#id260" title="Ссылка на этот заголовок"></a></h5>
+<section id="id283">
+<h5>Варианты использования<a class="headerlink" href="#id283" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p><strong>Обработка данных</strong>: Узлы sort часто используются в конвейерах обработки данных, где необходимо упорядочить данные в определенном порядке перед дальнейшей обработкой. Например, сортировка списка элементов по алфавиту или по номерам перед выполнением анализа или отображением данных.</p></li>
 <li><p><strong>Последовательности сообщений</strong>: При работе с последовательностями сообщений узел sort может использоваться для упорядочивания сообщений на основе определенных критериев. Это особенно полезно при работе с потоками данных, где порядок сообщений имеет значение, например, при обработке данных временных рядов или потоков событий.</p></li>
@@ -3288,8 +3702,8 @@
 <li><p><strong>Фильтрация и фильтрация</strong>: Сортировка данных упрощает отфильтровывание определенных элементов или выявление выбросов. Например, вы можете использовать узел soirt для определения самых высоких или самых низких значений в наборе данных или для фильтрации элементов, которые находятся выше или ниже определенного порога.</p></li>
 </ul>
 </section>
-<section id="id261">
-<h5>Примеры<a class="headerlink" href="#id261" title="Ссылка на этот заголовок"></a></h5>
+<section id="id284">
+<h5>Примеры<a class="headerlink" href="#id284" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В приведенном ниже примере узел sort сортирует массив чисел и массив английского алфавита в порядке возрастания.</p></li>
 </ol>
@@ -3299,8 +3713,8 @@
 </ol>
 <p><img alt="Пример использования узла sort" src="../_images/example22.png" /></p>
 </section>
-<section id="id262">
-<h5>Документация по узлу<a class="headerlink" href="#id262" title="Ссылка на этот заголовок"></a></h5>
+<section id="id285">
+<h5>Документация по узлу<a class="headerlink" href="#id285" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел sort, сортирующий свойство сообщения или последовательность сообщений.</p>
 <p>При настройке на сортировку свойств сообщения узел сортирует данные массива, на которые указывает указанное свойство сообщения.</p>
 <p>При настройке на сортировку последовательности сообщений порядок сообщений будет изменен.</p>
@@ -3321,14 +3735,14 @@
 </section>
 <section id="batch">
 <h4>batch<a class="headerlink" href="#batch" title="Ссылка на этот заголовок"></a></h4>
-<section id="id263">
-<h5>Где и почему мы используем узел batch?<a class="headerlink" href="#id263" title="Ссылка на этот заголовок"></a></h5>
+<section id="id286">
+<h5>Где и почему мы используем узел batch?<a class="headerlink" href="#id286" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел batch используется для группировки последовательностей сообщений в пакеты.</p>
 </section>
-<section id="id264">
-<h5>Режимы работы<a class="headerlink" href="#id264" title="Ссылка на этот заголовок"></a></h5>
-<section id="id265">
-<h6>Группировать по количеству сообщений<a class="headerlink" href="#id265" title="Ссылка на этот заголовок"></a></h6>
+<section id="id287">
+<h5>Режимы работы<a class="headerlink" href="#id287" title="Ссылка на этот заголовок"></a></h5>
+<section id="id288">
+<h6>Группировать по количеству сообщений<a class="headerlink" href="#id288" title="Ссылка на этот заголовок"></a></h6>
 <p>Узел batch можно настроить для группировки сообщений в пакеты на основе количества сообщений в пакете.</p>
 <p>Например, если вы установите размер пакета 5, то первые 5 сообщений будут сгруппированы в пакет перед выпуском. Затем следующие 5 сообщений будут сгруппированы в пакет и т. д.</p>
 <p>Ниже представлен пример того, как это выглядит на практике.</p>
@@ -3336,15 +3750,15 @@
 <p>Кроме того, вы можете добавить перекрытие, чтобы последнее сообщение было включено в следующий пакет.</p>
 <p><img alt="Пример использования узла batch" src="../_images/example23.png" /></p>
 </section>
-<section id="id266">
-<h6>Группировать по временному интервалу<a class="headerlink" href="#id266" title="Ссылка на этот заголовок"></a></h6>
+<section id="id289">
+<h6>Группировать по временному интервалу<a class="headerlink" href="#id289" title="Ссылка на этот заголовок"></a></h6>
 <p>Узел batch можно настроить для группировки сообщений в пакеты на основе периода времени.</p>
 <p>Например, если установить время пакета на 2 секунды, то все сообщения, полученные в течение 2 секунд, будут сгруппированы в пакет перед выпуском. Затем будет создан следующий пакет на следующие 2 секунды и т. д.</p>
 <p>Ниже представлен пример того, как это выглядит на практике.</p>
 <p><img alt="Пример использования узла batch" src="../_images/example32.png" /></p>
 </section>
-<section id="id267">
-<h6>Конкатенация последовательностей<a class="headerlink" href="#id267" title="Ссылка на этот заголовок"></a></h6>
+<section id="id290">
+<h6>Конкатенация последовательностей<a class="headerlink" href="#id290" title="Ссылка на этот заголовок"></a></h6>
 <p>Узел batch можно настроить для объединения последовательностей сообщений в одно сообщение.</p>
 <p>Например, вы можете использовать это для копирования последовательности сообщений или упорядочивания их по темам.</p>
 <p>Ниже представлен пример того, как это выглядит на практике.</p>
@@ -3352,19 +3766,19 @@
 <p><img alt="Пример использования узла batch" src="../_images/example52.png" /></p>
 </section>
 </section>
-<section id="id268">
-<h5>Документация по узлу<a class="headerlink" href="#id268" title="Ссылка на этот заголовок"></a></h5>
+<section id="id291">
+<h5>Документация по узлу<a class="headerlink" href="#id291" title="Ссылка на этот заголовок"></a></h5>
 <p>Создает последовательности сообщений на основе различных правил.</p>
-<section id="id269">
-<h6>Подробности<a class="headerlink" href="#id269" title="Ссылка на этот заголовок"></a></h6>
+<section id="id292">
+<h6>Подробности<a class="headerlink" href="#id292" title="Ссылка на этот заголовок"></a></h6>
 <p>Существует три режима создания последовательностей сообщений:</p>
 <p><strong>Группировать по количеству сообщений</strong>: Группирует сообщения в последовательности заданной длины. Параметр «Совпадения» указывает, сколько сообщений в конце одной последовательности должны быть повторены в начале следующей последовательности.</p>
 <p><strong>Группировать по интервалу времени</strong>: Группирует сообщения, которые приходят в течение указанного интервала. Если в течение интервала не приходит ни одного сообщения, узел может опционально отправить пустое сообщение.</p>
 <p><strong>Объединять последовательности</strong>: Создает последовательность сообщений путем конкатенации входящих последовательностей. Каждое сообщение должно иметь свойство <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code> и свойство <code class="docutils literal notranslate"><span class="pre">msg.parts</span></code>, идентифицирующее его последовательность. Узел настраивается со списком значений <code class="docutils literal notranslate"><span class="pre">topic</span></code> для определения порядка, в котором конкатенируются последовательности.</p>
 </section>
 </section>
-<section id="id270">
-<h5>Хранение сообщений<a class="headerlink" href="#id270" title="Ссылка на этот заголовок"></a></h5>
+<section id="id293">
+<h5>Хранение сообщений<a class="headerlink" href="#id293" title="Ссылка на этот заголовок"></a></h5>
 <p>Этот узел будет буферизовать сообщения внутри, чтобы работать с последовательностями. Настройка времени выполнения <code class="docutils literal notranslate"><span class="pre">nodeMessageBufferMaxLength</span></code> может использоваться для ограничения количества сообщений, которые будут буферизировать узлы.</p>
 <p>Если получено сообщение с установленным свойством <code class="docutils literal notranslate"><span class="pre">msg.reset</span></code>, буферизованные сообщения удаляются и не отправляются.</p>
 </section>
@@ -3375,8 +3789,8 @@
 <h5>Что такое узел Join в U-Logic?<a class="headerlink" href="#join-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел join в U-Logic используется для объединения последовательностей сообщений в одно сообщение. Он особенно полезен при работе с несколькими входными потоками или когда вам нужно объединить данные из разных источников в одну полезную нагрузку.</p>
 </section>
-<section id="id271">
-<h5>Настройка узла join<a class="headerlink" href="#id271" title="Ссылка на этот заголовок"></a></h5>
+<section id="id294">
+<h5>Настройка узла join<a class="headerlink" href="#id294" title="Ссылка на этот заголовок"></a></h5>
 <ul class="simple">
 <li><p>Режим:</p>
 <ul>
@@ -3416,8 +3830,8 @@
 </li>
 </ul>
 </section>
-<section id="id272">
-<h5>Варианты использования<a class="headerlink" href="#id272" title="Ссылка на этот заголовок"></a></h5>
+<section id="id295">
+<h5>Варианты использования<a class="headerlink" href="#id295" title="Ссылка на этот заголовок"></a></h5>
 <p><strong>Агрегация данных с нескольких датчиков</strong>: Предположим, у вас есть несколько датчиков (например, температуры, влажности, давления), отправляющих данные независимо. Вы можете использовать узел join, чтобы объединить эти отдельные показания в одно сообщение для анализа или хранения.</p>
 <p><strong>Последовательные операции</strong>: когда вам необходимо выполнить ряд операций, зависящих друг от друга, вы можете использовать узел join, чтобы убедиться, что все необходимые данные доступны, прежде чем переходить к следующему шагу.</p>
 <p><strong>Создание сложных структур данных</strong>: объединяя несколько сообщений в одно сообщение с вложенными объектами или массивами, узел join упрощает создание сложных структур данных.</p>
@@ -3425,8 +3839,8 @@
 <p><strong>Обработка параллельных рабочих процессов</strong>: в рабочих процессах, где одновременно выполняется несколько задач и их результаты необходимо синхронизировать или агрегировать, узел join помогает управлять параллельным выполнением и консолидировать результаты.</p>
 <p><strong>Пакетная обработка</strong>: если вы хотите обрабатывать данные пакетами, а не по отдельности, узел join может накапливать сообщения до тех пор, пока не будет достигнуто указанное количество или пороговое значение времени, а затем выдавать объединенное сообщение для пакетной обработки.</p>
 </section>
-<section id="id273">
-<h5>Примеры<a class="headerlink" href="#id273" title="Ссылка на этот заголовок"></a></h5>
+<section id="id296">
+<h5>Примеры<a class="headerlink" href="#id296" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В приведенном ниже примере узел join использует автоматический режим для повторного присоединения сообщения, разделенного узлом split.</p></li>
 </ol>
@@ -3440,8 +3854,8 @@
 </ol>
 <p><img alt="Пример использования узла join" src="../_images/example33.png" /></p>
 </section>
-<section id="id274">
-<h5>Документация по узлу<a class="headerlink" href="#id274" title="Ссылка на этот заголовок"></a></h5>
+<section id="id297">
+<h5>Документация по узлу<a class="headerlink" href="#id297" title="Ссылка на этот заголовок"></a></h5>
 <p>Объединяет последовательности сообщений в одно сообщение.</p>
 <p>Доступны три режима:</p>
 <ul class="simple">
@@ -3449,8 +3863,8 @@
 <li><p>ручной: Объединяйте последовательности сообщений различными способами.</p></li>
 <li><p>агрегация последовательности: Примените выражение ко всем сообщениям в последовательности, чтобы свести ее к одному сообщению.</p></li>
 </ul>
-<section id="id275">
-<h6>Входные значения<a class="headerlink" href="#id275" title="Ссылка на этот заголовок"></a></h6>
+<section id="id298">
+<h6>Входные значения<a class="headerlink" href="#id298" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code>: Для автоматического присоединения последовательности сообщений, все они должны иметь это свойство. Узел split генерирует это свойство, но его можно создать вручную. Он имеет следующие свойства:</p>
 <ul>
@@ -3468,8 +3882,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">restartTimeout</span></code>: Если установлено и на узле настроен тайм-аут, этот тайм-аут будет перезапущен.</p></li>
 </ul>
 </section>
-<section id="id276">
-<h6>Подробности<a class="headerlink" href="#id276" title="Ссылка на этот заголовок"></a></h6>
+<section id="id299">
+<h6>Подробности<a class="headerlink" href="#id299" title="Ссылка на этот заголовок"></a></h6>
 <p><strong>автоматический</strong></p>
 <p>Автоматический режим использует свойство входящих сообщений <code class="docutils literal notranslate"><span class="pre">parts</span></code> для определения того, как должна быть объединена последовательность. Это позволяет автоматически отменить действие узла split.</p>
 <p><strong>ручной</strong></p>
@@ -3502,23 +3916,23 @@
 </li>
 </ul>
 </section>
-<section id="id277">
-<h6>Хранение сообщений<a class="headerlink" href="#id277" title="Ссылка на этот заголовок"></a></h6>
+<section id="id300">
+<h6>Хранение сообщений<a class="headerlink" href="#id300" title="Ссылка на этот заголовок"></a></h6>
 <p>Этот узел будет буферизовать сообщения внутри, чтобы работать с последовательностями. Настройка времени выполнени <code class="docutils literal notranslate"><span class="pre">nodeMessageBufferMaxLength</span></code> может использоваться для ограничения количества сообщений, которые будут буферизировать узлы.</p>
 </section>
 </section>
 </section>
 </section>
-<section id="id278">
-<h3>анализатор<a class="headerlink" href="#id278" title="Ссылка на этот заголовок"></a></h3>
+<section id="id301">
+<h3>анализатор<a class="headerlink" href="#id301" title="Ссылка на этот заголовок"></a></h3>
 <section id="csv">
 <h4>csv<a class="headerlink" href="#csv" title="Ссылка на этот заголовок"></a></h4>
 <section id="csv-u-logic">
 <h5>Для чего используется узел csv в U-Logic?<a class="headerlink" href="#csv-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел csv в U-Logic используется для обработки данных, разделенных запятыми (CSV). Он позволяет либо преобразовать строку CSV в объект JavaScript, либо преобразовать объект в строку CSV. Эта возможность делает его чрезвычайно полезным для чтения и записи данных в табличном формате.</p>
 </section>
-<section id="id279">
-<h5>Пример использования<a class="headerlink" href="#id279" title="Ссылка на этот заголовок"></a></h5>
+<section id="id302">
+<h5>Пример использования<a class="headerlink" href="#id302" title="Ссылка на этот заголовок"></a></h5>
 <p>Предположим, у вас есть CSV-файл, в котором подробно описывается потребление энергии различными производственными станциями на заводе. Файл содержит название станции, месяц и общее потребление электроэнергии. Вы хотите добавить новый столбец, в котором отображается количество деталей, произведенных на станции, исходя из предположения, что каждая деталь потребляет определенное количество электроэнергии в дополнение к базовому потреблению электроэнергии станком.</p>
 <p>Содержание CSV:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Station</span><span class="p">,</span><span class="n">Month</span><span class="p">,</span><span class="n">Consumption</span>
@@ -3529,17 +3943,17 @@
 </div>
 <p><img alt="Пример использования узла csv" src="../_images/csv_example.png" /></p>
 </section>
-<section id="id280">
-<h5>Документация по узлу<a class="headerlink" href="#id280" title="Ссылка на этот заголовок"></a></h5>
+<section id="id303">
+<h5>Документация по узлу<a class="headerlink" href="#id303" title="Ссылка на этот заголовок"></a></h5>
 <p>Выполняет преобразование между строкой в ​​формате CSV и ее представлением объекта JavaScript в любом направлении.</p>
-<section id="id281">
-<h6>Входные значения<a class="headerlink" href="#id281" title="Ссылка на этот заголовок"></a></h6>
+<section id="id304">
+<h6>Входные значения<a class="headerlink" href="#id304" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript, массив или строка CSV.</p></li>
 </ul>
 </section>
-<section id="id282">
-<h6>Выходные значения<a class="headerlink" href="#id282" title="Ссылка на этот заголовок"></a></h6>
+<section id="id305">
+<h6>Выходные значения<a class="headerlink" href="#id305" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
 <ul>
@@ -3551,8 +3965,8 @@
 </li>
 </ul>
 </section>
-<section id="id283">
-<h6>Подробности<a class="headerlink" href="#id283" title="Ссылка на этот заголовок"></a></h6>
+<section id="id306">
+<h6>Подробности<a class="headerlink" href="#id306" title="Ссылка на этот заголовок"></a></h6>
 <p>Шаблон столбца может содержать упорядоченный список имен столбцов. При конвертации CSV в объект имена столбцов будут использоваться как имена свойств. В качестве альтернативы имена столбцов могут быть взяты из первой строки CSV.</p>
 <p>Если отмечена опция «разбирать числовые значения», строковые числовые значения будут возвращены как числа, т. е. среднее значение «1,»1.5»,2».</p>
 <p>Если отмечен параметр «включать пустые строковые значения», в результате будут возвращены пустые строки, т. е. среднее значение „«1»,»»,3“.</p>
@@ -3565,32 +3979,32 @@
 </section>
 <section id="html">
 <h4>html<a class="headerlink" href="#html" title="Ссылка на этот заголовок"></a></h4>
-<section id="id284">
-<h5>Документация по узлу<a class="headerlink" href="#id284" title="Ссылка на этот заголовок"></a></h5>
+<section id="id307">
+<h5>Документация по узлу<a class="headerlink" href="#id307" title="Ссылка на этот заголовок"></a></h5>
 <p>Извлекает элементы из HTML-документа, хранящегося в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> с помощью селектора CSS.</p>
-<section id="id285">
-<h6>Входные значения<a class="headerlink" href="#id285" title="Ссылка на этот заголовок"></a></h6>
+<section id="id308">
+<h6>Входные значения<a class="headerlink" href="#id308" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: HTML-строка, из которой извлекаются элементы.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">select</span></code>: Если селектор не настроен на панели редактирования, его можно задать как свойство сообщения.</p></li>
 </ul>
 </section>
-<section id="id286">
-<h6>Выходные значения<a class="headerlink" href="#id286" title="Ссылка на этот заголовок"></a></h6>
+<section id="id309">
+<h6>Выходные значения<a class="headerlink" href="#id309" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: результатом может быть либо одно сообщение с payload, содержащей массив совпавших элементов, либо несколько сообщений, каждое из которых содержит совпавший элемент. Если отправлено несколько сообщений, они также будут иметь набор <code class="docutils literal notranslate"><span class="pre">parts</span></code>.</p></li>
 </ul>
 </section>
 </section>
 </section>
-<section id="id287">
-<h4>json<a class="headerlink" href="#id287" title="Ссылка на этот заголовок"></a></h4>
+<section id="id310">
+<h4>json<a class="headerlink" href="#id310" title="Ссылка на этот заголовок"></a></h4>
 <section id="json-u-logic">
 <h5>Для чего используется узел JSON в U-Logic?<a class="headerlink" href="#json-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел JSON в U-Logic используется для обработки данных JavaScript Object Notation (JSON). Он позволяет выполнять преобразование между строкой в ​​формате JSON и объектом JavaScript, что делает его весьма универсальным для задач, связанных с манипуляцией JSON. Эта возможность преобразования оказывается существенной при работе с API, хранении данных или передаче данных между различными службами.</p>
 </section>
-<section id="id288">
-<h5>Пример использования<a class="headerlink" href="#id288" title="Ссылка на этот заголовок"></a></h5>
+<section id="id311">
+<h5>Пример использования<a class="headerlink" href="#id311" title="Ссылка на этот заголовок"></a></h5>
 <p>Предположим, у вас есть поток данных JSON, который поступает от различных датчиков, установленных на сборочной линии на производственном предприятии. Объекты JSON включают такие данные, как название оборудования, временная метка и процент эффективности. Вы хотели бы извлечь эту информацию и рассчитать среднюю ежедневную эффективность для каждого оборудования, чтобы помочь в предиктивном обслуживании и оптимизировать производственный процесс.</p>
 <p>Содержание JSON:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -3602,18 +4016,18 @@
 </div>
 <p><img alt="Пример использования узла html" src="../_images/html_example.png" /></p>
 </section>
-<section id="id289">
-<h5>Документация по узлу<a class="headerlink" href="#id289" title="Ссылка на этот заголовок"></a></h5>
+<section id="id312">
+<h5>Документация по узлу<a class="headerlink" href="#id312" title="Ссылка на этот заголовок"></a></h5>
 <p>Выполняет преобразование между строкой JSON и ее представлением объекта JavaScript в любом направлении.</p>
-<section id="id290">
-<h6>Входные значения<a class="headerlink" href="#id290" title="Ссылка на этот заголовок"></a></h6>
+<section id="id313">
+<h6>Входные значения<a class="headerlink" href="#id313" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка JSON.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">schema</span></code>: Необязательный объект JSON Schema для проверки payload. Свойство будет удалено перед отправкой <code class="docutils literal notranslate"><span class="pre">msg</span></code> на следующий узел.</p></li>
 </ul>
 </section>
-<section id="id291">
-<h6>Выходные значения<a class="headerlink" href="#id291" title="Ссылка на этот заголовок"></a></h6>
+<section id="id314">
+<h6>Выходные значения<a class="headerlink" href="#id314" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
 <ul>
@@ -3624,8 +4038,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">schemaError</span></code>: Если проверка схемы JSON не пройдена, узел catch будет иметь schemaErrorсвойство, содержащее массив ошибок.</p></li>
 </ul>
 </section>
-<section id="id292">
-<h6>Подробности<a class="headerlink" href="#id292" title="Ссылка на этот заголовок"></a></h6>
+<section id="id315">
+<h6>Подробности<a class="headerlink" href="#id315" title="Ссылка на этот заголовок"></a></h6>
 <p>По умолчанию узел работает с <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, но его можно настроить для преобразования любого свойства сообщения.</p>
 <p>Узел также может быть настроен на обеспечение определенной кодировки вместо переключения между ними. Это может быть использовано, например, с узлом http in, чтобы гарантировать, что payload является проанализированным объектом.</p>
 <p>Если узел настроен на обеспечение кодирования свойства как строки и он получает строку, дальнейшие проверки свойства не будут выполняться. Он не будет проверять, является ли строка допустимым JSON, и не будет переформатировать ее, если выбрана опция форматирования.</p>
@@ -3634,17 +4048,17 @@
 </section>
 <section id="xml">
 <h4>xml<a class="headerlink" href="#xml" title="Ссылка на этот заголовок"></a></h4>
-<section id="id293">
-<h5>Документация по узлу<a class="headerlink" href="#id293" title="Ссылка на этот заголовок"></a></h5>
+<section id="id316">
+<h5>Документация по узлу<a class="headerlink" href="#id316" title="Ссылка на этот заголовок"></a></h5>
 <p>Выполняет преобразование между строкой XML и ее представлением объекта JavaScript в любом направлении.</p>
-<section id="id294">
-<h6>Входные значения<a class="headerlink" href="#id294" title="Ссылка на этот заголовок"></a></h6>
+<section id="id317">
+<h6>Входные значения<a class="headerlink" href="#id317" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка XML.</p></li>
 </ul>
 </section>
-<section id="id295">
-<h6>Выходные значения<a class="headerlink" href="#id295" title="Ссылка на этот заголовок"></a></h6>
+<section id="id318">
+<h6>Выходные значения<a class="headerlink" href="#id318" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
 <ul>
@@ -3654,8 +4068,8 @@
 </li>
 </ul>
 </section>
-<section id="id296">
-<h6>Подробности<a class="headerlink" href="#id296" title="Ссылка на этот заголовок"></a></h6>
+<section id="id319">
+<h6>Подробности<a class="headerlink" href="#id319" title="Ссылка на этот заголовок"></a></h6>
 <p>При конвертации между XML и объектом любые атрибуты XML добавляются как свойство с именем $по умолчанию. Любое текстовое содержимое добавляется как свойство с именем _. Эти имена свойств можно указать в конфигурации узла.</p>
 <p>Например, следующий XML будет преобразован, как показано:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;tag&quot;</span><span class="o">&gt;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
@@ -3676,17 +4090,17 @@
 </section>
 <section id="yaml">
 <h4>yaml<a class="headerlink" href="#yaml" title="Ссылка на этот заголовок"></a></h4>
-<section id="id297">
-<h5>Документация по узлу<a class="headerlink" href="#id297" title="Ссылка на этот заголовок"></a></h5>
+<section id="id320">
+<h5>Документация по узлу<a class="headerlink" href="#id320" title="Ссылка на этот заголовок"></a></h5>
 <p>Выполняет преобразование между строкой в ​​формате YAML и ее представлением объекта JavaScript в любом направлении.</p>
-<section id="id298">
-<h6>Входные значения<a class="headerlink" href="#id298" title="Ссылка на этот заголовок"></a></h6>
+<section id="id321">
+<h6>Входные значения<a class="headerlink" href="#id321" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: Объект JavaScript или строка YAML.</p></li>
 </ul>
 </section>
-<section id="id299">
-<h6>Выходные значения<a class="headerlink" href="#id299" title="Ссылка на этот заголовок"></a></h6>
+<section id="id322">
+<h6>Выходные значения<a class="headerlink" href="#id322" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
 <ul>
@@ -3699,16 +4113,16 @@
 </section>
 </section>
 </section>
-<section id="id300">
-<h3>хранилище<a class="headerlink" href="#id300" title="Ссылка на этот заголовок"></a></h3>
+<section id="id323">
+<h3>хранилище<a class="headerlink" href="#id323" title="Ссылка на этот заголовок"></a></h3>
 <section id="write-file">
 <h4>write file<a class="headerlink" href="#write-file" title="Ссылка на этот заголовок"></a></h4>
 <section id="write-file-u-logic">
 <h5>Что такое узел write file в U-Logic?<a class="headerlink" href="#write-file-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел write file в U-Logic используется для записи данных в файл в файловой системе. Он обычно используется в потоках, где вам нужно сохранить данные или журналы для последующего анализа или хранения. Содержимое, которое должно быть записано, указывается с помощью <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>.</p>
 </section>
-<section id="id301">
-<h5>Настройка узла write file в U-Logic:<a class="headerlink" href="#id301" title="Ссылка на этот заголовок"></a></h5>
+<section id="id324">
+<h5>Настройка узла write file в U-Logic:<a class="headerlink" href="#id324" title="Ссылка на этот заголовок"></a></h5>
 <ul>
 <li><p>Имя файла: Укажите имя файла</p>
 <ul class="simple">
@@ -3731,8 +4145,8 @@
 </ul>
 <p><em>Совет: всегда используйте абсолютный путь для имени файла, чтобы U-Logic мог точно найти и обработать указанный файл.</em></p>
 </section>
-<section id="id302">
-<h5>Варианты использования<a class="headerlink" href="#id302" title="Ссылка на этот заголовок"></a></h5>
+<section id="id325">
+<h5>Варианты использования<a class="headerlink" href="#id325" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p><strong>Регистрация данных</strong>: сохранение показаний датчиков, данных устройств IoT или системных показателей в файле для исторического анализа или мониторинга тенденций с течением времени.</p></li>
 <li><p><strong>Регистрация ошибок</strong>: сбор и регистрация сообщений об ошибках, исключений или отладочной информации в файле для устранения неполадок и отладки.</p></li>
@@ -3745,8 +4159,8 @@
 <li><p><strong>Ведение журнала событий</strong>: регистрация событий, уведомлений или взаимодействий пользователей в файле для целей аудита, соответствия или отслеживания истории.</p></li>
 </ol>
 </section>
-<section id="id303">
-<h5>Примеры<a class="headerlink" href="#id303" title="Ссылка на этот заголовок"></a></h5>
+<section id="id326">
+<h5>Примеры<a class="headerlink" href="#id326" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В приведенном ниже примере мы демонстрируем, как создать файл и записать в него содержимое.</p></li>
 </ol>
@@ -3758,22 +4172,22 @@
 <p><img alt="Пример настройки узла write file" src="../_images/write_file_edit2.png" /></p>
 <p><img alt="Пример использования узла write file" src="../_images/write_file_example2.png" /></p>
 </section>
-<section id="id304">
-<h5>Документация по узлу<a class="headerlink" href="#id304" title="Ссылка на этот заголовок"></a></h5>
+<section id="id327">
+<h5>Документация по узлу<a class="headerlink" href="#id327" title="Ссылка на этот заголовок"></a></h5>
 <p>Записывает <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> в файл, добавляя в конец или заменяя существующее содержимое. Также может удалить файл.</p>
-<section id="id305">
-<h6>Входные значения<a class="headerlink" href="#id305" title="Ссылка на этот заголовок"></a></h6>
+<section id="id328">
+<h6>Входные значения<a class="headerlink" href="#id328" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: Имя файла для обновления может быть указано в конфигурации узла или как свойство сообщения. По умолчанию будет использоваться <code class="docutils literal notranslate"><span class="pre">msg.filename</span></code> но это можно настроить в узле.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">encoding</span></code>: Если кодировка настроена на установку с помощью msg, то это необязательное свойство может задать кодировку.</p></li>
 </ul>
 </section>
-<section id="id306">
-<h6>Выходное значение<a class="headerlink" href="#id306" title="Ссылка на этот заголовок"></a></h6>
+<section id="id329">
+<h6>Выходное значение<a class="headerlink" href="#id329" title="Ссылка на этот заголовок"></a></h6>
 <p>По завершении записи входное сообщение отправляется на выходной порт.</p>
 </section>
-<section id="id307">
-<h6>Подробности<a class="headerlink" href="#id307" title="Ссылка на этот заголовок"></a></h6>
+<section id="id330">
+<h6>Подробности<a class="headerlink" href="#id330" title="Ссылка на этот заголовок"></a></h6>
 <p>Каждое сообщение будет добавлено в конец файла, при желании между ними может быть добавлен символ новой строки (\n).</p>
 <p>Если используется <code class="docutils literal notranslate"><span class="pre">msg.filename</span></code>, файл будет закрыт после каждой записи. Для лучшей производительности используйте фиксированное имя файла.</p>
 <p>Его можно настроить на перезапись всего файла, а не на добавление. Например, при записи двоичных данных в файл, например, изображения, следует использовать эту опцию, а опцию добавления новой строки следует отключить.</p>
@@ -3788,8 +4202,8 @@
 <h5>Что такое узел read file в U-Logic?<a class="headerlink" href="#read-file-u-logic" title="Ссылка на этот заголовок"></a></h5>
 <p>Узел read file в U-Logic используется для чтения содержимого файла из файловой системы. Узел read file может читать как строковые, так и двоичные данные буфера, что делает его универсальным для различных потребностей интеграции в потоках U-Logic.</p>
 </section>
-<section id="id308">
-<h5>Настройка узла read file<a class="headerlink" href="#id308" title="Ссылка на этот заголовок"></a></h5>
+<section id="id331">
+<h5>Настройка узла read file<a class="headerlink" href="#id331" title="Ссылка на этот заголовок"></a></h5>
 <ul>
 <li><p>Имя файла: Укажите имя файла.</p>
 <ul class="simple">
@@ -3811,8 +4225,8 @@
 </ul>
 <p><em>Совет: всегда используйте абсолютный путь для имени файла, чтобы U-Logic мог точно находить и обрабатывать указанный файл.</em></p>
 </section>
-<section id="id309">
-<h5>Варианты использования<a class="headerlink" href="#id309" title="Ссылка на этот заголовок"></a></h5>
+<section id="id332">
+<h5>Варианты использования<a class="headerlink" href="#id332" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p><strong>Загрузка конфигурации</strong>: чтение файлов конфигурации, содержащих параметры или настройки для ваших потоков или приложений U-Logic. Это позволяет вам динамически настраивать поведение ваших потоков, не изменяя структуру потока.</p></li>
 <li><p><strong>Агрегация данных</strong>: чтение нескольких файлов данных и объединение их содержимого в одно сообщение или набор данных для дальнейшей обработки или анализа. Это может быть полезно для таких задач, как объединение нескольких файлов CSV в единый набор данных.</p></li>
@@ -3824,8 +4238,8 @@
 <li><p><strong>Резервное копирование и восстановление данных</strong>: читайте файлы, содержащие данные резервных копий или моментальные снимки, и используйте U-Logic для управления и автоматизации процессов резервного копирования и восстановления.</p></li>
 </ol>
 </section>
-<section id="id310">
-<h5>Примеры<a class="headerlink" href="#id310" title="Ссылка на этот заголовок"></a></h5>
+<section id="id333">
+<h5>Примеры<a class="headerlink" href="#id333" title="Ссылка на этот заголовок"></a></h5>
 <ol class="arabic simple">
 <li><p>В примере потока мы демонстрируем, как прочитать содержимое файла с помощью узла read file и получить вывод в виде строки.</p></li>
 </ol>
@@ -3837,8 +4251,8 @@
 <p><img alt="Пример настройки узла read file" src="../_images/read_file_edit2.png" /></p>
 <p><img alt="Пример использования узла read file" src="../_images/read_file_example2.png" /></p>
 </section>
-<section id="id311">
-<h5>Документация по узлу<a class="headerlink" href="#id311" title="Ссылка на этот заголовок"></a></h5>
+<section id="id334">
+<h5>Документация по узлу<a class="headerlink" href="#id334" title="Ссылка на этот заголовок"></a></h5>
 <p>Отслеживает изменения в каталоге или файле.</p>
 <p>Вы можете ввести список каталогов и/или файлов, разделенных запятыми. Вам нужно будет поместить кавычки «…» вокруг всех, где есть пробелы.</p>
 <p>Полное имя файла, который фактически изменился, помещается в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> и <code class="docutils literal notranslate"><span class="pre">msg.filename</span></code>, а строковая версия списка наблюдения возвращается в <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code>.</p>
@@ -3847,13 +4261,314 @@
 <p class="admonition-title">Примечание</p>
 <p>Каталог или файл должны существовать, чтобы за ними можно было наблюдать. Если файл или каталог удаляется, он может перестать отслеживаться, даже если будет создан заново.</p>
 </div>
-<section id="id312">
-<h6>Выходные значения<a class="headerlink" href="#id312" title="Ссылка на этот заголовок"></a></h6>
+<section id="id335">
+<h6>Выходные значения<a class="headerlink" href="#id335" title="Ссылка на этот заголовок"></a></h6>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">payload</span></code>: содержимое файла в виде строки или двоичного буфера.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: если не настроено в узле, это необязательное свойство задает имя файла для чтения.</p></li>
 </ul>
 </section>
+</section>
+</section>
+</section>
+<section id="ui">
+<h3>UI<a class="headerlink" href="#ui" title="Ссылка на этот заголовок"></a></h3>
+<section id="api-helper">
+<h4>api-helper<a class="headerlink" href="#api-helper" title="Ссылка на этот заголовок"></a></h4>
+<section id="id336">
+<h5>Описание<a class="headerlink" href="#id336" title="Ссылка на этот заголовок"></a></h5>
+<p>Узел api-helper предназначен для упрощения управления состоянием и навигацией между элементами пользовательского интерфейса. Он позволяет одновременно изменять состояния нескольких объектов, таких как кнопки, слайдеры, списки и фреймы. Узел поддерживает масштабирование значений для слайдеров.</p>
+</section>
+<section id="id337">
+<h5>Основные параметры узла<a class="headerlink" href="#id337" title="Ссылка на этот заголовок"></a></h5>
+<ul>
+<li><p><strong>Имя узла (name)</strong> — произвольное имя узла.</p></li>
+<li><p><strong>Имя интерфейса (ui)</strong> — название интерфейса.</p></li>
+<li><p><strong>Тип сообщения (action_type)</strong> — определяет тип события, которое узел отправляет. Поддерживаются два типа:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;navigation&quot;</span></code> — используется для навигации по интерфейсу.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;uiState&quot;</span></code> — используется для изменения состояния элементов интерфейса, таких как текст, видимость или цвет.</p></li>
+</ul>
+</li>
+<li><p><strong>Объекты (object)</strong> — элементы интерфейса с параметрами:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> — имя объекта, идентифицирующее элемент интерфейса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event</span></code> — тип события для объекта. Поддерживаемые события:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">uiState</span></code> — для изменения состояния (только кнопки).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> — для установки текста.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> — для числового значения (только слайдер).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overlay</span></code> — для overlay.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">item</span></code> — добавляет ключ и значение в список.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove</span> <span class="pre">list</span> <span class="pre">item</span></code> — удаляет элемент списка по ключу.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code> — создает список или очищает его.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span></code> — для смещения объекта по координатам.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hidden</span></code> — для управления видимостью.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontColor</span></code> — для изменения цвета шрифта.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> — значение для слайдера.</p></li>
+</ul>
+</li>
+</ul>
+<p>Для слайдера поддерживаются дополнительные параметры:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code> и <code class="docutils literal notranslate"><span class="pre">max</span></code> — минимальное и максимальное входное значение, определяющие диапазон, который будет масштабироваться в диапазон от 0 до 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame</span></code> — для объектов типа overlay, указывающий имя frame, где будет отображаться overlay.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code> — для объектов типа listbox, указывает список, состоящий из ключей и значений (key и value).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id338">
+<h5>Работа узла<a class="headerlink" href="#id338" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><strong>Подготовка данных:</strong> Для изменения значений элементов отправьте JSON-объект в <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code>. Каждый ключ в <code class="docutils literal notranslate"><span class="pre">msg.topic</span></code> должен соответствовать имени одного из объектов, указанных в параметре <code class="docutils literal notranslate"><span class="pre">object</span></code> узла. Значения зависят от типа объекта и аналогичны значениям, доступным по умолчанию в узле.</p></li>
+<li><p><strong>Тип события:</strong> В зависимости от параметра <code class="docutils literal notranslate"><span class="pre">action_type</span></code> узел выполняет одно из двух действий:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">navigation</span></code>: создаёт объект для навигации по интерфейсу, ссылающийся на указанные элементы.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uiState</span></code>: изменяет состояние указанных элементов интерфейса на основе переданных данных.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id339">
+<h5>Пример использования<a class="headerlink" href="#id339" title="Ссылка на этот заголовок"></a></h5>
+<p>Предположим, у нас есть три элемента интерфейса: <code class="docutils literal notranslate"><span class="pre">LEVEL1</span></code>, <code class="docutils literal notranslate"><span class="pre">LEVEL2</span></code>, и <code class="docutils literal notranslate"><span class="pre">LEVEL3</span></code>, которые нужно обновить.</p>
+<ol class="arabic simple">
+<li><p>Настройте массив объектов в узле следующим образом:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;button1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;LEVEL2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;LEVEL3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">2000</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Отправьте входное сообщение с данными, например:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">msg</span><span class="p">.</span><span class="nx">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;button1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;LEVEL2&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;LEVEL3&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1500</span>
+<span class="w">    </span><span class="s2">&quot;List Box&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;Key 1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 1&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Key 2&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 2&quot;</span><span class="p">}]</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Узел преобразует входные значения, которые могут выглядеть следующим образом:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">UI</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MainUI&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">action_type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">object</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;button1&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="s2">&quot;LEVEL2&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="s2">&quot;LEVEL3&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="interlock">
+<h4>interlock<a class="headerlink" href="#interlock" title="Ссылка на этот заголовок"></a></h4>
+<p>Узел interlock предназначен для управления состояниями и видимостью объектов на пользовательском интерфейсе. Этот узел позволяет динамически обновлять состояние нескольких кнопок на основе входящих сообщений.</p>
+<section id="id340">
+<h5>Использование<a class="headerlink" href="#id340" title="Ссылка на этот заголовок"></a></h5>
+<section id="id341">
+<h6>Настройка узла<a class="headerlink" href="#id341" title="Ссылка на этот заголовок"></a></h6>
+<p>При добавлении узла interlock в ваш поток вам нужно будет настроить его, используя следующие поля:</p>
+<ul class="simple">
+<li><p><strong>Имя узла:</strong> Произвольное имя узла для его идентификации в потоке.</p></li>
+<li><p><strong>Имя интерфейса:</strong> Имя интерфейса, которому будет отправлено сообщение.</p></li>
+<li><p><strong>Тип события:</strong> Определяет тип события для кнопок. Может быть либо <code class="docutils literal notranslate"><span class="pre">uiState</span></code>, либо <code class="docutils literal notranslate"><span class="pre">hidden</span></code>.</p></li>
+<li><p><strong>Активное состояние кнопки:</strong> Состояние, которое будет применено к активной кнопке.</p></li>
+<li><p><strong>Состояние кнопки по умолчанию:</strong> Состояние, которое будет применено ко всем другим кнопкам.</p></li>
+<li><p><strong>Новые кнопки:</strong> Поле для ввода имени новой кнопки и кнопка для добавления этой кнопки в список.</p></li>
+<li><p><strong>Список кнопок:</strong> Выпадающий список добавленных кнопок с возможностью удаления выбранной кнопки.</p></li>
+</ul>
+</section>
+<section id="id342">
+<h6>Пример конфигурации<a class="headerlink" href="#id342" title="Ссылка на этот заголовок"></a></h6>
+<ul class="simple">
+<li><p><strong>Имя узла:</strong> My Interlock Node</p></li>
+<li><p><strong>Имя интерфейса:</strong> MyInterface</p></li>
+<li><p><strong>Тип события:</strong> uiState</p></li>
+<li><p><strong>Активное состояние кнопки:</strong> selected</p></li>
+<li><p><strong>Состояние кнопки по умолчанию:</strong> default</p></li>
+<li><p><strong>Добавление кнопок:</strong> Введите имя кнопки в поле и нажмите Add, чтобы добавить кнопку в список. Повторите для каждой кнопки.</p></li>
+</ul>
+</section>
+<section id="id343">
+<h6>Формат входящих сообщений<a class="headerlink" href="#id343" title="Ссылка на этот заголовок"></a></h6>
+<p>Узел принимает имя активной кнопки через <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>. Например, если <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> содержит имя кнопки <code class="docutils literal notranslate"><span class="pre">Button1</span></code>, то это имя будет использовано для определения активного состояния кнопки. Для перевода всех объектов в состояние по умолчанию отправьте <code class="docutils literal notranslate"><span class="pre">reset</span> <span class="pre">state</span></code> в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>.</p>
+</section>
+<section id="id344">
+<h6>Формат выходящих сообщений<a class="headerlink" href="#id344" title="Ссылка на этот заголовок"></a></h6>
+<p>Сообщение, отправляемое узлом, будет в следующем формате:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Имя интерфейса&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;action_type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип действия (uiState или hidden)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;Имя кнопки 1&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="s2">&quot;Имя кнопки 2&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Тип события&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Состояние&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id345">
+<h6>Пример использования<a class="headerlink" href="#id345" title="Ссылка на этот заголовок"></a></h6>
+<p>Если у вас есть три кнопки: <code class="docutils literal notranslate"><span class="pre">Button1</span></code>, <code class="docutils literal notranslate"><span class="pre">Button2</span></code> и <code class="docutils literal notranslate"><span class="pre">Button3</span></code>, и вы хотите установить состояние <code class="docutils literal notranslate"><span class="pre">selected</span></code> для <code class="docutils literal notranslate"><span class="pre">Button1</span></code>, а состояние <code class="docutils literal notranslate"><span class="pre">default</span></code> для остальных, вам нужно настроить узел следующим образом:</p>
+<ul class="simple">
+<li><p><strong>Имя интерфейса:</strong> MyInterface</p></li>
+<li><p><strong>Тип события:</strong> uiState</p></li>
+<li><p><strong>Активное состояние кнопки:</strong> selected</p></li>
+<li><p><strong>Состояние кнопки по умолчанию:</strong> default</p></li>
+<li><p><strong>Добавленные кнопки:</strong> Button1, Button2, Button3</p></li>
+</ul>
+<p>Отправьте сообщение с <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, содержащим <code class="docutils literal notranslate"><span class="pre">Button1</span></code>, чтобы установить <code class="docutils literal notranslate"><span class="pre">Button1</span></code> в состояние <code class="docutils literal notranslate"><span class="pre">selected</span></code>, а остальные кнопки в состояние <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</section>
+<section id="id346">
+<h6>Пример выходящего сообщения<a class="headerlink" href="#id346" title="Ссылка на этот заголовок"></a></h6>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;UI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyInterface&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;action_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Button1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Button2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Button3&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uiState&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="ui-panel-in">
+<h4>UI - Panel in<a class="headerlink" href="#ui-panel-in" title="Ссылка на этот заголовок"></a></h4>
+<p>Формат сообщений от интерфейса — JSON. Сообщение находится в <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>.</p>
+<p>При каждом подключении или смене интерфейса приходит сообщение о выборе интерфейса.</p>
+<section id="id347">
+<h5>Пример:<a class="headerlink" href="#id347" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;select UI&quot;</span><span class="o">:</span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.14&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Каждое сообщение может содержать несколько ключей:</p>
+<ul class="simple">
+<li><p><strong>«Client»</strong> – ключ, значение которого — IP-адрес клиента, инициатора события.</p></li>
+<li><p><strong>«UI»</strong> – ключ, значение которого — имя интерфейса, на котором произошло событие. Имя интерфейса также является ключом, значением которого является JSON с информацией о событии.</p></li>
+<li><p><strong>«object»</strong> – ключ, значением которого является имя объекта события.</p></li>
+<li><p><strong>«event»</strong> – ключ, значением которого является тип события.</p></li>
+<li><p><strong>«value»</strong> – ключ, значением которого является значение слайдера.</p></li>
+</ul>
+</section>
+<section id="event">
+<h5>Значения для <strong>«event»</strong>:<a class="headerlink" href="#event" title="Ссылка на этот заголовок"></a></h5>
+<ul class="simple">
+<li><p><strong>«tap»</strong> – кратковременное нажатие на кнопку.</p></li>
+<li><p><strong>«release»</strong> – кнопка отпущена после нажатия.</p></li>
+<li><p><strong>«push»</strong> – кнопка нажата.</p></li>
+<li><p><strong>«slide_begin»</strong> – начало движения слайдера. Применимо только к слайдеру. В этом случае появляется ключ <strong>«value»</strong>, который содержит значение слайдера в формате <code class="docutils literal notranslate"><span class="pre">float</span></code>, но тип значения для ключа <strong>«value»</strong> — <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p></li>
+<li><p><strong>«slide_end»</strong> – слайдер отпущен. Применимо только к слайдеру. В этом случае появляется ключ <strong>«value»</strong>, который содержит значение слайдера в формате <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p><strong>«item_selected»</strong> – нажатие на элемент списка. Применимо только к спискам. В этом случае появляется ключ <strong>«value»</strong>, значением которого является ключ элемента, который был указан при формировании списка.</p></li>
+</ul>
+</section>
+<section id="id348">
+<h5>Пример для кнопки<a class="headerlink" href="#id348" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;push&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;release&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;My Interface&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Button Home&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;tap&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id349">
+<h5>Пример для слайдера<a class="headerlink" href="#id349" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Slider&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;slide_begin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.47</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;Slider (2)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;slide_end&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.47</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id350">
+<h5>Пример для списка<a class="headerlink" href="#id350" title="Ссылка на этот заголовок"></a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;UI&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;Test&quot;</span><span class="o">:</span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;object&quot;</span><span class="o">:</span><span class="s2">&quot;List Box&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="s2">&quot;item_selected&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Client&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.66.20&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
