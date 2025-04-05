@@ -63,28 +63,32 @@
 <li class="toctree-l3"><a class="reference internal" href="#id10">Создание страницы</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id11">Создание оверлея</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id12">Добавление фона</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Изменение изображения кнопки</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">Управление проектом</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Сохранение и публикация проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">Управление проектом</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Сохранение и публикация проекта</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#u-logic">Настройка интерфейса в U-logic</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">Терминология</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Интерфейс</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Холст</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Страница</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Оверлей</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Фрейм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Кнопка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Слайдер</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Фон</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id15">Терминология</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id16">Интерфейс</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">Холст</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id18">Страница</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id19">Оверлей</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id20">Фрейм</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id21">Кнопка</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id22">Список</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id23">Слайдер</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id24">Фон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id25">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Рабочее пространство</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Элементы</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id25">Горячие клавиши</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../UI-Panel.html">UI-Panel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Часто задаваемые вопросы</a></li>
 </ul>
@@ -125,7 +129,7 @@
 <p>Основные элементы:</p>
 <ul class="simple">
 <li><p><strong>Дерево интерфейса</strong> – служит для навигации по созданным элементам.</p></li>
-<li><p><strong>Холст</strong> – основная рабочая область для создания интерфейсов.</p></li>
+<li><p><strong>Холст</strong> – основная рабочая область (пространство) для создания интерфейсов.</p></li>
 <li><p><strong>Панель свойств элементов</strong> – служит для изменения размеров, положения, стилей и других параметров</p></li>
 <li><p><strong>Менеджер изображений</strong> – загрузка и выбор изображений для использования в интерфейсе.</p></li>
 </ul>
@@ -258,12 +262,22 @@
 <li><p><strong>Разгруппировать элементы</strong>: Отменяет группировку.</p></li>
 <li><p><strong>Показывать имена элементов</strong>: Отображает имена элементов на рабочей области.</p></li>
 </ul>
-<p>Рабочее пространство - это рабочая зона UI-Designer для размещения элементов</p>
+<p>Рабочая область (пространство) - это рабочая зона UI-Designer для размещения элементов</p>
 </section>
 <section id="id6">
 <h4>Менеджер изображений<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h4>
 <p><img alt="Менеджер изображений" src="../_images/image_manager.png" /></p>
-<p>Левая часть менеджера изображений представляет из себя список библиотек, содержащих изображения. В правой части отображается содержимое выбранной библиотеки.</p>
+<p>Левая часть менеджера изображений представляет из себя список библиотек, содержащих элементы. В правой части отображается содержимое выбранной библиотеки.
+Над каждым элементом написано состояние, изображение которого на данный момент отображается. Чтобы изменить состояние элемента и соотвественно его изображение, нажмите по нему. Если у элемента нет изображения для других состояний, то ничего не произойдет.</p>
+<p>Если нажать на элемент несколько раз, то отобразится изображение состояния элемента.</p>
+<p><img alt="Подробности изображения" src="../_images/image_manager_details.png" /></p>
+<p>Также отобразится его название, размер изображения, размер файла, состояние, отображаемого изображения элемента. Можно выбрать фон показываемого изображения. Доступны следующие варианты:</p>
+<ul class="simple">
+<li><p>black - Черный задний фон изображения</p></li>
+<li><p>white - Белый задний фон изображения</p></li>
+<li><p>grid - Шахматный задний фон изображения (Фон прозрачности)</p></li>
+</ul>
+<p>Слева и справа от изображения находятся стрелочки, позволяющий переключиться на следующее или предыдущее изображение состояния элемента. При отсутствии других изображений состояния элемента ничего не произойдет.</p>
 <p>При нажатии на «Менеджер изображений» появится следующее окно:</p>
 <p><img alt="Менеджер изображений" src="../_images/image_manager_frame.png" /></p>
 <p>В левой части представлен список библиотек</p>
@@ -414,13 +428,19 @@
 <section id="id12">
 <h3>Добавление фона<a class="headerlink" href="#id12" title="Ссылка на этот заголовок"></a></h3>
 <p>Выберите нужное изображение в менеджере изображений и перетащите его на холст. При этом, удерживая клавишу <code class="docutils literal notranslate"><span class="pre">Shift</span></code>.</p>
-<!-- чек -->
-</section>
 </section>
 <section id="id13">
-<h2>Управление проектом<a class="headerlink" href="#id13" title="Ссылка на этот заголовок"></a></h2>
+<h3>Изменение изображения кнопки<a class="headerlink" href="#id13" title="Ссылка на этот заголовок"></a></h3>
+<p>Чтобы изменить изображение кнопки любого состония можно следующими способами:</p>
+<p>Выбрать кнопку на холсте и перетащить изображение из менеджера изображений в поле изображения нужного состояния в панели свойств.</p>
+<p><img alt="Изменение изображения состояния кнопки" src="../_images/change_button_image.png" /></p>
+<p>Или же можно перетащить изображение из менеджера изображений на сам элемент на холсте, однако в этом случае заменятся все изображения состояний кнопки.</p>
+</section>
+</section>
 <section id="id14">
-<h3>Сохранение и публикация проекта<a class="headerlink" href="#id14" title="Ссылка на этот заголовок"></a></h3>
+<h2>Управление проектом<a class="headerlink" href="#id14" title="Ссылка на этот заголовок"></a></h2>
+<section id="id15">
+<h3>Сохранение и публикация проекта<a class="headerlink" href="#id15" title="Ссылка на этот заголовок"></a></h3>
 <p>После того как дизайн интерфейса готов, интерфейс можно загрузить на UI-Panel. Для этого сначала необходимо сохранить проект нажав на кнопку <strong>Сохранить</strong>, затем нажать кнопку <strong>Опубликовать</strong> для отправки проекта на панель.</p>
 <p><img alt="Сохранение и публикация проекта" src="../_images/save_and_publish.png" /></p>
 </section>
@@ -432,28 +452,27 @@
 </ul>
 </section>
 </section>
-</section>
-<section id="id15">
-<h1>Терминология<a class="headerlink" href="#id15" title="Ссылка на этот заголовок"></a></h1>
-<p>Ниже приведены основные термины и концепции, используемые в UI-Designer</p>
 <section id="id16">
-<h2>Интерфейс<a class="headerlink" href="#id16" title="Ссылка на этот заголовок"></a></h2>
+<h2>Терминология<a class="headerlink" href="#id16" title="Ссылка на этот заголовок"></a></h2>
+<p>Ниже приведены основные термины и концепции, используемые в UI-Designer</p>
+<section id="id17">
+<h3>Интерфейс<a class="headerlink" href="#id17" title="Ссылка на этот заголовок"></a></h3>
 <p>Совокупность элементов управления, с которыми взаимодействует пользователь. Интерфейс определяет внешний вид и поведение системы.</p>
 </section>
-<section id="id17">
-<h2>Холст<a class="headerlink" href="#id17" title="Ссылка на этот заголовок"></a></h2>
+<section id="id18">
+<h3>Холст<a class="headerlink" href="#id18" title="Ссылка на этот заголовок"></a></h3>
 <p>Холст (Рабочее пространство) используется для определения внешнего вида страниц и расположения элементов на них. Каждая страница обладает собственным рабочим пространством</p>
 </section>
-<section id="id18">
-<h2>Страница<a class="headerlink" href="#id18" title="Ссылка на этот заголовок"></a></h2>
+<section id="id19">
+<h3>Страница<a class="headerlink" href="#id19" title="Ссылка на этот заголовок"></a></h3>
 <p>Ключевой элемент интерфейса, представляющий собой основное рабочее пространство для взаимодействия пользователя</p>
 </section>
-<section id="id19">
-<h2>Оверлей<a class="headerlink" href="#id19" title="Ссылка на этот заголовок"></a></h2>
+<section id="id20">
+<h3>Оверлей<a class="headerlink" href="#id20" title="Ссылка на этот заголовок"></a></h3>
 <p>Оверлей — это элемент, накладываемый поверх основной страницы. Он помогает упростить структуру интерфейса, избегая создания множества отдельных страниц, и позволяет использовать одни и те же элементы в разных частях системы.</p>
 </section>
-<section id="id20">
-<h2>Фрейм<a class="headerlink" href="#id20" title="Ссылка на этот заголовок"></a></h2>
+<section id="id21">
+<h3>Фрейм<a class="headerlink" href="#id21" title="Ссылка на этот заголовок"></a></h3>
 <p>Фрейм – это контейнер, в котором отображаются оверлеи. Он позволяет повторно использовать логику взаимодействия и функциональные элементы. Фрейм также может сохранять пропорции оверлея, корректно отображаясь в заданных ему размерах, или, при необходимости, делать оверлей внутри себя прокручиваемым, если его содержимое превышает доступное пространство.</p>
 <p>Назначение фрейма:</p>
 <ul class="simple">
@@ -461,8 +480,8 @@
 <li><p>Позволяет уменьшить количество страниц за счёт добавления дополнительных слоёв интерфейса, где можно повторно использовать логику взаимодействия.</p></li>
 </ul>
 </section>
-<section id="id21">
-<h2>Кнопка<a class="headerlink" href="#id21" title="Ссылка на этот заголовок"></a></h2>
+<section id="id22">
+<h3>Кнопка<a class="headerlink" href="#id22" title="Ссылка на этот заголовок"></a></h3>
 <p>Элемент интерфейса, предназначенный для выполнения действий при нажатии. Они могут содержать текст или изображения. Подробнее о настройке текста или изображения можно узнать в разделе «Обзор/Правая панель». Также кнопка может менять состояние в зависимости от состояния.</p>
 <p>Кнопка может иметь следующие состояния:</p>
 <ul class="simple">
@@ -471,65 +490,151 @@
 <li><p>PRESSED: Отображается после отправки соответствующей команды из U-Logic.</p></li>
 <li><p>DISABLED: Отображается, когда кнопка больше не активна.</p></li>
 </ul>
-</section>
-<section id="id22">
-<h2>Список<a class="headerlink" href="#id22" title="Ссылка на этот заголовок"></a></h2>
+<!-- ### Список -->
 <!-- чек -->
 </section>
 <section id="id23">
-<h2>Слайдер<a class="headerlink" href="#id23" title="Ссылка на этот заголовок"></a></h2>
+<h3>Слайдер<a class="headerlink" href="#id23" title="Ссылка на этот заголовок"></a></h3>
 <p>Элемент, позволяющий изменять значение в определенном диапазоне. Может , например, использоваться для регулировки громкости, яркости, выбора значений или параметров. Слайдеры могут быть горизонтальными или вертикальными.</p>
 </section>
 <section id="id24">
-<h2>Фон<a class="headerlink" href="#id24" title="Ссылка на этот заголовок"></a></h2>
+<h3>Фон<a class="headerlink" href="#id24" title="Ссылка на этот заголовок"></a></h3>
 <p>Визуальный элемент страницы, создающий основу для её оформления.</p>
 </section>
 </section>
 <section id="id25">
-<h1>Горячие клавиши<a class="headerlink" href="#id25" title="Ссылка на этот заголовок"></a></h1>
+<h2>Горячие клавиши<a class="headerlink" href="#id25" title="Ссылка на этот заголовок"></a></h2>
 <p>Использование горячих клавиш в UI-Designer помогает работать быстрее, облегчая навигацию, редактирование и управление потоками. Ниже приведен список горячих клавиш UI-Designer:</p>
+<section id="id26">
+<h3>Рабочее пространство<a class="headerlink" href="#id26" title="Ссылка на этот заголовок"></a></h3>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Основное сочетание</p></th>
-<th class="head"><p>Альтернативное сочетание</p></th>
+<tr class="row-odd"><th class="head"><p>Сочетание</p></th>
 <th class="head"><p>Описание</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Ctrl + E</p></td>
-<td><p>⌘ + E</p></td>
-<td><p>Открыть диалог экспорта</p></td>
+<tr class="row-even"><td><p>↑</p></td>
+<td><p>Переместить рабочее простраство вверх</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ctrl + I</p></td>
-<td><p>⌘ + I</p></td>
-<td><p>Открыть диалог импорта</p></td>
+<tr class="row-odd"><td><p>↓</p></td>
+<td><p>Переместить рабочее простраство вниз</p></td>
 </tr>
-<tr class="row-even"><td><p>Ctrl + Z</p></td>
-<td><p>⌘ + Z</p></td>
-<td><p>Отменить последнее действие</p></td>
+<tr class="row-even"><td><p>←</p></td>
+<td><p>Переместить рабочее простраство влево</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ctrl + Y</p></td>
-<td><p>⌘ + Y</p></td>
-<td><p>Повторить последнее отмененное действие</p></td>
+<tr class="row-odd"><td><p>→</p></td>
+<td><p>Переместить рабочее простраство вправо</p></td>
 </tr>
-<tr class="row-even"><td><p>Ctrl + D</p></td>
-<td><p>⌘ + D</p></td>
-<td><p>Развернуть поток</p></td>
+<tr class="row-even"><td><p>U</p></td>
+<td><p>Выбрать инструмент «Создать Виджет (Кнопку)»</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ctrl + Space</p></td>
-<td><p>⌘ + Space</p></td>
-<td><p>Открыть/Закрыть боковую панель</p></td>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>Выбрать инструмент «Создать Виджет (Список)»</p></td>
 </tr>
-<tr class="row-even"><td><p>Ctrl + P</p></td>
-<td><p>⌘ + P</p></td>
-<td><p>Открыть/Закрыть палитру узлов</p></td>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>Выбрать инструмент «Создать Виджет (Слайдер)»</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ctrl + Shift + P</p></td>
-<td><p>⌘ + Shift + P</p></td>
-<td><p>Показать список действий</p></td>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>Выбрать инструмент «Создать Виджет (Фон)»</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>Выбрать инструмент «Создать Виджет (Фрейм)»</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>Выбрать инструмент «Выделение»</p></td>
+</tr>
+<tr class="row-even"><td><p>+</p></td>
+<td><p>Приблизить рабочее пространство</p></td>
+</tr>
+<tr class="row-odd"><td><p>-</p></td>
+<td><p>Отдалить рабочее пространство</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Привести рабочее пространство в исходный масштаб</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="id27">
+<h3>Элементы<a class="headerlink" href="#id27" title="Ссылка на этот заголовок"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Сочетание</p></th>
+<th class="head"><p>Описание</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>Центрировать выдленные элементы по горизонтали</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q</p></td>
+<td><p>Центрировать выделенные элементы по вертикали</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Выровнять выделенные элементы по левому краю</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>Выровнять выделенные элементы по правому краю</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>Выровнять выделенные элементы по верхнему краю</p></td>
+</tr>
+<tr class="row-odd"><td><p>S</p></td>
+<td><p>Выровнять выделенные элементы по нижнему краю</p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p>Сгруппировать выделенные элементы</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift + G</p></td>
+<td><p>Разгруппировать элементы</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>Показывать / Скрывать имена элементов</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Включить / Выключить режим предпросмотра</p></td>
+</tr>
+<tr class="row-even"><td><p>Escape</p></td>
+<td><p>Выключить режим предпросмотра</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl + P</p></td>
+<td><p>Опубликовать проект в UI-Panel</p></td>
+</tr>
+<tr class="row-even"><td><p>Ctrl + S</p></td>
+<td><p>Сохранить текущие изменения</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift + «+»</p></td>
+<td><p>Увеличить размер выдленного элемента</p></td>
+</tr>
+<tr class="row-even"><td><p>Shift + «-»</p></td>
+<td><p>Уменьшить размер выделенного элемента</p></td>
+</tr>
+<tr class="row-odd"><td><p>↑</p></td>
+<td><p>Переместить выделенный элемент вверх на единицу</p></td>
+</tr>
+<tr class="row-even"><td><p>↓</p></td>
+<td><p>Переместить выделенный элемент вниз на единицу</p></td>
+</tr>
+<tr class="row-odd"><td><p>←</p></td>
+<td><p>Переместить выделенный элемент влево на единицу</p></td>
+</tr>
+<tr class="row-even"><td><p>→</p></td>
+<td><p>Переместить выделенные элемент вправо на единицу</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete</p></td>
+<td><p>Удалить выделенный элемент</p></td>
+</tr>
+</tbody>
+</table>
+<!-- | H | Распределить выделенные элементы по горизонтали |
+| J | Распределить выдленные элементы по вертикали | -->
+<!-- | Ctrl + Z | Шаг назад |
+| Ctrl + Shift + Z | Шаг вперед | -->
+<p>Приблизить рабочее пространство можно также зажав <code class="docutils literal notranslate"><span class="pre">Alt</span></code> и используя колесико мыши</p>
+<p>Перемещаться по рабочему пространству можно зажав <code class="docutils literal notranslate"><span class="pre">Space</span></code> и кнопку мыши, перемещая курсор</p>
+</section>
+</section>
 </section>
 
 

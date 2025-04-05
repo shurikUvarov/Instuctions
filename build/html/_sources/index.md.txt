@@ -8,6 +8,6 @@
 guide.md
 U-Logic/U-Logic.md
 UI-Designer/UI-Designer.md
-UI-Panel.md
+UI-Panel/UI-Panel.md
 faq.md
 ```
