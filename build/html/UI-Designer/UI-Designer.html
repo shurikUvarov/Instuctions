@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
     <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="UI-Panel" href="../UI-Panel.html" />
+    <link rel="next" title="UI-Panel" href="../UI-Panel/UI-Panel.html" />
     <link rel="prev" title="U-Logic" href="../U-Logic/U-Logic.html" /> 
 </head>
 
@@ -78,18 +78,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#id20">Оверлей</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id21">Фрейм</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id22">Кнопка</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id23">Слайдер</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id24">Фон</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Список</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Слайдер</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Фон</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id25">Горячие клавиши</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Рабочее пространство</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id27">Элементы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id26">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Рабочее пространство</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Элементы</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../UI-Panel.html">UI-Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UI-Panel/UI-Panel.html">UI-Panel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Часто задаваемые вопросы</a></li>
 </ul>
 
@@ -121,8 +122,7 @@
 <p><strong>UI-Designer</strong>– это инструмент для создания и настройки пользовательских интерфейсов с помощью drag-and-drop (перетаскивания). Пользователь может управлять структурой интерфейса, настраивая страницы и элементы на страницах, такие как фоны, текст, кнопки, слайдеры, списки, Оверлеи(подстраницы). UI-Designer интерфейсов позволяет легко изменять свойства каждого элемента через панель настроек. Для доступа к UI-Designer введите в браузере <a class="reference external" href="IP-Controller:8000">IP-Controller:8000</a></p>
 <section id="id1">
 <h2>Обзор<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h2>
-<p><strong>UI-Designer</strong> служит для создания интерфейсов, для панели управления. Все имена объектов — это их <strong>ID</strong>,
-с помощью которых производится управление состоянием этих элементов. При создании каждого элемента интерфейса тщательно
+<p><strong>UI-Designer</strong> служит для создания интерфейсов панели управления. Все имена объектов являются их ID, которые используются для управления состоянием этих элементов. При создании каждого элемента интерфейса тщательно
 продумывайте их имена, это упростит взаимодействие с интерфейсом в <strong>U-Logic</strong>. Имена объектов могут дублироваться,
 но в таком случае состояние, отправленное из U-Logic, будет применяться ко всем элементам с одинаковым именем.
 Не создавайте объекты разных типов с одинаковыми именами. Используйте только английские символы для имен объектов.</p>
@@ -268,7 +268,7 @@
 <h4>Менеджер изображений<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h4>
 <p><img alt="Менеджер изображений" src="../_images/image_manager.png" /></p>
 <p>Левая часть менеджера изображений представляет из себя список библиотек, содержащих элементы. В правой части отображается содержимое выбранной библиотеки.
-Над каждым элементом написано состояние, изображение которого на данный момент отображается. Чтобы изменить состояние элемента и соотвественно его изображение, нажмите по нему. Если у элемента нет изображения для других состояний, то ничего не произойдет.</p>
+Над каждым элементом отображается его текущее состояние. Чтобы изменить состояние элемента и соотвественно его изображение, нажмите по нему. Если у элемента нет изображения для других состояний, то ничего не произойдет.</p>
 <p>Если нажать на элемент несколько раз, то отобразится изображение состояния элемента.</p>
 <p><img alt="Подробности изображения" src="../_images/image_manager_details.png" /></p>
 <p>Также отобразится его название, размер изображения, размер файла, состояние, отображаемого изображения элемента. Можно выбрать фон показываемого изображения. Доступны следующие варианты:</p>
@@ -295,7 +295,7 @@
 </section>
 <section id="id7">
 <h3>Правая панель<a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h3>
-<p>На правой панели отображаются свойства элемента. Панель Свойств предоставляет возможность редактировать определенные параметры элементов интерфейса:</p>
+<p>На правой панели отображаются свойства элемента. Панель Свойств предоставляет возможность редактировать параметры элементов интерфейса:</p>
 <ul class="simple">
 <li><p>Имя - Задает название элемента.</p></li>
 <li><p>Скрыть - Позволяет скрыть элемент с пользовательского интерфейса.</p></li>
@@ -312,7 +312,7 @@
 <li><p>Текст – Добавляет текст для идентификации кнопки, страницы или интерфейса.</p></li>
 <li><p>Размер шрифта – Определяет размер текста. Допустимым размером шрифта является число от 0 (текст не отображается) и больше.</p></li>
 <li><p>Цвет шрифта - Определяет цвет и прозрачность отображаемого текста. Цвет можно выбрать при помощи палитры цветов или ввода цвета вручную в формате HEX, RGBA, HSLA.</p></li>
-<li><p>Выравнивание текста – Регулирует положение текста внутри элемента интерфейса. Текст можно расположить в одном из следующих положений: верхний левый, верхний средний, верхний правый, центр слева, центр по центру, центр справа, нижний левый, нижний средний или нижний правый.</p></li>
+<li><p>Выравнивание текста – Регулирует положение текста внутри элемента интерфейса. Текст можно расположить в одном из следующих положений: верхний левый, верхний средний, верхний правый, центр слева, по центру, центр справа, нижний левый, нижний средний или нижний правый.</p></li>
 <li><p>Отступ текста – Задаёт расстояние между текстом и границами элемента интерфейса. Отступ регулируется в пикселях и может быть установлен отдельно для каждой стороны: верхний, нижний, левый и правый.</p></li>
 <li><p>Шрифт – Задает шрифт текста, отображаемого в пользовательском интерфейсе.</p></li>
 <li><p>Жирный шрифт – Применяет полужирное начертание текста.</p></li>
@@ -371,7 +371,7 @@
 </ul>
 <p><strong>Слайдер</strong></p>
 <ul class="simple">
-<li><p>Ориентация - Определяет определяет ориентацию слайдера:</p>
+<li><p>Ориентация - Определяет ориентацию слайдера:</p>
 <ul>
 <li><p>вертикально - Движение от низа к верху, где нижняя часть – минимальное значение, а верхняя – максимальное</p></li>
 <li><p>горизонатльно - Движение слева направо, где левая сторона – минимальное значение, а правая – максимальное</p></li>
@@ -390,7 +390,6 @@
 <li><p>Цвет пустой полоски - Определяет цвет и прозрачность пустой полоски. Цвет можно выбрать при помощи палитры цветов или ввода цвета вручную в формате HEX, RGBA, HSLA.</p></li>
 <li><p>Толщина полоски - Задает ширину вертикального слайдера и высоту горизонтального.</p></li>
 </ul>
-<!-- дальше не отредактировано -->
 </section>
 </section>
 <section id="id8">
@@ -490,23 +489,25 @@
 <li><p>PRESSED: Отображается после отправки соответствующей команды из U-Logic.</p></li>
 <li><p>DISABLED: Отображается, когда кнопка больше не активна.</p></li>
 </ul>
-<!-- ### Список -->
-<!-- чек -->
 </section>
 <section id="id23">
-<h3>Слайдер<a class="headerlink" href="#id23" title="Ссылка на этот заголовок"></a></h3>
-<p>Элемент, позволяющий изменять значение в определенном диапазоне. Может , например, использоваться для регулировки громкости, яркости, выбора значений или параметров. Слайдеры могут быть горизонтальными или вертикальными.</p>
+<h3>Список<a class="headerlink" href="#id23" title="Ссылка на этот заголовок"></a></h3>
+<p>Элемент, предназначенный для отображения структурированной информации в виде набора «Ключ Значение», которые визуально располагаются друг под другом. Список определяет только внешний вид, но не управляет содержимым списка.</p>
 </section>
 <section id="id24">
-<h3>Фон<a class="headerlink" href="#id24" title="Ссылка на этот заголовок"></a></h3>
+<h3>Слайдер<a class="headerlink" href="#id24" title="Ссылка на этот заголовок"></a></h3>
+<p>Элемент, позволяющий изменять значение в определенном диапазоне. Может , например, использоваться для регулировки громкости, яркости, выбора значений или параметров. Слайдеры могут быть горизонтальными или вертикальными.</p>
+</section>
+<section id="id25">
+<h3>Фон<a class="headerlink" href="#id25" title="Ссылка на этот заголовок"></a></h3>
 <p>Визуальный элемент страницы, создающий основу для её оформления.</p>
 </section>
 </section>
-<section id="id25">
-<h2>Горячие клавиши<a class="headerlink" href="#id25" title="Ссылка на этот заголовок"></a></h2>
-<p>Использование горячих клавиш в UI-Designer помогает работать быстрее, облегчая навигацию, редактирование и управление потоками. Ниже приведен список горячих клавиш UI-Designer:</p>
 <section id="id26">
-<h3>Рабочее пространство<a class="headerlink" href="#id26" title="Ссылка на этот заголовок"></a></h3>
+<h2>Горячие клавиши<a class="headerlink" href="#id26" title="Ссылка на этот заголовок"></a></h2>
+<p>Использование горячих клавиш в UI-Designer помогает работать быстрее. Ниже приведен список горячих клавиш UI-Designer:</p>
+<section id="id27">
+<h3>Рабочее пространство<a class="headerlink" href="#id27" title="Ссылка на этот заголовок"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Сочетание</p></th>
@@ -556,8 +557,8 @@
 </tbody>
 </table>
 </section>
-<section id="id27">
-<h3>Элементы<a class="headerlink" href="#id27" title="Ссылка на этот заголовок"></a></h3>
+<section id="id28">
+<h3>Элементы<a class="headerlink" href="#id28" title="Ссылка на этот заголовок"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Сочетание</p></th>
@@ -565,64 +566,73 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>E</p></td>
+<tr class="row-even"><td><p>Ctrl + C</p></td>
+<td><p>Скопировать выделенный элемент</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ctrl + V</p></td>
+<td><p>Вставить скопированный элемент</p></td>
+</tr>
+<tr class="row-even"><td><p>Ctrl + X</p></td>
+<td><p>Вырезать выделенный элемент</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
 <td><p>Центрировать выдленные элементы по горизонтали</p></td>
 </tr>
-<tr class="row-odd"><td><p>Q</p></td>
+<tr class="row-even"><td><p>Q</p></td>
 <td><p>Центрировать выделенные элементы по вертикали</p></td>
 </tr>
-<tr class="row-even"><td><p>A</p></td>
+<tr class="row-odd"><td><p>A</p></td>
 <td><p>Выровнять выделенные элементы по левому краю</p></td>
 </tr>
-<tr class="row-odd"><td><p>D</p></td>
+<tr class="row-even"><td><p>D</p></td>
 <td><p>Выровнять выделенные элементы по правому краю</p></td>
 </tr>
-<tr class="row-even"><td><p>W</p></td>
+<tr class="row-odd"><td><p>W</p></td>
 <td><p>Выровнять выделенные элементы по верхнему краю</p></td>
 </tr>
-<tr class="row-odd"><td><p>S</p></td>
+<tr class="row-even"><td><p>S</p></td>
 <td><p>Выровнять выделенные элементы по нижнему краю</p></td>
 </tr>
-<tr class="row-even"><td><p>G</p></td>
+<tr class="row-odd"><td><p>G</p></td>
 <td><p>Сгруппировать выделенные элементы</p></td>
 </tr>
-<tr class="row-odd"><td><p>Shift + G</p></td>
+<tr class="row-even"><td><p>Shift + G</p></td>
 <td><p>Разгруппировать элементы</p></td>
 </tr>
-<tr class="row-even"><td><p>B</p></td>
+<tr class="row-odd"><td><p>B</p></td>
 <td><p>Показывать / Скрывать имена элементов</p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
+<tr class="row-even"><td><p>1</p></td>
 <td><p>Включить / Выключить режим предпросмотра</p></td>
 </tr>
-<tr class="row-even"><td><p>Escape</p></td>
+<tr class="row-odd"><td><p>Escape</p></td>
 <td><p>Выключить режим предпросмотра</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ctrl + P</p></td>
+<tr class="row-even"><td><p>Ctrl + P</p></td>
 <td><p>Опубликовать проект в UI-Panel</p></td>
 </tr>
-<tr class="row-even"><td><p>Ctrl + S</p></td>
+<tr class="row-odd"><td><p>Ctrl + S</p></td>
 <td><p>Сохранить текущие изменения</p></td>
 </tr>
-<tr class="row-odd"><td><p>Shift + «+»</p></td>
-<td><p>Увеличить размер выдленного элемента</p></td>
+<tr class="row-even"><td><p>Shift + «+»</p></td>
+<td><p>Увеличить размер выделенного элемента</p></td>
 </tr>
-<tr class="row-even"><td><p>Shift + «-»</p></td>
+<tr class="row-odd"><td><p>Shift + «-»</p></td>
 <td><p>Уменьшить размер выделенного элемента</p></td>
 </tr>
-<tr class="row-odd"><td><p>↑</p></td>
+<tr class="row-even"><td><p>↑</p></td>
 <td><p>Переместить выделенный элемент вверх на единицу</p></td>
 </tr>
-<tr class="row-even"><td><p>↓</p></td>
+<tr class="row-odd"><td><p>↓</p></td>
 <td><p>Переместить выделенный элемент вниз на единицу</p></td>
 </tr>
-<tr class="row-odd"><td><p>←</p></td>
+<tr class="row-even"><td><p>←</p></td>
 <td><p>Переместить выделенный элемент влево на единицу</p></td>
 </tr>
-<tr class="row-even"><td><p>→</p></td>
-<td><p>Переместить выделенные элемент вправо на единицу</p></td>
+<tr class="row-odd"><td><p>→</p></td>
+<td><p>Переместить выделенный элемент вправо на единицу</p></td>
 </tr>
-<tr class="row-odd"><td><p>Delete</p></td>
+<tr class="row-even"><td><p>Delete</p></td>
 <td><p>Удалить выделенный элемент</p></td>
 </tr>
 </tbody>
@@ -631,8 +641,8 @@
 | J | Распределить выдленные элементы по вертикали | -->
 <!-- | Ctrl + Z | Шаг назад |
 | Ctrl + Shift + Z | Шаг вперед | -->
-<p>Приблизить рабочее пространство можно также зажав <code class="docutils literal notranslate"><span class="pre">Alt</span></code> и используя колесико мыши</p>
-<p>Перемещаться по рабочему пространству можно зажав <code class="docutils literal notranslate"><span class="pre">Space</span></code> и кнопку мыши, перемещая курсор</p>
+<p>Приблизить рабочее пространство можно также, зажав клавишу <code class="docutils literal notranslate"><span class="pre">Alt</span></code> и используя колесико мыши</p>
+<p>Для перемещения по рабочему пространству вы также можете зажать клавишу Space и, удерживая кнопку мыши, перемещать курсор.</p>
 </section>
 </section>
 </section>
@@ -642,7 +652,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
         <a href="../U-Logic/U-Logic.html" class="btn btn-neutral float-left" title="U-Logic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
-        <a href="../UI-Panel.html" class="btn btn-neutral float-right" title="UI-Panel" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../UI-Panel/UI-Panel.html" class="btn btn-neutral float-right" title="UI-Panel" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
